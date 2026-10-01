@@ -1,0 +1,159 @@
+{
+  "manifest_entries": 13005,
+  "package_bytes_excluding_manifest_files": 8210798024,
+  "workbooks": [
+    {
+      "name": "ADAR2_SD40_16A_中文结果表.xlsx",
+      "sheets": [
+        "Boltz逐模型表",
+        "序列最终得分"
+      ],
+      "dimensions": {
+        "Boltz逐模型表": [
+          120,
+          26
+        ],
+        "序列最终得分": [
+          120,
+          26
+        ]
+      },
+      "formulas": 0
+    },
+    {
+      "name": "高于GGGGSGGGGS_全指标对比.xlsx",
+      "sheets": [
+        "序列对比_按分排序",
+        "逐模型完整指标",
+        "原始字段及产物",
+        "指标与筛选说明"
+      ],
+      "dimensions": {
+        "序列对比_按分排序": [
+          28,
+          47
+        ],
+        "逐模型完整指标": [
+          74,
+          92
+        ],
+        "原始字段及产物": [
+          1339,
+          6
+        ],
+        "指标与筛选说明": [
+          13,
+          2
+        ]
+      },
+      "formulas": 23
+    }
+  ],
+  "all_spans_required_stages_present": {
+    "11": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "12": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "13": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "14": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "15": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "16": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "17": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "18": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "19": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    },
+    "20": {
+      "01_input": true,
+      "02_rfdiffusion_raw": true,
+      "06_proteinmpnn": true,
+      "08_boltz2_local": true,
+      "09_rmsd_gate_local": true,
+      "10_docking": true,
+      "11_ranker": true,
+      "04_logs": true
+    }
+  },
+  "two_16A_batches_present": true,
+  "identity_absolute_path_scan_hits": 0,
+  "later_fusion_project_scan_hits": 0,
+  "secret_pattern_scan_hits": 0,
+  "status": "PASS"
+}

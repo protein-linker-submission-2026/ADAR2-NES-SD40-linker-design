@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/span_report.py", line 187, in <module>
+    if __name__=="__main__": main()
+                             ^^^^^^
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/span_report.py", line 182, in main
+    elif a.command=="prepare-ranker": result=prepare_ranker(a.root, a.docking_dir, a.ranker_dir)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/span_report.py", line 85, in prepare_ranker
+    raise FileNotFoundError(src)
+FileNotFoundError: ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\08_boltz2_local\outputs\baseline_GGGGSGGGGS\boltz_results_baseline_GGGGSGGGGS\predictions\baseline_GGGGSGGGGS\baseline_GGGGSGGGGS_model_0.pdb
+Exception: ${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考\src\run_remaining_spans.ps1:40
+Line |
+  40 |  … DE -ne 0) { throw "WSL命令失败，退出码 $LASTEXITCODE：$($Arguments -join ' ')" …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | WSL命令失败，退出码 1：bash ${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/run_single_span.sh --span 11
+     | --output-root ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A --msa-mode online --stage ranker

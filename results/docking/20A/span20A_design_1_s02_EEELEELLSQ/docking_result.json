@@ -1,0 +1,103 @@
+{
+  "candidate_id": "span20A_design_1_s02_EEELEELLSQ",
+  "candidate_type": "design",
+  "rf_rmsd_status": "evaluated",
+  "vina_gate": {
+    "model_pass": [
+      false,
+      true,
+      true
+    ],
+    "pass_count": 2,
+    "required": 2,
+    "candidate_pass": true,
+    "operator": "<=",
+    "threshold_kcal_mol": -6.0
+  },
+  "models": [
+    {
+      "model_index": 0,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A/08_boltz2_local/outputs/span20A_design_1_s02_EEELEELLSQ/boltz_results_span20A_design_1_s02_EEELEELLSQ/predictions/span20A_design_1_s02_EEELEELLSQ/span20A_design_1_s02_EEELEELLSQ_model_0.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.3907735077496825,
+      "rf_rmsd_pass": true,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\08_boltz2_local\\outputs\\span20A_design_1_s02_EEELEELLSQ\\boltz_results_span20A_design_1_s02_EEELEELLSQ\\predictions\\span20A_design_1_s02_EEELEELLSQ\\span20A_design_1_s02_EEELEELLSQ_model_0.pdb",
+      "docking_box": {
+        "center": [
+          25.361,
+          -4.729000000000001,
+          -0.7184999999999997
+        ],
+        "size": [
+          31.544000000000004,
+          36.038,
+          30.366999999999997
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 2000839608,
+      "vina_best_score_kcal_mol": -5.8,
+      "vina_model_pass": false,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\10_docking\\span20A_design_1_s02_EEELEELLSQ\\model_0_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\10_docking\\span20A_design_1_s02_EEELEELLSQ\\model_0_vina.log"
+    },
+    {
+      "model_index": 1,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A/08_boltz2_local/outputs/span20A_design_1_s02_EEELEELLSQ/boltz_results_span20A_design_1_s02_EEELEELLSQ/predictions/span20A_design_1_s02_EEELEELLSQ/span20A_design_1_s02_EEELEELLSQ_model_1.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.4741139983015107,
+      "rf_rmsd_pass": true,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\08_boltz2_local\\outputs\\span20A_design_1_s02_EEELEELLSQ\\boltz_results_span20A_design_1_s02_EEELEELLSQ\\predictions\\span20A_design_1_s02_EEELEELLSQ\\span20A_design_1_s02_EEELEELLSQ_model_1.pdb",
+      "docking_box": {
+        "center": [
+          -19.180500000000002,
+          -11.1545,
+          -14.093
+        ],
+        "size": [
+          31.949,
+          38.876999999999995,
+          32.814
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 152781621,
+      "vina_best_score_kcal_mol": -6.3,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\10_docking\\span20A_design_1_s02_EEELEELLSQ\\model_1_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\10_docking\\span20A_design_1_s02_EEELEELLSQ\\model_1_vina.log"
+    },
+    {
+      "model_index": 2,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A/08_boltz2_local/outputs/span20A_design_1_s02_EEELEELLSQ/boltz_results_span20A_design_1_s02_EEELEELLSQ/predictions/span20A_design_1_s02_EEELEELLSQ/span20A_design_1_s02_EEELEELLSQ_model_2.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.4414699786798905,
+      "rf_rmsd_pass": true,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\08_boltz2_local\\outputs\\span20A_design_1_s02_EEELEELLSQ\\boltz_results_span20A_design_1_s02_EEELEELLSQ\\predictions\\span20A_design_1_s02_EEELEELLSQ\\span20A_design_1_s02_EEELEELLSQ_model_2.pdb",
+      "docking_box": {
+        "center": [
+          3.9160000000000004,
+          9.652999999999999,
+          22.9525
+        ],
+        "size": [
+          55.806,
+          34.326,
+          28.049
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 532865549,
+      "vina_best_score_kcal_mol": -7.2,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\10_docking\\span20A_design_1_s02_EEELEELLSQ\\model_2_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/20A\\10_docking\\span20A_design_1_s02_EEELEELLSQ\\model_2_vina.log"
+    }
+  ]
+}

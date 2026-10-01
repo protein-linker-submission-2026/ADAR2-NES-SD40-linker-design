@@ -1,0 +1,15 @@
+name: adar2-sd40-submission
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - pandas==3.0.5
+      - openpyxl>=3.1,<4
+      - Pillow==12.3.0
+      - python-docx>=1.1,<2
+      - PyYAML>=6.0,<7
+      - biopython==1.84
+

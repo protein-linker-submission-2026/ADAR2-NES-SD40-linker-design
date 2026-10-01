@@ -1,0 +1,10 @@
+rank,candidate,total_score,sd40_rmsd,contact_recovery,recovered_contacts,reference_contacts,clashing_atoms,rmsd_score,contact_score,clash_score,passed_filters,sd40_chain,sd40_coverage
+1,span16A_design_1_s05_SPELLRKLGK_model0,27.3056,2.9920,0.5902,36,61,1181,0.3088,0.5902,0.0084,,A,1.0000
+2,span16A_design_1_s01_SAEELRKLGK_model1,25.5607,3.8902,0.6230,38,61,656,0.2091,0.6230,0.0150,,A,1.0000
+3,baseline_GGGGSGGGGS_model2,18.4162,4.3961,0.4262,26,61,815,0.1715,0.4262,0.0121,,A,1.0000
+4,baseline_GGGGSGGGGS_model1,17.0274,4.6026,0.3934,24,61,861,0.1588,0.3934,0.0115,,A,1.0000
+5,span16A_design_1_s01_SAEELRKLGK_model0,16.0305,4.6350,0.3607,22,61,787,0.1570,0.3607,0.0125,,A,1.0000
+6,span16A_design_1_s05_SPELLRKLGK_model1,15.2719,4.5012,0.3279,20,61,807,0.1649,0.3279,0.0122,,A,1.0000
+7,baseline_GGGGSGGGGS_model0,14.4691,5.3246,0.3443,21,61,916,0.1236,0.3443,0.0108,,A,1.0000
+8,span16A_design_1_s05_SPELLRKLGK_model2,8.8227,8.5300,0.2295,14,61,1059,0.0521,0.2295,0.0094,,A,1.0000
+9,span16A_design_1_s01_SAEELRKLGK_model2,8.4322,7.5569,0.1639,10,61,248,0.0655,0.1639,0.0388,,A,1.0000

@@ -1,0 +1,177 @@
+data_MIQ
+# 
+_chem_comp.id                                    MIQ 
+_chem_comp.name                                  "2-[(3S)-2,6-dioxopiperidin-3-yl]-5-(morpholin-4-yl)-1H-isoindole-1,3(2H)-dione" 
+_chem_comp.type                                  non-polymer 
+_chem_comp.pdbx_type                             HETAIN 
+_chem_comp.formula                               "C17 H17 N3 O5" 
+_chem_comp.mon_nstd_parent_comp_id               ? 
+_chem_comp.pdbx_synonyms                         ? 
+_chem_comp.pdbx_formal_charge                    0 
+_chem_comp.pdbx_initial_date                     2023-08-15 
+_chem_comp.pdbx_modified_date                    2024-03-08 
+_chem_comp.pdbx_ambiguous_flag                   N 
+_chem_comp.pdbx_release_status                   REL 
+_chem_comp.pdbx_replaced_by                      ? 
+_chem_comp.pdbx_replaces                         ? 
+_chem_comp.formula_weight                        343.334 
+_chem_comp.one_letter_code                       ? 
+_chem_comp.three_letter_code                     MIQ 
+_chem_comp.pdbx_model_coordinates_details        ? 
+_chem_comp.pdbx_model_coordinates_missing_flag   N 
+_chem_comp.pdbx_ideal_coordinates_details        Corina 
+_chem_comp.pdbx_ideal_coordinates_missing_flag   N 
+_chem_comp.pdbx_model_coordinates_db_code        8TNQ 
+_chem_comp.pdbx_subcomponent_list                ? 
+_chem_comp.pdbx_processing_site                  RCSB 
+# 
+loop_
+_chem_comp_atom.comp_id 
+_chem_comp_atom.atom_id 
+_chem_comp_atom.alt_atom_id 
+_chem_comp_atom.type_symbol 
+_chem_comp_atom.charge 
+_chem_comp_atom.pdbx_align 
+_chem_comp_atom.pdbx_aromatic_flag 
+_chem_comp_atom.pdbx_leaving_atom_flag 
+_chem_comp_atom.pdbx_stereo_config 
+_chem_comp_atom.pdbx_backbone_atom_flag 
+_chem_comp_atom.pdbx_n_terminal_atom_flag 
+_chem_comp_atom.pdbx_c_terminal_atom_flag 
+_chem_comp_atom.model_Cartn_x 
+_chem_comp_atom.model_Cartn_y 
+_chem_comp_atom.model_Cartn_z 
+_chem_comp_atom.pdbx_model_Cartn_x_ideal 
+_chem_comp_atom.pdbx_model_Cartn_y_ideal 
+_chem_comp_atom.pdbx_model_Cartn_z_ideal 
+_chem_comp_atom.pdbx_component_atom_id 
+_chem_comp_atom.pdbx_component_comp_id 
+_chem_comp_atom.pdbx_ordinal 
+MIQ O1  O1  O 0 1 N N N N N N 144.061 152.601 90.262 0.724  -2.347 0.606  O1  MIQ 1  
+MIQ C2  C1  C 0 1 N N N N N N 143.160 151.545 90.108 0.632  -1.177 0.294  C2  MIQ 2  
+MIQ C3  C2  C 0 1 Y N N N N N 142.255 151.279 88.863 -0.627 -0.410 0.181  C3  MIQ 3  
+MIQ C4  C3  C 0 1 Y N N N N N 142.071 151.978 87.569 -1.963 -0.715 0.363  C4  MIQ 4  
+MIQ C5  C4  C 0 1 Y N N N N N 141.151 151.482 86.611 -2.930 0.272  0.170  C5  MIQ 5  
+MIQ C7  C5  C 0 1 N N N N N N 139.622 152.539 84.944 -5.118 1.147  0.099  C7  MIQ 6  
+MIQ C8  C6  C 0 1 N N N N N N 139.500 152.655 83.430 -6.582 0.787  0.368  C8  MIQ 7  
+MIQ C10 C7  C 0 1 N N N N N N 141.623 153.810 83.622 -6.149 -1.493 -0.227 C10 MIQ 8  
+MIQ C11 C8  C 0 1 N N N N N N 142.084 152.899 84.755 -4.682 -1.156 -0.502 C11 MIQ 9  
+MIQ C12 C9  C 0 1 Y N N N N N 140.384 150.279 86.901 -2.554 1.558  -0.204 C12 MIQ 10 
+MIQ C13 C10 C 0 1 Y N N N N N 140.561 149.608 88.141 -1.220 1.871  -0.388 C13 MIQ 11 
+MIQ C14 C11 C 0 1 Y N N N N N 141.530 150.132 89.142 -0.249 0.896  -0.198 C14 MIQ 12 
+MIQ C15 C12 C 0 1 N N N N N N 141.988 149.683 90.568 1.222  0.876  -0.303 C15 MIQ 13 
+MIQ C18 C13 C 0 1 N N S N N N 143.531 150.476 92.256 3.067  -0.763 0.002  C18 MIQ 14 
+MIQ C19 C14 C 0 1 N N N N N N 143.618 151.893 92.836 3.826  0.075  0.997  C19 MIQ 15 
+MIQ C21 C15 C 0 1 N N N N N N 146.034 151.601 93.288 5.807  -0.030 -0.269 C21 MIQ 16 
+MIQ C22 C16 C 0 1 N N N N N N 146.139 150.658 92.105 5.162  -0.873 -1.336 C22 MIQ 17 
+MIQ C23 C17 C 0 1 N N N N N N 144.892 149.793 92.131 3.664  -0.552 -1.393 C23 MIQ 18 
+MIQ N17 N1  N 0 1 N N N N N N 142.891 150.568 90.957 1.658  -0.360 -0.002 N17 MIQ 19 
+MIQ N20 N2  N 0 1 N N N N N N 144.860 152.433 93.350 5.120  0.378  0.808  N20 MIQ 20 
+MIQ N6  N3  N 0 1 N N N N N N 140.970 152.185 85.354 -4.275 -0.030 0.352  N6  MIQ 21 
+MIQ O16 O2  O 0 1 N N N N N N 141.531 148.574 91.282 1.923  1.820  -0.611 O16 MIQ 22 
+MIQ O24 O3  O 0 1 N N N N N N 146.870 151.649 94.122 6.972  0.287  -0.385 O24 MIQ 23 
+MIQ O25 O4  O 0 1 N N N N N N 142.647 152.562 92.870 3.259  0.482  1.987  O25 MIQ 24 
+MIQ O9  O5  O 0 1 N N N N N N 140.518 153.422 82.860 -6.950 -0.329 -0.448 O9  MIQ 25 
+MIQ H12 H1  H 0 1 N N N N N N 142.641 152.870 87.355 -2.257 -1.714 0.652  H12 MIQ 26 
+MIQ H02 H2  H 0 1 N N N N N N 139.355 153.505 85.397 -5.005 1.460  -0.939 H02 MIQ 27 
+MIQ H01 H3  H 0 1 N N N N N N 138.927 151.763 85.298 -4.817 1.960  0.759  H01 MIQ 28 
+MIQ H03 H4  H 0 1 N N N N N N 139.537 151.645 82.996 -6.705 0.526  1.419  H03 MIQ 29 
+MIQ H04 H5  H 0 1 N N N N N N 138.533 153.122 83.191 -7.217 1.639  0.126  H04 MIQ 30 
+MIQ H06 H6  H 0 1 N N N N N N 141.383 154.786 84.068 -6.472 -2.289 -0.898 H06 MIQ 31 
+MIQ H05 H7  H 0 1 N N N N N N 142.471 153.922 82.930 -6.260 -1.820 0.807  H05 MIQ 32 
+MIQ H08 H8  H 0 1 N N N N N N 142.803 152.168 84.356 -4.061 -2.024 -0.280 H08 MIQ 33 
+MIQ H07 H9  H 0 1 N N N N N N 142.573 153.510 85.528 -4.562 -0.880 -1.550 H07 MIQ 34 
+MIQ H09 H10 H 0 1 N N N N N N 139.682 149.897 86.175 -3.308 2.316  -0.352 H09 MIQ 35 
+MIQ H10 H11 H 0 1 N N N N N N 139.991 148.716 88.358 -0.934 2.871  -0.679 H10 MIQ 36 
+MIQ H11 H12 H 0 1 N N N N N N 142.903 149.870 92.926 3.145  -1.815 0.277  H11 MIQ 37 
+MIQ H14 H13 H 0 1 N N N N N N 146.185 151.230 91.166 5.618  -0.652 -2.301 H14 MIQ 38 
+MIQ H15 H14 H 0 1 N N N N N N 147.038 150.031 92.197 5.300  -1.928 -1.100 H15 MIQ 39 
+MIQ H16 H15 H 0 1 N N N N N N 144.991 149.108 92.986 3.174  -1.217 -2.105 H16 MIQ 40 
+MIQ H17 H16 H 0 1 N N N N N N 144.880 149.214 91.196 3.523  0.484  -1.699 H17 MIQ 41 
+MIQ H13 H17 H 0 1 N N N N N N 144.901 153.355 93.736 5.575  0.913  1.477  H13 MIQ 42 
+# 
+loop_
+_chem_comp_bond.comp_id 
+_chem_comp_bond.atom_id_1 
+_chem_comp_bond.atom_id_2 
+_chem_comp_bond.value_order 
+_chem_comp_bond.pdbx_aromatic_flag 
+_chem_comp_bond.pdbx_stereo_config 
+_chem_comp_bond.pdbx_ordinal 
+MIQ C10 C11 SING N N 1  
+MIQ C10 O9  SING N N 2  
+MIQ C11 N6  SING N N 3  
+MIQ C12 C13 DOUB Y N 4  
+MIQ C12 C5  SING Y N 5  
+MIQ C13 C14 SING Y N 6  
+MIQ C14 C15 SING N N 7  
+MIQ C14 C3  DOUB Y N 8  
+MIQ C15 N17 SING N N 9  
+MIQ C15 O16 DOUB N N 10 
+MIQ C18 C19 SING N N 11 
+MIQ C18 C23 SING N N 12 
+MIQ C18 N17 SING N N 13 
+MIQ C19 N20 SING N N 14 
+MIQ C19 O25 DOUB N N 15 
+MIQ C2  C3  SING N N 16 
+MIQ C2  N17 SING N N 17 
+MIQ C2  O1  DOUB N N 18 
+MIQ C21 C22 SING N N 19 
+MIQ C21 N20 SING N N 20 
+MIQ C21 O24 DOUB N N 21 
+MIQ C22 C23 SING N N 22 
+MIQ C3  C4  SING Y N 23 
+MIQ C4  C5  DOUB Y N 24 
+MIQ C5  N6  SING N N 25 
+MIQ C7  C8  SING N N 26 
+MIQ C7  N6  SING N N 27 
+MIQ C8  O9  SING N N 28 
+MIQ C4  H12 SING N N 29 
+MIQ C7  H02 SING N N 30 
+MIQ C7  H01 SING N N 31 
+MIQ C8  H03 SING N N 32 
+MIQ C8  H04 SING N N 33 
+MIQ C10 H06 SING N N 34 
+MIQ C10 H05 SING N N 35 
+MIQ C11 H08 SING N N 36 
+MIQ C11 H07 SING N N 37 
+MIQ C12 H09 SING N N 38 
+MIQ C13 H10 SING N N 39 
+MIQ C18 H11 SING N N 40 
+MIQ C22 H14 SING N N 41 
+MIQ C22 H15 SING N N 42 
+MIQ C23 H16 SING N N 43 
+MIQ C23 H17 SING N N 44 
+MIQ N20 H13 SING N N 45 
+# 
+loop_
+_pdbx_chem_comp_descriptor.comp_id 
+_pdbx_chem_comp_descriptor.type 
+_pdbx_chem_comp_descriptor.program 
+_pdbx_chem_comp_descriptor.program_version 
+_pdbx_chem_comp_descriptor.descriptor 
+MIQ SMILES           ACDLabs              12.01 "O=C1NC(=O)CCC1N1C(=O)c2cc(ccc2C1=O)N1CCOCC1"                                                                                                 
+MIQ InChI            InChI                1.06  "InChI=1S/C17H17N3O5/c21-14-4-3-13(15(22)18-14)20-16(23)11-2-1-10(9-12(11)17(20)24)19-5-7-25-8-6-19/h1-2,9,13H,3-8H2,(H,18,21,22)/t13-/m0/s1" 
+MIQ InChIKey         InChI                1.06  CCCSRHUSXCBFJZ-ZDUSSCGKSA-N                                                                                                                   
+MIQ SMILES_CANONICAL CACTVS               3.385 "O=C1CC[C@H](N2C(=O)c3ccc(cc3C2=O)N4CCOCC4)C(=O)N1"                                                                                           
+MIQ SMILES           CACTVS               3.385 "O=C1CC[CH](N2C(=O)c3ccc(cc3C2=O)N4CCOCC4)C(=O)N1"                                                                                            
+MIQ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7 "c1cc2c(cc1N3CCOCC3)C(=O)N(C2=O)[C@H]4CCC(=O)NC4=O"                                                                                           
+MIQ SMILES           "OpenEye OEToolkits" 2.0.7 "c1cc2c(cc1N3CCOCC3)C(=O)N(C2=O)C4CCC(=O)NC4=O"                                                                                               
+# 
+loop_
+_pdbx_chem_comp_identifier.comp_id 
+_pdbx_chem_comp_identifier.type 
+_pdbx_chem_comp_identifier.program 
+_pdbx_chem_comp_identifier.program_version 
+_pdbx_chem_comp_identifier.identifier 
+MIQ "SYSTEMATIC NAME" ACDLabs              12.01 "2-[(3S)-2,6-dioxopiperidin-3-yl]-5-(morpholin-4-yl)-1H-isoindole-1,3(2H)-dione"        
+MIQ "SYSTEMATIC NAME" "OpenEye OEToolkits" 2.0.7 "2-[(3~{S})-2,6-bis(oxidanylidene)piperidin-3-yl]-5-morpholin-4-yl-isoindole-1,3-dione" 
+# 
+loop_
+_pdbx_chem_comp_audit.comp_id 
+_pdbx_chem_comp_audit.action_type 
+_pdbx_chem_comp_audit.date 
+_pdbx_chem_comp_audit.processing_site 
+MIQ "Create component" 2023-08-15 RCSB 
+MIQ "Initial release"  2024-03-13 RCSB 
+# 

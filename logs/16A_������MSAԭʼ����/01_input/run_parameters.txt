@@ -1,0 +1,15 @@
+experiment=ADAR2_SD40_V2_span16A_spin0
+target_span_A=16
+anchor_A=A393_CA_NES_C_terminus
+anchor_B=input_A394_CA_SD40_full_position_2
+spin_deg=0
+rf_contig=[A1-393/11/A394-428]
+num_designs=3
+design_startnum=0
+deterministic=True
+rf_seed_rule=seed_equals_design_index
+expected_design_indices=0,1,2
+expected_final_length=439
+linker_range=A394-A403
+sd40_range=A404-A439
+sd40_sequence=LLLFCPICGFTCRQKGNLLRHINLHTGEKLFKYHLY

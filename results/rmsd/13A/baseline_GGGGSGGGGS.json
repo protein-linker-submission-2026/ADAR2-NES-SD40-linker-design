@@ -1,0 +1,43 @@
+{
+  "candidate_id": "baseline_GGGGSGGGGS",
+  "candidate_type": "baseline",
+  "rf_backbone_id": null,
+  "rf_pdb_path": null,
+  "rf_rmsd_status": "not_applicable_baseline",
+  "rf_rmsd_gate": {
+    "model_pass": [
+      null,
+      null,
+      null
+    ],
+    "pass_count": null,
+    "required": null,
+    "candidate_pass": null,
+    "operator": "not_applicable",
+    "threshold": null
+  },
+  "downstream_eligible": true,
+  "models": [
+    {
+      "model_index": 0,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/13A/08_boltz2_local/outputs/baseline_GGGGSGGGGS/boltz_results_baseline_GGGGSGGGGS/predictions/baseline_GGGGSGGGGS/baseline_GGGGSGGGGS_model_0.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": null,
+      "rf_rmsd_pass": null
+    },
+    {
+      "model_index": 1,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/13A/08_boltz2_local/outputs/baseline_GGGGSGGGGS/boltz_results_baseline_GGGGSGGGGS/predictions/baseline_GGGGSGGGGS/baseline_GGGGSGGGGS_model_1.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": null,
+      "rf_rmsd_pass": null
+    },
+    {
+      "model_index": 2,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/13A/08_boltz2_local/outputs/baseline_GGGGSGGGGS/boltz_results_baseline_GGGGSGGGGS/predictions/baseline_GGGGSGGGGS/baseline_GGGGSGGGGS_model_2.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": null,
+      "rf_rmsd_pass": null
+    }
+  ]
+}

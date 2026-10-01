@@ -1,0 +1,51 @@
+[4/23] Boltz-2 + online MSA span17A_design_0_s06_SKEEREKEET attempt=1
+Seed set to 1932464318
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/17A/08_boltz2_local/inputs/span17A_design_0_s06_SKEEREKEET.yaml with 1 protein entities.
+Calling MSA server for target span17A_design_0_s06_SKEEREKEET with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][ASleeping for 5s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:07 remaining: ?][A
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:07 remaining: 03:27][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:13 remaining: 03:27][A
+RUNNING:   7%|▋         | 10/150 [elapsed: 00:13 remaining: 03:00][ASleeping for 9s. Reason: RUNNING
+
+RUNNING:   7%|▋         | 10/150 [elapsed: 00:21 remaining: 03:00][A
+RUNNING:  13%|█▎        | 19/150 [elapsed: 00:21 remaining: 02:23][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:  13%|█▎        | 19/150 [elapsed: 00:29 remaining: 02:23][A
+RUNNING:  17%|█▋        | 26/150 [elapsed: 00:29 remaining: 02:17][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:  17%|█▋        | 26/150 [elapsed: 00:37 remaining: 02:17][A
+RUNNING:  22%|██▏       | 33/150 [elapsed: 00:37 remaining: 02:10][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:  22%|██▏       | 33/150 [elapsed: 00:44 remaining: 02:10][A
+RUNNING:  26%|██▌       | 39/150 [elapsed: 00:44 remaining: 02:04][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:  26%|██▌       | 39/150 [elapsed: 00:51 remaining: 02:04][A
+RUNNING:  31%|███       | 46/150 [elapsed: 00:51 remaining: 01:50][ASleeping for 10s. Reason: RUNNING
+
+COMPLETE:  31%|███       | 46/150 [elapsed: 01:01 remaining: 01:50][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 01:01 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 01:04 remaining: 00:00]
+100%|██████████| 1/1 [01:05<00:00, 65.49s/it]100%|██████████| 1/1 [01:05<00:00, 65.49s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [04:49<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [04:49<00:00,  0.00it/s]

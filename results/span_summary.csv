@@ -1,0 +1,11 @@
+﻿batch,target_span_A,span_A,rf_backbones,mpnn_requested,mpnn_unique,qc_pass_design,boltz_candidates,boltz_models,rmsd_pass_design,vina_candidates,vina_models,vina_pass_design,ranker_models,network_used_for_MSA,msa_server,boltz_inference,scoring_weights,rmsd_threshold_A,rmsd_required_models,vina_threshold_kcal_mol,vina_required_models,baseline_sequence,baseline_score
+online_mmseqs2,11,11,3,30,29,28,29,87,1,2,6,1,6,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,12,12,3,30,29,27,28,84,12,13,39,12,39,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,13,13,3,30,30,26,27,81,10,11,33,10,33,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,14,14,3,30,29,9,10,30,8,9,27,8,27,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,15,15,3,30,29,11,12,36,11,12,36,11,36,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,16,16,3,30,28,19,20,60,18,19,57,16,51,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,17,17,3,30,30,22,23,69,18,19,57,18,57,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,18,18,3,30,29,18,19,57,15,16,48,14,45,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,19,19,3,30,29,14,15,45,13,14,42,13,42,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035
+online_mmseqs2,20,20,3,30,30,12,13,39,11,12,36,11,36,True,https://api.colabfold.com,local GPU,"{'S_RMSD': 0.3, 'S_contact': 0.3, 'S_clash': 0.4}",2.0,2,-6.0,2,GGGGSGGGGS,24.1035

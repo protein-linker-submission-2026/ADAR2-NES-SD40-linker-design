@@ -1,0 +1,29 @@
+reference:
+  pdb_id: "8TNQ"
+  path: "reference/8TNQ.pdb"
+  download_url: "https://files.rcsb.org/download/8TNQ.pdb"
+  crbn_chain: "B"
+  sd40_chain: "C"
+  ligand_resname: "MIQ"
+
+sd40:
+  sequence: "LLLFCPICGFTCRQKGNLLRHINLHTGEKLFKYHLY"
+  min_sequence_coverage: 0.85
+
+geometry:
+  contact_cutoff_angstrom: 5.0
+  clash_cutoff_angstrom: 2.0
+
+scoring:
+  rmsd_scale_angstrom: 2.0
+  clash_scale_atoms: 10.0
+  weights:
+    rmsd: 0.3
+    contact: 0.3
+    clash: 0.4
+
+filters:
+  enabled: false
+  max_rmsd_angstrom: 2.5
+  min_contact_recovery: 0.70
+  max_clashing_atoms: 10

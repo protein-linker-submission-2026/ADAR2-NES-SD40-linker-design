@@ -1,0 +1,12 @@
+﻿批次,目标距离_A,MSA方式,使用网络,包内原始记录目录,RF骨架数,MPNN请求数,Boltz候选数,Boltz模型数,Ranker模型数,对应中期结果
+16A-单序列MSA,16,本地单序列A3M,否,02_原始记录/16A_单序列MSA原始批次,3,30,20,60,6,ADAR2_SD40_16A_中文结果表.xlsx
+11A-在线MSA,11,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/11A,3,30,29,87,6,高于GGGGSGGGGS_全指标对比.xlsx
+12A-在线MSA,12,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/12A,3,30,28,84,39,高于GGGGSGGGGS_全指标对比.xlsx
+13A-在线MSA,13,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/13A,3,30,27,81,33,高于GGGGSGGGGS_全指标对比.xlsx
+14A-在线MSA,14,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/14A,3,30,10,30,27,高于GGGGSGGGGS_全指标对比.xlsx
+15A-在线MSA,15,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/15A,3,30,12,36,36,高于GGGGSGGGGS_全指标对比.xlsx
+16A-在线MSA,16,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/16A,3,30,20,60,51,高于GGGGSGGGGS_全指标对比.xlsx
+17A-在线MSA,17,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/17A,3,30,23,69,57,高于GGGGSGGGGS_全指标对比.xlsx
+18A-在线MSA,18,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/18A,3,30,19,57,45,高于GGGGSGGGGS_全指标对比.xlsx
+19A-在线MSA,19,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/19A,3,30,15,45,42,高于GGGGSGGGGS_全指标对比.xlsx
+20A-在线MSA,20,在线MMseqs2,是,02_原始记录/11-20A_在线MSA批次/20A,3,30,13,39,36,高于GGGGSGGGGS_全指标对比.xlsx

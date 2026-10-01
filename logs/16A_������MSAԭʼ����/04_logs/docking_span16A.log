@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考\src\docking_helper.py", line 90, in <module>
+    if __name__=="__main__": main()
+                             ^^^^^^
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考\src\docking_helper.py", line 89, in main
+    else: print(json.dumps({"status":"ok","candidates":len(run_batch(a.evaluations_dir,a.ligand_pdb,a.output_root,a.vina))},indent=2))
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考\src\docking_helper.py", line 66, in run_batch
+    if not ligand_pdbqt.exists(): prepare_pdbqt(ligand_pdb,ligand_pdbqt,"ligand")
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考\src\docking_helper.py", line 60, in prepare_pdbqt
+    subprocess.run([python2,str(script),flag,str(pdb),"-o",str(pdbqt)],check=True,capture_output=True,text=True)
+  File "${USER_HOME}\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\Download\\python.exe', 'D:\\Download\\Lib\\site-packages\\AutoDockTools\\Utilities24\\prepare_ligand4.py', '-l', '${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考\\references\\prepared\\8TNQ_MIQ_experimental.pdb', '-o', '${PROJECT_ROOT}\\data\\10_docking\\MIQ_8TNQ.pdbqt']' returned non-zero exit status 1.

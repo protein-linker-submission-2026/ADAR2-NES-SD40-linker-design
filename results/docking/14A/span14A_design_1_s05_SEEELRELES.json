@@ -1,0 +1,103 @@
+{
+  "candidate_id": "span14A_design_1_s05_SEEELRELES",
+  "candidate_type": "design",
+  "rf_rmsd_status": "evaluated",
+  "vina_gate": {
+    "model_pass": [
+      true,
+      true,
+      true
+    ],
+    "pass_count": 3,
+    "required": 2,
+    "candidate_pass": true,
+    "operator": "<=",
+    "threshold_kcal_mol": -6.0
+  },
+  "models": [
+    {
+      "model_index": 0,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A/08_boltz2_local/outputs/span14A_design_1_s05_SEEELRELES/boltz_results_span14A_design_1_s05_SEEELRELES/predictions/span14A_design_1_s05_SEEELRELES/span14A_design_1_s05_SEEELRELES_model_0.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.2747687414639415,
+      "rf_rmsd_pass": true,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\08_boltz2_local\\outputs\\span14A_design_1_s05_SEEELRELES\\boltz_results_span14A_design_1_s05_SEEELRELES\\predictions\\span14A_design_1_s05_SEEELRELES\\span14A_design_1_s05_SEEELRELES_model_0.pdb",
+      "docking_box": {
+        "center": [
+          11.9985,
+          19.633499999999998,
+          -14.181
+        ],
+        "size": [
+          31.051000000000002,
+          29.685,
+          36.218
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 1273843737,
+      "vina_best_score_kcal_mol": -7.3,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\10_docking\\span14A_design_1_s05_SEEELRELES\\model_0_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\10_docking\\span14A_design_1_s05_SEEELRELES\\model_0_vina.log"
+    },
+    {
+      "model_index": 1,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A/08_boltz2_local/outputs/span14A_design_1_s05_SEEELRELES/boltz_results_span14A_design_1_s05_SEEELRELES/predictions/span14A_design_1_s05_SEEELRELES/span14A_design_1_s05_SEEELRELES_model_1.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.36839704456038264,
+      "rf_rmsd_pass": true,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\08_boltz2_local\\outputs\\span14A_design_1_s05_SEEELRELES\\boltz_results_span14A_design_1_s05_SEEELRELES\\predictions\\span14A_design_1_s05_SEEELRELES\\span14A_design_1_s05_SEEELRELES_model_1.pdb",
+      "docking_box": {
+        "center": [
+          17.5575,
+          8.898,
+          -14.9375
+        ],
+        "size": [
+          31.119,
+          41.528,
+          31.613
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 708510155,
+      "vina_best_score_kcal_mol": -7.1,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\10_docking\\span14A_design_1_s05_SEEELRELES\\model_1_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\10_docking\\span14A_design_1_s05_SEEELRELES\\model_1_vina.log"
+    },
+    {
+      "model_index": 2,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A/08_boltz2_local/outputs/span14A_design_1_s05_SEEELRELES/boltz_results_span14A_design_1_s05_SEEELRELES/predictions/span14A_design_1_s05_SEEELRELES/span14A_design_1_s05_SEEELRELES_model_2.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.3019460202413022,
+      "rf_rmsd_pass": true,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\08_boltz2_local\\outputs\\span14A_design_1_s05_SEEELRELES\\boltz_results_span14A_design_1_s05_SEEELRELES\\predictions\\span14A_design_1_s05_SEEELRELES\\span14A_design_1_s05_SEEELRELES_model_2.pdb",
+      "docking_box": {
+        "center": [
+          -6.456000000000001,
+          20.9365,
+          14.854
+        ],
+        "size": [
+          32.672,
+          32.067,
+          37.574
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 470907042,
+      "vina_best_score_kcal_mol": -6.9,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\10_docking\\span14A_design_1_s05_SEEELRELES\\model_2_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/14A\\10_docking\\span14A_design_1_s05_SEEELRELES\\model_2_vina.log"
+    }
+  ]
+}

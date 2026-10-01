@@ -103,5 +103,9 @@ This package intentionally excludes Git history, account names, personal names, 
 
 ## Large files
 
-All final PDB structures used in the reported analysis are included. Large intermediate MSA arrays, model caches, Conda environments, pretrained weights, duplicate artifacts, and temporary files remain in the separately preserved full archive and are indexed by relative path and SHA256 in `provenance/source_inventory.csv`.
+All final PDB structures used in the reported analysis are included. The complete non-duplicate intermediate archive is distributed separately in the [`v2.0-complete-submission` Release](https://github.com/protein-linker-submission-2026/ADAR2-NES-SD40-linker-design/releases/tag/v2.0-complete-submission) as 11 `full-reproduction-*.zip` assets with `FULL_REPRODUCTION_SHA256SUMS.txt`. Download every volume, verify the hashes, and extract them into the same empty directory.
+
+Third-party pretrained weights, Conda environments, software caches, duplicate artifacts, private competition documents, and identity-bearing source files are intentionally excluded. All archived scientific files are indexed by relative path and SHA256 in `provenance/source_inventory.csv`.
+
+Structure naming, coordinate units, chain conventions, residue-range interpretation, and hydrogen/protonation handling are documented in `docs/STRUCTURE_FILES.md`.
 

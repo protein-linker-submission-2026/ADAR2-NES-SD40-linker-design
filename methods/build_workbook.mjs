@@ -30,6 +30,12 @@ function recordsMatrix(records, preferredColumns = null) {
   const rows = records.map((record) => headers.map((key) => {
     const value = record[key];
     if (typeof value === "boolean") return value ? "是" : "否";
+    if (value !== null && typeof value === "object") {
+      if (key === "scoring_weights") {
+        return Object.entries(value).map(([name, weight]) => `${name}=${weight}`).join(", ");
+      }
+      return JSON.stringify(value);
+    }
     return value === undefined || value === null || Number.isNaN(value) ? null : value;
   }));
   return { headers, rows };
@@ -115,7 +121,7 @@ function addDataSheet(name, records, options = {}) {
 const summary = workbook.worksheets.add("摘要");
 summary.showGridLines = false;
 summary.mergeCells("A1:J2");
-summary.getRange("A1").values = [["ADAR2 NES SD40 Linker 设计中期结果总汇"]];
+summary.getRange("A1").values = [["ADAR2 NES SD40 Linker 计算结果总汇"]];
 summary.getRange("A1:J2").format = {
   fill: "#FFFFFF",
   font: { name: fontFamily, size: 20, bold: true, color: "#000000" },
@@ -272,7 +278,7 @@ for (const [sheetName, range] of previews) {
   await fs.writeFile(`${outputRoot}/00_阅读说明/workbook_previews/${sheetName}.png`, new Uint8Array(await preview.arrayBuffer()));
 }
 const xlsx = await SpreadsheetFile.exportXlsx(workbook);
-const outputPath = `${outputRoot}/02_核心数据表/ADAR2_SD40_中期结果_全量总汇.xlsx`;
+const outputPath = `${outputRoot}/02_核心数据表/ADAR2_SD40_计算结果_全量总汇.xlsx`;
 await xlsx.save(outputPath);
 await fs.rm(`${outputPath}.inspect.ndjson`, { force: true });
 await fs.writeFile(`${outputRoot}/00_阅读说明/workbook_validation.txt`, errorScan.ndjson || "", "utf8");

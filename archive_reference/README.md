@@ -1,9 +1,9 @@
-# Full archive reference
+# Full reproduction archive
 
-The separately preserved anonymous full archive contains all 13,005 validated source artifacts, including large MSA arrays, model confidence arrays, caches retained for audit, duplicate logs, and intermediate files that are not necessary for routine judging.
+The complete non-duplicate anonymous scientific archive is published in the [`v2.0-complete-submission` Release](https://github.com/protein-linker-submission-2026/ADAR2-NES-SD40-linker-design/releases/tag/v2.0-complete-submission) as 11 GitHub Release ZIP assets. Together they contain all 9,745 files and 6,835,799,227 uncompressed bytes from the validated extracted archive, including MSA files, prediction arrays, intermediate structures, docking records, run logs, methods, manifests, and provenance.
 
-Archive filename: `ADAR2_SD40_中期提交材料_匿名版.zip`
+Download all `full-reproduction-*.zip` assets plus `FULL_REPRODUCTION_SHA256SUMS.txt`, verify every checksum, and extract every ZIP into the same empty directory. The included `FULL_REPRODUCTION_ASSETS.csv` maps each volume to its source paths and records file counts and byte totals.
 
-SHA256: `705697db6456f286bea37f982839e36dce026ab21041831b76a24650d381106b`
+Third-party pretrained weights, Conda environments, software caches, duplicate archives, private competition documents, and identity-bearing source files are intentionally excluded. They are not required to inspect the submitted results; third-party software should be obtained from the official sources in `THIRD_PARTY_SOFTWARE.md`.
 
-The full archive is retained locally and should be supplied only when the organizer requests complete raw computational records or provides a sufficiently large transfer channel. Its relative file inventory and hashes are available in the formal submission under `provenance/`.
+`full_archive.sha256` is retained only as a legacy checksum for the earlier monolithic local ZIP and is not the checksum list for the published split archive.

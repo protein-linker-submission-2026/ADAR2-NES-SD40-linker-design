@@ -1,0 +1,12 @@
+file_name,size_bytes,source_bytes,file_count,sha256,source_paths
+full-reproduction-online-11A.zip,224741995,930128680,780,b4b54e9e5473896f35c35aa8d1a87ab3f3ed99d5e3ffcff7ee86f510759720ac,02_原始记录/11-20A_在线MSA批次/11A
+full-reproduction-online-12A.zip,216844506,858956222,913,150b616cf0ed36c10c0b50b0ee8e2c009430b4fd82f3baa5668d0a3500dcf6e7,02_原始记录/11-20A_在线MSA批次/12A
+full-reproduction-online-13A.zip,221205086,938886755,861,003a5976688c59040ad3b6286f600cd36074f68a6fdede9c666321cc16f9082c,02_原始记录/11-20A_在线MSA批次/13A
+full-reproduction-online-14A.zip,96440379,390342577,441,42fcd4ecda372acfb56b1572f8b8988e0e747e6f00928a0d5df670f487391c90,02_原始记录/11-20A_在线MSA批次/14A
+full-reproduction-online-15A.zip,110914639,447324248,529,2572fc292c5a16a9a76c431428331b6dcc43a62e0f60fa7e5454875b5397c8c4,02_原始记录/11-20A_在线MSA批次/15A
+full-reproduction-online-16A.zip,168705456,687490379,795,6556d7d76325095612e22771cbcbe82caa51c4959698fd1657818171ea841619,02_原始记录/11-20A_在线MSA批次/16A
+full-reproduction-online-17A.zip,189081418,773277238,880,9e128b587385be2ed3cbc45ce3c3859d4e3ca14cc936834dd7f55d0535702547,02_原始记录/11-20A_在线MSA批次/17A
+full-reproduction-online-18A.zip,161580516,660893243,743,b736b6c8204be4c82ab9e98836e8b4b30e260e05f721e9ef2e233879ee4b77cc,02_原始记录/11-20A_在线MSA批次/18A
+full-reproduction-online-19A.zip,132070811,527671791,626,d578f214a963a139d347292c5717a80d128a7b9d2fb1da61a0ca2adf008f2800,02_原始记录/11-20A_在线MSA批次/19A
+full-reproduction-online-20A.zip,117178241,469769008,552,1fc8bc71d1dc4859b5004c6adc06d26844b969e6782bfb384b6f3feab3de755b,02_原始记录/11-20A_在线MSA批次/20A
+full-reproduction-common-and-early-16A.zip,39301370,151059086,2625,5239fb78b16a8b648a010d86fd751b74e2cad0a91e56ae0f57757230cc46dbba,01_中期结果; 02_原始记录/16A_单序列MSA原始批次; 02_原始记录/方法脚本与公共参考; 02_原始记录/跨距离对比表生成证据; 02_原始记录/跨距离总表审计.txt; 02_原始记录/原始记录对应关系.md; 02_原始记录/ADAR2_SD40_11-20A_跨距离总表_中文.xlsx; 02_原始记录/README.md; 02_原始记录/remaining_spans_status.csv; 03_运行日志; 文件清单.csv; SHA256SUMS.txt; 匿名化报告.json; 运行批次对应表.csv; README_提交说明.md; VALIDATION_REPORT.json

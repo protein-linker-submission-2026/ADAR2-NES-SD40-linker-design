@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-MPNN_DIR=/opt/adar2/ProteinMPNN
-MPNN_PY=/opt/adar2/envs/rfdiffusion/bin/python
+# Historical production defaults are retained for provenance and can be
+# overridden when replaying this stage on another machine.
+MPNN_DIR=${PROTEINMPNN_DIR:-/opt/adar2/ProteinMPNN}
+MPNN_PY=${PROTEINMPNN_PYTHON:-/opt/adar2/envs/rfdiffusion/bin/python}
 DATA_ROOT=${PROJECT_ROOT}/data
 for idx in 0 1 2; do
   id="span16A_design_${idx}"

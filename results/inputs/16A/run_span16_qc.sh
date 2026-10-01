@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-HELPER=${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/pipeline_helper.py
-PY=/opt/adar2/envs/boltz/bin/python
+# Historical production defaults are retained for provenance and can be
+# overridden when replaying this stage on another machine.
+HELPER=${PIPELINE_HELPER:-${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/pipeline_helper.py}
+PY=${BOLTZ_PYTHON:-/opt/adar2/envs/boltz/bin/python}
 DATA_ROOT=${PROJECT_ROOT}/data
 : > "$DATA_ROOT/07_sequence_qc/all_candidates.jsonl"
 for idx in 0 1 2; do

@@ -311,7 +311,7 @@ def build_source_inventory():
                 digest.update(chunk)
         stage, ext, usage = classify_source(path.name)
         inventory.append({
-            "scope": "匿名归档根目录结果文件",
+            "scope": "匿名归档补充结果文件",
             "relative_path": path.name,
             "size_bytes": path.stat().st_size,
             "sha256": digest.hexdigest(),
@@ -658,13 +658,13 @@ def build_docx(span_df, candidate_df, top_df, early_summary, online16, early_row
     doc = Document()
     doc.core_properties.author = "Anonymous competition team"
     doc.core_properties.last_modified_by = "Anonymous competition team"
-    doc.core_properties.title = "ADAR2 NES SD40 Linker Design Interim Results"
+    doc.core_properties.title = "ADAR2 NES SD40 Linker Design Computational Results"
     doc.core_properties.subject = "Anonymous computational design report"
     doc.core_properties.keywords = "ADAR2, SD40, linker, RFdiffusion, ProteinMPNN, Boltz-2"
     style_doc(doc)
     title = doc.add_paragraph(style="Title")
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    title.add_run("ADAR2 NES SD40 Linker 设计中期结果全量整理")
+    title.add_run("ADAR2 NES SD40 Linker 计算结果汇总")
     subtitle = doc.add_paragraph()
     subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
     subtitle.add_run("基于 11–20 Å 多距离设计、三模型结构预测、RMSD/Vina 门控与 SD40 几何评分").bold = True
@@ -679,7 +679,7 @@ def build_docx(span_df, candidate_df, top_df, early_summary, online16, early_row
     total_unique = int(span_df.mpnn_unique.sum())
     total_models = int(span_df.boltz_models.sum())
     doc.add_paragraph(
-        f"本次整理覆盖匿名提交包中的 {len(inventory_df):,} 条来源记录及匿名归档根目录结果文件。在线 MMseqs2 批次共获得 "
+        f"本次整理覆盖匿名提交包中的 {len(inventory_df):,} 条来源记录及归档中的补充结果文件。在线 MMseqs2 批次共获得 "
         f"{total_unique} 条去重 ProteinMPNN 设计序列，完成 {total_models} 个 Boltz-2 模型预测。采用 Linker Cα RMSD 严格小于 "
         f"{RMSD_THRESHOLD:.1f} Å、至少 2/3 模型通过，以及 Vina 最佳分数不高于 {VINA_THRESHOLD_ONLINE:.1f} kcal/mol、至少 2/3 模型通过的门控。"
     )
@@ -699,7 +699,7 @@ def build_docx(span_df, candidate_df, top_df, early_summary, online16, early_row
 
     doc.add_heading("数据完整性与分析范围", level=1)
     doc.add_paragraph(
-        "匿名包的 VALIDATION_REPORT 状态为 PASS；在线批次 11–20 Å 均包含 RFdiffusion、ProteinMPNN、序列 QC、Boltz-2、Linker RMSD、Vina 和 Ranker 阶段。根目录两份 XLSX 与包内副本哈希一致。全部大体积结构、MSA 和日志文件未复制到派生目录，而是通过相对路径、大小、SHA256、阶段和用途写入全量来源索引。"
+        "匿名包的 VALIDATION_REPORT 状态为 PASS；在线批次 11–20 Å 均包含 RFdiffusion、ProteinMPNN、序列 QC、Boltz-2、Linker RMSD、Vina 和 Ranker 阶段。归档中的两份补充 XLSX 与包内副本哈希一致。全部大体积结构、MSA 和日志文件通过相对路径、大小、SHA256、阶段和用途写入全量来源索引，并作为 GitHub Release 的分卷复现附件提供。"
     )
     add_table(
         doc,
@@ -786,14 +786,14 @@ def build_docx(span_df, candidate_df, top_df, early_summary, online16, early_row
 
     doc.add_heading("数据可用性与复现", level=1)
     doc.add_paragraph(
-        "本报告的主表和图均由匿名化全量结果档案重建。完整相对路径和 SHA256 位于 06_全量来源索引；解析后的候选级与模型级数据位于 02_核心数据表和 04_补充表与补充图。轻量展示目录只包含派生表、图和方法说明，不包含大型 A3M、NPZ、压缩包或模型缓存。"
+        "本报告的主表和图均由匿名化全量结果档案重建。主仓库提供可直接浏览的报告、表格、图、最终结构、代码与关键日志；GitHub Release 提供 11 个完整复现分卷及统一 SHA256 清单。完整相对路径和 SHA256 位于 06_全量来源索引。第三方预训练权重、Conda 环境和软件缓存不随提交包分发，应按官方来源另行获取。"
     )
 
     doc.add_heading("参考文献", level=1)
     for paper in PAPERS:
         doc.add_paragraph(paper, style="List Number")
 
-    path = OUTPUT_ROOT / "01_主结果报告" / "ADAR2_SD40_中期结果_文献式全量报告.docx"
+    path = OUTPUT_ROOT / "01_主结果报告" / "ADAR2_SD40_计算结果_文献式全量报告.docx"
     doc.save(path)
     return path
 
@@ -829,9 +829,9 @@ def write_readmes(span_df, candidate_df, top_df, inventory_df):
 """
     (OUTPUT_ROOT / "00_阅读说明" / "README.md").write_text(source_note, encoding="utf-8")
 
-    github_readme = f"""# ADAR2 NES SD40 linker design interim results
+    github_readme = f"""# ADAR2 NES SD40 linker design computational results
 
-This lightweight package contains derived tables, figures, and method notes from the local full archive. Raw structure predictions, MSAs, docking poses, model arrays, caches, and logs are excluded because of size.
+The main repository contains reader-facing tables, figures, final structures, analysis code, key logs, and provenance records. The complete non-duplicate reproduction archive is distributed as 11 GitHub Release ZIP assets with a shared SHA256 manifest.
 
 ## Scope
 
@@ -854,7 +854,7 @@ This lightweight package contains derived tables, figures, and method notes from
 
 ## Data availability
 
-The full local archive is indexed by relative path and SHA256 in `source_inventory.csv`. It is not committed here. To reproduce every intermediate artifact, obtain the matching anonymous archive whose validation report is PASS.
+The complete archive is indexed by relative path and SHA256 in `source_inventory.csv`. Download all 11 `full-reproduction-*.zip` assets and `FULL_REPRODUCTION_SHA256SUMS.txt` from the complete-submission GitHub Release, verify the hashes, and extract all ZIP files into the same empty directory. Third-party pretrained weights, Conda environments, software caches, private competition documents, and identity-bearing source files are intentionally excluded.
 
 ## Important interpretation note
 

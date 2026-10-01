@@ -1,0 +1,2 @@
+candidate,error
+06_invalid_no_sd40,ValueError: SD40 sequence not found at >= 85% coverage

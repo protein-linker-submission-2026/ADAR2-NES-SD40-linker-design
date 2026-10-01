@@ -1,0 +1,49 @@
+{
+  "sequence_authority": "CMV His+4λ-ADAR2DD(E488Q)+NES-3'SD40.dna",
+  "ADAR2DD_E488Q": {
+    "length": 384,
+    "sequence": "LHLPQVLADAVSRLVLGKFGDLTDNFSSPHARRKVLAGVVMTTGTDVKDAKVISVSTGTKCINGEYMSDRGLALNDCHAEIISRRSLLRFLYTQLELYLNNKDDQKRSIFQKSERGGFRLKENVQFHLYISTSPCGDARIFSPHEPILEEPADRHPNRKARGQLRTKIESGQGTIPVRSNASIQTWDGVLQGERLLTMSCSDKIARWNVVGIQGSLLSIFVEPIYFSSIILGSLYHGDHLSRAMYQRISNIEDLPPLYTLNKPLLSGISNAEARQPGKAPNFSVNWTVGDSAIEVINATTGKDELGRASRLCKHALYCRWMRVHGKVPSHLLRSKITKPNVYHESKLAAKEYQAAKARLFTAFIKAGLGAWVEKPTEQDQFSLT",
+    "source": "5ED1 chain A residues 317-700"
+  },
+  "NES": {
+    "length": 9,
+    "sequence": "LPPLERLTL"
+  },
+  "SD40": {
+    "sequence_length": 36,
+    "experimental_coordinate_length": 35,
+    "unresolved_position": 1,
+    "sequence": "LLLFCPICGFTCRQKGNLLRHINLHTGEKLFKYHLY",
+    "resolved_sequence": "LLFCPICGFTCRQKGNLLRHINLHTGEKLFKYHLY",
+    "source": "8TNQ chain C residues 16-50"
+  },
+  "MIQ": {
+    "experimental_source": "8TNQ",
+    "chemical_definition": "RCSB CCD MIQ.cif",
+    "validation": {
+      "ccd_atoms_total": 42,
+      "ccd_heavy_atoms": 25,
+      "experimental_heavy_atoms": 25,
+      "ccd_bonds": 45,
+      "stereocenters": [
+        {
+          "atom_id": "C18",
+          "configuration": "S"
+        }
+      ],
+      "bond_orders": [
+        "DOUB",
+        "SING"
+      ]
+    }
+  },
+  "raw_sha256": {
+    "1ZY7.pdb": "3fb4b7bddf8f108c3d0d3fb83a5882b630b2a7d3018a94f993f7c678f0cb4cc7",
+    "5ED1.pdb": "de406084c605b91ae0f297fe68c75aa969aa039761922835fcea20e9ac68c9fe",
+    "8TNP.pdb": "643065c5be7dbb8684f32ffa6595a0d6cef7619657c478b4084f2a80879bface",
+    "8TNQ.pdb": "d9b6598595eb00778407542e6148b64b888e6d0be9e68a4d443a47379323ca4a",
+    "8TNR.pdb": "45cf806e18dd68924af5509aa4d21bea9961b4b61b8ff49917e3bc38c04d99ad",
+    "MIQ.cif": "88fede86de4df123716c3d0e767d750f4ddaeedef5c1c8908b4f13174bd92af4",
+    "MIQ_ideal.sdf": "5b0d1b4609b7836ea8f9b3c677addfde7ada2953e6f6b78c676dfda3a5f67fd8"
+  }
+}

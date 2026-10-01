@@ -1,0 +1,103 @@
+{
+  "candidate_id": "baseline_GGGGSGGGGS",
+  "candidate_type": "baseline",
+  "rf_rmsd_status": "not_applicable_baseline",
+  "vina_gate": {
+    "model_pass": [
+      true,
+      true,
+      true
+    ],
+    "pass_count": 3,
+    "required": 2,
+    "candidate_pass": true,
+    "operator": "<=",
+    "threshold_kcal_mol": -6.0
+  },
+  "models": [
+    {
+      "model_index": 0,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A/08_boltz2_local/outputs/baseline_GGGGSGGGGS/boltz_results_baseline_GGGGSGGGGS/predictions/baseline_GGGGSGGGGS/baseline_GGGGSGGGGS_model_0.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": null,
+      "rf_rmsd_pass": null,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\08_boltz2_local\\outputs\\baseline_GGGGSGGGGS\\boltz_results_baseline_GGGGSGGGGS\\predictions\\baseline_GGGGSGGGGS\\baseline_GGGGSGGGGS_model_0.pdb",
+      "docking_box": {
+        "center": [
+          -19.902,
+          11.895999999999999,
+          -10.136000000000001
+        ],
+        "size": [
+          32.204,
+          34.328,
+          32.19
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 1233029100,
+      "vina_best_score_kcal_mol": -7.5,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\10_docking\\baseline_GGGGSGGGGS\\model_0_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\10_docking\\baseline_GGGGSGGGGS\\model_0_vina.log"
+    },
+    {
+      "model_index": 1,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A/08_boltz2_local/outputs/baseline_GGGGSGGGGS/boltz_results_baseline_GGGGSGGGGS/predictions/baseline_GGGGSGGGGS/baseline_GGGGSGGGGS_model_1.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": null,
+      "rf_rmsd_pass": null,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\08_boltz2_local\\outputs\\baseline_GGGGSGGGGS\\boltz_results_baseline_GGGGSGGGGS\\predictions\\baseline_GGGGSGGGGS\\baseline_GGGGSGGGGS_model_1.pdb",
+      "docking_box": {
+        "center": [
+          22.7405,
+          -21.536,
+          -10.8055
+        ],
+        "size": [
+          41.135,
+          30.552,
+          31.973000000000003
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 724154963,
+      "vina_best_score_kcal_mol": -6.6,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\10_docking\\baseline_GGGGSGGGGS\\model_1_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\10_docking\\baseline_GGGGSGGGGS\\model_1_vina.log"
+    },
+    {
+      "model_index": 2,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A/08_boltz2_local/outputs/baseline_GGGGSGGGGS/boltz_results_baseline_GGGGSGGGGS/predictions/baseline_GGGGSGGGGS/baseline_GGGGSGGGGS_model_2.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": null,
+      "rf_rmsd_pass": null,
+      "receptor_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\08_boltz2_local\\outputs\\baseline_GGGGSGGGGS\\boltz_results_baseline_GGGGSGGGGS\\predictions\\baseline_GGGGSGGGGS\\baseline_GGGGSGGGGS_model_2.pdb",
+      "docking_box": {
+        "center": [
+          5.1259999999999994,
+          14.16,
+          -20.693
+        ],
+        "size": [
+          34.584,
+          39.612,
+          36.752
+        ],
+        "margin_A_per_side": 5.0,
+        "residue_count": 36,
+        "heavy_atom_count": 301
+      },
+      "vina_seed": 647886321,
+      "vina_best_score_kcal_mol": -6.4,
+      "vina_model_pass": true,
+      "vina_output": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\10_docking\\baseline_GGGGSGGGGS\\model_2_vina.pdbqt",
+      "vina_log": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/19A\\10_docking\\baseline_GGGGSGGGGS\\model_2_vina.log"
+    }
+  ]
+}

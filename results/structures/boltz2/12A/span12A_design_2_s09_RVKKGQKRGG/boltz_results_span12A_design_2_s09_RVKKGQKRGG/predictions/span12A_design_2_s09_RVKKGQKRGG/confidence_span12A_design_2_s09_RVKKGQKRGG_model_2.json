@@ -1,0 +1,19 @@
+{
+    "confidence_score": 0.8565959930419922,
+    "ptm": 0.8580230474472046,
+    "iptm": 0.0,
+    "ligand_iptm": 0.0,
+    "protein_iptm": 0.0,
+    "complex_plddt": 0.8562392592430115,
+    "complex_iplddt": 0.8562392592430115,
+    "complex_pde": 0.7191715240478516,
+    "complex_ipde": 0.0,
+    "chains_ptm": {
+        "0": 0.8580230474472046
+    },
+    "pair_chains_iptm": {
+        "0": {
+            "0": 0.8580230474472046
+        }
+    }
+}

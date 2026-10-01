@@ -1,0 +1,43 @@
+{
+  "candidate_id": "span12A_design_0_s07_GSVSELGETS",
+  "candidate_type": "design",
+  "rf_backbone_id": "span12A_design_0",
+  "rf_pdb_path": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/03_rfdiffusion_validated/span12A_design_0.pdb",
+  "rf_rmsd_status": "evaluated",
+  "rf_rmsd_gate": {
+    "model_pass": [
+      true,
+      true,
+      false
+    ],
+    "pass_count": 2,
+    "required": 2,
+    "candidate_pass": true,
+    "operator": "<",
+    "threshold": 2.0
+  },
+  "downstream_eligible": true,
+  "models": [
+    {
+      "model_index": 0,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/outputs/span12A_design_0_s07_GSVSELGETS/boltz_results_span12A_design_0_s07_GSVSELGETS/predictions/span12A_design_0_s07_GSVSELGETS/span12A_design_0_s07_GSVSELGETS_model_0.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 0.9892139830019493,
+      "rf_rmsd_pass": true
+    },
+    {
+      "model_index": 1,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/outputs/span12A_design_0_s07_GSVSELGETS/boltz_results_span12A_design_0_s07_GSVSELGETS/predictions/span12A_design_0_s07_GSVSELGETS/span12A_design_0_s07_GSVSELGETS_model_1.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 1.0027031596799338,
+      "rf_rmsd_pass": true
+    },
+    {
+      "model_index": 2,
+      "prediction_pdb": "${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/outputs/span12A_design_0_s07_GSVSELGETS/boltz_results_span12A_design_0_s07_GSVSELGETS/predictions/span12A_design_0_s07_GSVSELGETS/span12A_design_0_s07_GSVSELGETS_model_2.pdb",
+      "linker_ca_atoms": 10,
+      "linker_ca_rmsd_A": 3.204099206576947,
+      "rf_rmsd_pass": false
+    }
+  ]
+}

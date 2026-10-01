@@ -1,0 +1,15 @@
+span_A=19
+spin_deg=0
+rf_designs=3
+mpnn_sequences_per_backbone=10
+msa_mode=online
+msa_server=https://api.colabfold.com
+boltz_model=boltz2
+boltz_sampling_steps=200
+boltz_recycling_steps=3
+boltz_diffusion_samples=3
+vina_exhaustiveness=32
+vina_num_modes=9
+vina_energy_range=3
+vina_score_cutoff=-6.0
+ranker_weights=0.3,0.3,0.4

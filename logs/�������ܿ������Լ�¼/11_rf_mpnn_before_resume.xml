@@ -1,0 +1,68 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.FileHashInfo</T>
+      <T>System.Object</T>
+    </TN>
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">3111540A5CD12A662CE20DFFC6E413190BC0A304ACC35FACEA77C1AD6BE6F455</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\03_rfdiffusion_validated\backbone_manifest.jsonl</S>
+    </Props>
+  </Obj>
+  <Obj RefId="1">
+    <TNRef RefId="0" />
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">953D0C7D3ED3F4BA0B865A8840069D79CB7DAEB090EBC3C15000FCBE1C09B34C</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\03_rfdiffusion_validated\span11A_design_0.pdb</S>
+    </Props>
+  </Obj>
+  <Obj RefId="2">
+    <TNRef RefId="0" />
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">BC934CE85D054C42BBA8F19C09F7B6695862CC80B6F3E7ABC013E5DAA98DEADD</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\03_rfdiffusion_validated\span11A_design_1.pdb</S>
+    </Props>
+  </Obj>
+  <Obj RefId="3">
+    <TNRef RefId="0" />
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">D120A5E55F75CB45CF3154B98D73DFF3EA8148D05D6E70D3E773729835087CB8</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\03_rfdiffusion_validated\span11A_design_2.pdb</S>
+    </Props>
+  </Obj>
+  <Obj RefId="4">
+    <TNRef RefId="0" />
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">85FDD3C83DBC7F1F6CD05071B6B20BCE6F40F92A7B45AEF13C634A57ED756942</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\06_proteinmpnn\span11A_design_0\output\seqs\span11A_design_0.fa</S>
+    </Props>
+  </Obj>
+  <Obj RefId="5">
+    <TNRef RefId="0" />
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">FCAA8A5E8CD7D4CEA2E135422ADA302A3A4CDD9E6807C6B59469E06585693B68</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\06_proteinmpnn\span11A_design_1\output\seqs\span11A_design_1.fa</S>
+    </Props>
+  </Obj>
+  <Obj RefId="6">
+    <TNRef RefId="0" />
+    <ToString>Microsoft.PowerShell.Commands.FileHashInfo</ToString>
+    <Props>
+      <S N="Algorithm">SHA256</S>
+      <S N="Hash">EC059FC3A593807521B1BC7B876B2527B2DF5B03EBF523BD2CDC6622A2121A07</S>
+      <S N="Path">${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/11A\06_proteinmpnn\span11A_design_2\output\seqs\span11A_design_2.fa</S>
+    </Props>
+  </Obj>
+</Objs>

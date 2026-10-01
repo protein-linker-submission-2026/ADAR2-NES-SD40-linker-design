@@ -1,0 +1,636 @@
+NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB
+{
+  "status": "ok",
+  "requested": 30,
+  "unique": 29,
+  "qc_pass": 27
+}
+{
+  "status": "ok",
+  "candidates": 28,
+  "design": 27,
+  "baseline": 1
+}
+[5/28] Boltz-2 + online MSA span12A_design_0_s05_GVVTERGETS attempt=1
+Seed set to 173609199
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+All inputs are already processed.
+Processing 0 inputs with 0 threads.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:06<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:06<00:00,  0.00it/s]
+[6/28] Boltz-2 + online MSA span12A_design_0_s06_GTVYSNGRTS attempt=1
+Seed set to 426765540
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_0_s06_GTVYSNGRTS.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_0_s06_GTVYSNGRTS with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:02 remaining: ?][ASleeping for 5s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:10 remaining: ?][A
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:10 remaining: 04:51][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:20 remaining: 04:51][A
+RUNNING:   8%|▊         | 12/150 [elapsed: 00:20 remaining: 03:47][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   8%|▊         | 12/150 [elapsed: 00:28 remaining: 03:47][A
+RUNNING:  12%|█▏        | 18/150 [elapsed: 00:28 remaining: 03:20][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:  12%|█▏        | 18/150 [elapsed: 00:40 remaining: 03:20][A
+RUNNING:  19%|█▊        | 28/150 [elapsed: 00:40 remaining: 02:45][ASleeping for 5s. Reason: RUNNING
+
+COMPLETE:  19%|█▊        | 28/150 [elapsed: 00:46 remaining: 02:45][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:46 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:59 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 02:09 remaining: 00:00]
+100%|██████████| 1/1 [02:12<00:00, 132.00s/it]100%|██████████| 1/1 [02:12<00:00, 132.00s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:21<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:21<00:00,  0.00it/s]
+[7/28] Boltz-2 + online MSA span12A_design_0_s07_GSVSELGETS attempt=1
+Seed set to 1000482407
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_0_s07_GSVSELGETS.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_0_s07_GSVSELGETS with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][ASleeping for 7s. Reason: PENDING
+Error while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out. (read timeout=6.02)
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:21 remaining: ?][A
+RUNNING:   5%|▍         | 7/150 [elapsed: 00:21 remaining: 07:14][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   5%|▍         | 7/150 [elapsed: 00:29 remaining: 07:14][A
+RUNNING:   9%|▊         | 13/150 [elapsed: 00:29 remaining: 04:49][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:   9%|▊         | 13/150 [elapsed: 00:41 remaining: 04:49][A
+RUNNING:  15%|█▌        | 23/150 [elapsed: 00:41 remaining: 03:22][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:  15%|█▌        | 23/150 [elapsed: 00:47 remaining: 03:22][A
+RUNNING:  19%|█▊        | 28/150 [elapsed: 00:47 remaining: 02:58][ASleeping for 10s. Reason: RUNNING
+
+COMPLETE:  19%|█▊        | 28/150 [elapsed: 01:00 remaining: 02:58][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 01:00 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 02:01 remaining: 00:00]
+100%|██████████| 1/1 [02:02<00:00, 122.70s/it]100%|██████████| 1/1 [02:02<00:00, 122.70s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:18<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:18<00:00,  0.00it/s]
+[8/28] Boltz-2 + online MSA span12A_design_0_s08_GTESELGERT attempt=1
+Seed set to 1473530946
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_0_s08_GTESELGERT.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_0_s08_GTESELGERT with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][ASleeping for 8s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:12 remaining: ?][A
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:12 remaining: 03:42][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:19 remaining: 03:42][A
+RUNNING:   9%|▊         | 13/150 [elapsed: 00:19 remaining: 03:24][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:   9%|▊         | 13/150 [elapsed: 00:31 remaining: 03:24][A
+RUNNING:  15%|█▌        | 23/150 [elapsed: 00:31 remaining: 02:48][ASleeping for 5s. Reason: RUNNING
+
+COMPLETE:  15%|█▌        | 23/150 [elapsed: 00:39 remaining: 02:48][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:39 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:49 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 01:58 remaining: 00:00]
+100%|██████████| 1/1 [02:00<00:00, 120.38s/it]100%|██████████| 1/1 [02:00<00:00, 120.38s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:23<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:23<00:00,  0.00it/s]
+[9/28] Boltz-2 + online MSA span12A_design_0_s09_GKVTSLGETE attempt=1
+Seed set to 1081529962
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_0_s09_GKVTSLGETE.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_0_s09_GKVTSLGETE with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][ASleeping for 5s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:09 remaining: ?][A
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:09 remaining: 04:27][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:22 remaining: 04:27][A
+RUNNING:  10%|█         | 15/150 [elapsed: 00:22 remaining: 03:21][ASleeping for 9s. Reason: RUNNING
+
+COMPLETE:  10%|█         | 15/150 [elapsed: 00:34 remaining: 03:21][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:34 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:49 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 02:01 remaining: 00:00]
+100%|██████████| 1/1 [02:03<00:00, 123.48s/it]100%|██████████| 1/1 [02:03<00:00, 123.48s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:17<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:17<00:00,  0.00it/s]
+[10/28] Boltz-2 + online MSA span12A_design_0_s10_GTVSERGETT attempt=1
+Seed set to 403856283
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_0_s10_GTVSERGETT.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_0_s10_GTVSERGETT with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:03 remaining: ?][ASleeping for 8s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:14 remaining: ?][A
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:14 remaining: 04:23][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:23 remaining: 04:23][A
+RUNNING:  11%|█         | 16/150 [elapsed: 00:23 remaining: 03:12][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:  11%|█         | 16/150 [elapsed: 00:30 remaining: 03:12][A
+RUNNING:  14%|█▍        | 21/150 [elapsed: 00:30 remaining: 02:59][ASleeping for 9s. Reason: RUNNING
+
+COMPLETE:  14%|█▍        | 21/150 [elapsed: 00:44 remaining: 02:59][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:44 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 01:43 remaining: 00:00]
+100%|██████████| 1/1 [01:45<00:00, 105.49s/it]100%|██████████| 1/1 [01:45<00:00, 105.49s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:22<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:22<00:00,  0.00it/s]
+[11/28] Boltz-2 + online MSA span12A_design_1_s01_SKEDAPKKYK attempt=1
+Seed set to 768514480
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s01_SKEDAPKKYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s01_SKEDAPKKYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:02 remaining: ?][ASleeping for 7s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:10 remaining: ?][A
+RUNNING:   5%|▍         | 7/150 [elapsed: 00:10 remaining: 03:42][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:   5%|▍         | 7/150 [elapsed: 00:19 remaining: 03:42][A
+RUNNING:   9%|▉         | 14/150 [elapsed: 00:19 remaining: 03:06][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   9%|▉         | 14/150 [elapsed: 00:26 remaining: 03:06][A
+RUNNING:  13%|█▎        | 19/150 [elapsed: 00:26 remaining: 02:55][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:  13%|█▎        | 19/150 [elapsed: 00:35 remaining: 02:55][A
+RUNNING:  18%|█▊        | 27/150 [elapsed: 00:35 remaining: 02:38][ASleeping for 7s. Reason: RUNNING
+
+COMPLETE:  18%|█▊        | 27/150 [elapsed: 00:46 remaining: 02:38][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:46 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:59 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 02:07 remaining: 00:00]
+100%|██████████| 1/1 [02:09<00:00, 129.63s/it]100%|██████████| 1/1 [02:09<00:00, 129.63s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:21<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:21<00:00,  0.00it/s]
+[12/28] Boltz-2 + online MSA span12A_design_1_s02_SREDAPKLYK attempt=1
+Seed set to 1956421049
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s02_SREDAPKLYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s02_SREDAPKLYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:02 remaining: ?][ASleeping for 8s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:12 remaining: ?][A
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:12 remaining: 03:45][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:21 remaining: 03:45][A
+RUNNING:   9%|▊         | 13/150 [elapsed: 00:21 remaining: 03:42][ASleeping for 9s. Reason: RUNNING
+
+RUNNING:   9%|▊         | 13/150 [elapsed: 00:32 remaining: 03:42][A
+RUNNING:  15%|█▍        | 22/150 [elapsed: 00:32 remaining: 03:04][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:  15%|█▍        | 22/150 [elapsed: 00:40 remaining: 03:04][A
+RUNNING:  19%|█▊        | 28/150 [elapsed: 00:40 remaining: 02:50][ASleeping for 10s. Reason: RUNNING
+
+COMPLETE:  19%|█▊        | 28/150 [elapsed: 00:54 remaining: 02:50][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:54 remaining: 00:00][AError while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+Error while fetching result from MSA server. Retrying... (2/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out. (read timeout=6.02)
+COMPLETE: 100%|██████████| 150/150 [elapsed: 02:45 remaining: 00:00]
+100%|██████████| 1/1 [02:47<00:00, 167.42s/it]100%|██████████| 1/1 [02:47<00:00, 167.42s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:14<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:14<00:00,  0.00it/s]
+[13/28] Boltz-2 + online MSA span12A_design_1_s03_SKEDSPKLYK attempt=1
+Seed set to 782381982
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s03_SKEDSPKLYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s03_SKEDSPKLYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][ASleeping for 8s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:12 remaining: ?][A
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:12 remaining: 03:45][ASleeping for 8s. Reason: RUNNING
+Error while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/6c6df5afe7dd90aed8700afe4f644a5dd43ed93927e41996a9f4110dfc53b99a (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))
+
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:32 remaining: 03:45][A
+RUNNING:  11%|█         | 16/150 [elapsed: 00:32 remaining: 04:43][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:  11%|█         | 16/150 [elapsed: 00:40 remaining: 04:43][A
+RUNNING:  15%|█▍        | 22/150 [elapsed: 00:40 remaining: 03:47][ASleeping for 5s. Reason: RUNNING
+
+COMPLETE:  15%|█▍        | 22/150 [elapsed: 00:49 remaining: 03:47][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:49 remaining: 00:00][AError while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+COMPLETE: 100%|██████████| 150/150 [elapsed: 03:05 remaining: 00:00]
+100%|██████████| 1/1 [03:06<00:00, 186.92s/it]100%|██████████| 1/1 [03:06<00:00, 186.92s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:12<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:12<00:00,  0.00it/s]
+[14/28] Boltz-2 + online MSA span12A_design_1_s04_SKEDAPEEYK attempt=1
+Seed set to 957513948
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s04_SKEDAPEEYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s04_SKEDAPEEYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][ASleeping for 8s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:11 remaining: ?][A
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:11 remaining: 03:20][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:   5%|▌         | 8/150 [elapsed: 00:21 remaining: 03:20][A
+RUNNING:  11%|█         | 16/150 [elapsed: 00:21 remaining: 02:53][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:  11%|█         | 16/150 [elapsed: 00:33 remaining: 02:53][A
+RUNNING:  17%|█▋        | 26/150 [elapsed: 00:33 remaining: 02:35][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:  17%|█▋        | 26/150 [elapsed: 00:44 remaining: 02:35][A
+RUNNING:  23%|██▎       | 34/150 [elapsed: 00:44 remaining: 02:30][ASleeping for 7s. Reason: RUNNING
+
+COMPLETE:  23%|██▎       | 34/150 [elapsed: 00:53 remaining: 02:30][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:53 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 02:14 remaining: 00:00]
+100%|██████████| 1/1 [02:16<00:00, 136.07s/it]100%|██████████| 1/1 [02:16<00:00, 136.07s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:22<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:22<00:00,  0.00it/s]
+[15/28] Boltz-2 + online MSA span12A_design_1_s07_SKEDSPKKYK attempt=1
+Seed set to 2029438318
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s07_SKEDSPKKYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s07_SKEDSPKKYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:05 remaining: ?][ASleeping for 6s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:13 remaining: ?][A
+RUNNING:   4%|▍         | 6/150 [elapsed: 00:13 remaining: 05:25][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   4%|▍         | 6/150 [elapsed: 00:21 remaining: 05:25][A
+RUNNING:   8%|▊         | 12/150 [elapsed: 00:21 remaining: 03:49][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:   8%|▊         | 12/150 [elapsed: 00:31 remaining: 03:49][A
+RUNNING:  13%|█▎        | 20/150 [elapsed: 00:31 remaining: 03:08][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:  13%|█▎        | 20/150 [elapsed: 00:42 remaining: 03:08][A
+RUNNING:  20%|██        | 30/150 [elapsed: 00:42 remaining: 02:35][ASleeping for 9s. Reason: RUNNING
+
+COMPLETE:  20%|██        | 30/150 [elapsed: 00:53 remaining: 02:35][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:53 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 01:09 remaining: 00:00][AError while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+Error while fetching result from MSA server. Retrying... (2/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+Error while fetching result from MSA server. Retrying... (3/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+Error while fetching result from MSA server. Retrying... (4/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+Error while fetching result from MSA server. Retrying... (5/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+COMPLETE: 100%|██████████| 150/150 [elapsed: 05:10 remaining: 00:00]
+100%|██████████| 1/1 [05:12<00:00, 312.02s/it]100%|██████████| 1/1 [05:12<00:00, 312.02s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:30<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:31<00:00,  0.00it/s]
+[16/28] Boltz-2 + online MSA span12A_design_1_s09_SPEDAPELYK attempt=1
+Seed set to 836058228
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s09_SPEDAPELYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s09_SPEDAPELYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:03 remaining: ?][ASleeping for 6s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:11 remaining: ?][A
+RUNNING:   4%|▍         | 6/150 [elapsed: 00:11 remaining: 04:28][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:   4%|▍         | 6/150 [elapsed: 00:22 remaining: 04:28][A
+RUNNING:  11%|█         | 16/150 [elapsed: 00:22 remaining: 03:01][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:  11%|█         | 16/150 [elapsed: 00:29 remaining: 03:01][A
+RUNNING:  14%|█▍        | 21/150 [elapsed: 00:29 remaining: 02:54][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:  14%|█▍        | 21/150 [elapsed: 00:41 remaining: 02:54][A
+RUNNING:  21%|██        | 31/150 [elapsed: 00:41 remaining: 02:31][ASleeping for 5s. Reason: RUNNING
+
+COMPLETE:  21%|██        | 31/150 [elapsed: 00:48 remaining: 02:31][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:48 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:59 remaining: 00:00][AError while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Read timed out.
+COMPLETE: 100%|██████████| 150/150 [elapsed: 02:02 remaining: 00:00]
+100%|██████████| 1/1 [02:04<00:00, 124.41s/it]100%|██████████| 1/1 [02:04<00:00, 124.41s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:06<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:06<00:00,  0.00it/s]
+[17/28] Boltz-2 + online MSA span12A_design_1_s10_SPEDAPKKYK attempt=1
+Seed set to 1431595866
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_1_s10_SPEDAPKKYK.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_1_s10_SPEDAPKKYK with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:02 remaining: ?][ASleeping for 10s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:15 remaining: ?][A
+RUNNING:   7%|▋         | 10/150 [elapsed: 00:15 remaining: 03:40][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   7%|▋         | 10/150 [elapsed: 00:23 remaining: 03:40][A
+RUNNING:  11%|█         | 16/150 [elapsed: 00:23 remaining: 03:14][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:  11%|█         | 16/150 [elapsed: 00:34 remaining: 03:14][A
+RUNNING:  16%|█▌        | 24/150 [elapsed: 00:34 remaining: 02:55][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:  16%|█▌        | 24/150 [elapsed: 00:43 remaining: 02:55][A
+RUNNING:  21%|██        | 31/150 [elapsed: 00:43 remaining: 02:40][ASleeping for 9s. Reason: RUNNING
+
+RUNNING:  21%|██        | 31/150 [elapsed: 00:53 remaining: 02:40][A
+RUNNING:  27%|██▋       | 40/150 [elapsed: 00:53 remaining: 02:22][ASleeping for 9s. Reason: RUNNING
+
+COMPLETE:  27%|██▋       | 40/150 [elapsed: 01:05 remaining: 02:22][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 01:05 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 01:35 remaining: 00:00]
+100%|██████████| 1/1 [01:36<00:00, 96.55s/it]100%|██████████| 1/1 [01:36<00:00, 96.55s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:21<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:21<00:00,  0.00it/s]
+[18/28] Boltz-2 + online MSA span12A_design_2_s01_KITKGQGRGG attempt=1
+Seed set to 522497405
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_2_s01_KITKGQGRGG.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_2_s01_KITKGQGRGG with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:03 remaining: ?][ASleeping for 5s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:11 remaining: ?][A
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:11 remaining: 05:19][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   3%|▎         | 5/150 [elapsed: 00:17 remaining: 05:19][A
+RUNNING:   7%|▋         | 10/150 [elapsed: 00:17 remaining: 03:58][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   7%|▋         | 10/150 [elapsed: 00:24 remaining: 03:58][A
+RUNNING:  10%|█         | 15/150 [elapsed: 00:24 remaining: 03:30][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:  10%|█         | 15/150 [elapsed: 00:37 remaining: 03:30][A
+RUNNING:  17%|█▋        | 25/150 [elapsed: 00:37 remaining: 02:53][ASleeping for 10s. Reason: RUNNING
+
+COMPLETE:  17%|█▋        | 25/150 [elapsed: 00:48 remaining: 02:53][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:48 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:59 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 01:20 remaining: 00:00]
+100%|██████████| 1/1 [01:21<00:00, 81.61s/it]100%|██████████| 1/1 [01:21<00:00, 81.61s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0: 100%|██████████| 1/1 [07:15<00:00,  0.00it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [07:15<00:00,  0.00it/s]
+[19/28] Boltz-2 + online MSA span12A_design_2_s02_KEKKGQGRGG attempt=1
+Seed set to 1384364788
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/12A/08_boltz2_local/inputs/span12A_design_2_s02_KEKKGQGRGG.yaml with 1 protein entities.
+Calling MSA server for target span12A_design_2_s02_KEKKGQGRGG with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/150 [elapsed: 00:02 remaining: ?][ASleeping for 9s. Reason: PENDING
+
+RUNNING:   0%|          | 0/150 [elapsed: 00:13 remaining: ?][A
+RUNNING:   6%|▌         | 9/150 [elapsed: 00:13 remaining: 03:34][ASleeping for 9s. Reason: RUNNING
+
+RUNNING:   6%|▌         | 9/150 [elapsed: 00:24 remaining: 03:34][A
+RUNNING:  12%|█▏        | 18/150 [elapsed: 00:24 remaining: 02:55][ASleeping for 7s. Reason: RUNNING
+Error while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/4da886c8bf31670163a5aab71595a857273557960639b77619de7cb3bd9d159d (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))
+
+RUNNING:  12%|█▏        | 18/150 [elapsed: 00:42 remaining: 02:55][A
+RUNNING:  17%|█▋        | 25/150 [elapsed: 00:42 remaining: 03:51][ASleeping for 5s. Reason: RUNNING
+
+COMPLETE:  17%|█▋        | 25/150 [elapsed: 00:49 remaining: 03:51][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:49 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 01:00 remaining: 00:00][ACOMPLETE: 100%|██████████| 150/150 [elapsed: 01:04 remaining: 00:00]
+100%|██████████| 1/1 [01:05<00:00, 65.20s/it]100%|██████████| 1/1 [01:05<00:00, 65.20s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Running structure prediction for 1 input.
+/opt/adar2/envs/boltz/lib/python3.11/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 4070 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]

@@ -1,0 +1,18 @@
+node:internal/fs/promises:697
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: EBUSY: resource busy or locked, open '${PROJECT_ROOT}\ADAR2_SD40_11-20A_璺ㄨ窛绂绘€昏〃_涓枃.xlsx'
+    at async open (node:internal/fs/promises:697:25)
+    at async Object.writeFile (node:internal/fs/promises:1317:14)
+    at async e.save (file:///C:/Users/LOCAL_USER/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs:3130:28886)
+    at async buildCross (file:///D:/ChatGPT/GAME/_V2/scoring_report_build/build_span_workbook_runtime.mjs:79:117)
+    at async file:///D:/ChatGPT/GAME/_V2/scoring_report_build/build_span_workbook_runtime.mjs:84:25 {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'D:\\ChatGPT\\GAME\\ADAR2_SD40_11-20A_璺ㄨ窛绂绘€昏〃_涓枃.xlsx'
+}
+
+Node.js v24.19.0
+Exception: 跨距离总表生成失败，退出码 1

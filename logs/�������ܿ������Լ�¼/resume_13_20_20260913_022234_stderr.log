@@ -1,0 +1,1 @@
+Exception: WSL命令失败，退出码 1：bash ${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/run_single_span.sh --span 17 --output-root ${PACKAGE_ROOT}/02_原始记录/11-20A_在线MSA批次/17A --msa-mode online --stage all

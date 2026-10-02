@@ -9,6 +9,8 @@
 | ProteinMPNN | git `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57` |
 | boltz Python package | 2.2.1 |
 | 实际预测模型 | Boltz-2（`--model boltz2`） |
+| 在线MSA客户端 | Boltz 2.2.1；ColabFold MMseqs2服务调用 |
+| MSA服务端软件/数据库版本 | 历史构建号与数据库快照未核实；服务地址、参数和归档MSA见 `ONLINE_MSA_PROVENANCE.md` |
 | Boltz Python | 3.11.16 |
 | PyTorch | 2.5.1+cu124 |
 | DGL | 1.1.3+cu121 |

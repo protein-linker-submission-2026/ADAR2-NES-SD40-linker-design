@@ -52,6 +52,7 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 | RFdiffusion骨架生成 | `src/run_single_span.sh`、`results/structures/rfdiffusion/`、`logs/` |
 | ProteinMPNN序列设计与QC | `src/pipeline_helper.py`、`results/proteinmpnn/`、`results/sequence_qc/` |
 | MSA与Boltz-2预测 | `results/inputs/`、`results/structures/boltz2/`、`logs/`；完整MSA与数组见原始附件 |
+| 在线MSA服务版本与调用溯源 | `docs/ONLINE_MSA_PROVENANCE.md`：客户端版本、服务端点、调用参数、时间记录边界及归档MSA对应 |
 | Linker Cα RMSD | `results/rmsd/`、`src/pipeline_helper.py` |
 | PT-179/MIQ对接与Vina门控 | `results/docking/`、`src/docking_helper.py` |
 | SD40几何评分 | `ranker/`、`results/ranking/`、`results/results.csv` |
@@ -78,6 +79,8 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 ## 六、环境证据与复核范围
 
 原归档提供主要软件版本、源码修订、参数与历史日志。2026-10-02团队补充核查报告记载：已定位原脚本指定环境，找到两份历史Python依赖锁文件，导出当前Conda与pip清单，并核实项目指定目录的MGLTools 1.5.7和Vina 1.1.2。
+
+在线MSA使用Boltz 2.2.1调用ColabFold MMseqs2服务；服务地址与参数有记录，但未核实当时服务端软件和数据库快照版本。该版本不等同于Boltz版本，历史输入可通过归档MSA复核。详见 `docs/ONLINE_MSA_PROVENANCE.md`。
 
 本次已收录报告的脱敏摘要。报告所述锁文件、环境导出及Git工作区差异等原始附件尚未随本次说明交付，不能据摘要独立验证全部依赖条目。当前导出也不等于计算当日的逐次快照。详细证据边界见 `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`。
 

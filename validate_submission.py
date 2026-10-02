@@ -35,6 +35,7 @@ REQUIRED = [
     "provenance/ORIGINAL_ARCHIVE_AUDIT.json",
     "docs/REPRODUCIBILITY_STATUS.md",
     "docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md",
+    "docs/ONLINE_MSA_PROVENANCE.md",
     "results/results.xlsx",
     "results/results.csv",
     "results/all_candidate_records.csv",

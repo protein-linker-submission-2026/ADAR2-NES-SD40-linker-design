@@ -5,7 +5,7 @@
 | RFdiffusion | `86507b6538f51fce57b5a72477165f03999ed7ae` | BSD; https://github.com/RosettaCommons/RFdiffusion | Backbone generation | Configuration and invocation only |
 | ProteinMPNN | `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57` | MIT; https://github.com/dauparas/ProteinMPNN | Linker sequence design | Configuration and invocation only |
 | Boltz | 2.2.1, Boltz-2 model | MIT; https://github.com/jwohlwend/boltz | Full-fusion prediction | Inputs, outputs, parameters; weights excluded |
-| ColabFold MMseqs2 API | online service | Official project and citations: https://github.com/sokrypton/ColabFold | Production-batch MSA generation | Derived records and returned MSA files only |
+| ColabFold MMseqs2 API | Historical server build and database snapshot unverified; invoked by Boltz 2.2.1 | Official project and citations: https://github.com/sokrypton/ColabFold | Production-batch MSA generation | Returned MSA and logs in full archives; detailed evidence in `docs/ONLINE_MSA_PROVENANCE.md` |
 | AutoDock Vina | 1.1.2 | Apache-2.0; https://github.com/ccsb-scripps/AutoDock-Vina | PT-179/MIQ docking | Parameters and outputs; binary excluded |
 | MGLTools / AutoDockTools | 1.5.7 reported for project-specified installation in the 2026-10-02 team audit; historical continuity unverified | Component-specific licenses; https://ccsb.scripps.edu/mgltools/downloads/ | Receptor/ligand preparation; configured through `ADT_PYTHON` and `ADT_UTILITIES` | Invocation code only; installation excluded; see `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md` |
 | RCSB PDB | 5ED1, 8TNQ, 8TNR, 8TNP, MIQ | RCSB PDB data policies: https://www.rcsb.org/pages/policies | Structural references | Required reference structures with accession provenance |
@@ -25,4 +25,6 @@ The formal 11-20 A production batch was run in September 2026. Per-job timestamp
 | AutoDock Vina | Complete A1-A439 Boltz receptor and MIQ/PT-179 ligand; model-specific 36-residue SD40 box plus 5 A per-side margin; exhaustiveness 32; 9 modes; energy range 3 kcal/mol; deterministic candidate/model seed |
 
 No commercial API or private model endpoint was used. The public MMseqs2 service is the only network inference dependency in the formal batch. No prompt-based generative service was used to generate candidate sequences or scores.
+
+Online MSA evidence and limits are documented in `docs/ONLINE_MSA_PROVENANCE.md`. Client version, server software build and database snapshot are distinct. No verified historical server/database version was found; current service versions must not be substituted. Logs retain job identifiers, status and retries, but not every API request has an absolute timestamp.
 

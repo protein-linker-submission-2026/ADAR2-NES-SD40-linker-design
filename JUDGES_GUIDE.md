@@ -1,5 +1,13 @@
 # 评委资料导航清单
 
+## 下载入口
+
+- [直接下载参赛代码与核心结果 ZIP](https://github.com/protein-linker-submission-2026/ADAR2-NES-SD40-linker-design/archive/refs/heads/main.zip)
+- [在线浏览项目仓库](https://github.com/protein-linker-submission-2026/ADAR2-NES-SD40-linker-design)
+- [下载完整原始计算记录和中间结果](https://github.com/protein-linker-submission-2026/ADAR2-NES-SD40-linker-design/releases/tag/v2.0-complete-submission)
+
+建议先下载“参赛代码与核心结果 ZIP”。只有需要核查完整 MSA、预测数组、中间结构和逐阶段日志时，才需要进入 Release 下载全部 11 个 `full-reproduction-*.zip` 分卷。
+
 ## 项目信息
 
 - 项目名称：AI辅助设计RNA编辑器连接肽优化

@@ -32,6 +32,8 @@ REQUIRED = [
     "src/local_paths.example.sh",
     ".github/workflows/validate-submission.yml",
     "provenance/ATTACHMENT5_AUDIT_20261002.json",
+    "provenance/ORIGINAL_ARCHIVE_AUDIT.json",
+    "docs/REPRODUCIBILITY_STATUS.md",
     "results/results.xlsx",
     "results/results.csv",
     "results/all_candidate_records.csv",

@@ -22,7 +22,7 @@ Inputs include the fusion-protein sequence, prepared public PDB structures, targ
 
 ## Intended use
 
-The system is intended for computational hypothesis generation and prioritization before laboratory validation. It is not a clinical, diagnostic, or therapeutic decision system.
+The system is intended for computational hypothesis generation and prioritization alongside laboratory work. The team confirms accompanying wet-laboratory work; its methods, raw data and conclusions are outside this computational package. It is not a clinical, diagnostic, or therapeutic decision system.
 
 ## Known limitations
 

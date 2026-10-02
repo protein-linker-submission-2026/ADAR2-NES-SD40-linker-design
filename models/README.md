@@ -13,7 +13,7 @@ Official sources, licenses, model roles, and public-data services are listed in 
 
 `src/setup_external_sources.sh` retrieves the exact RFdiffusion and ProteinMPNN source revisions, downloads the required RFdiffusion `Base_ckpt.pt`, and verifies ProteinMPNN `v_48_020.pt`. Boltz 2.2.1 downloads its official Boltz-2 checkpoint and molecular cache on first prediction through the configured `BOLTZ_CACHE` directory.
 
-Recorded weight checksums:
+Weight download checksums used by the retrieval script (not proof of historical production-file identity):
 
 - RFdiffusion `Base_ckpt.pt`: SHA256 `0fcf7d7c32b4848030aca3a051e6768de194616f96ba6c38186351a33bfc6eca`
 - ProteinMPNN `vanilla_model_weights/v_48_020.pt`: SHA256 `c9cb4a671d79604111231f8dbfc7c590e06f1197453b7a6854ac6661a642f5bd`

@@ -1,0 +1,18 @@
+{
+  "audit_date": "2026-10-02",
+  "archive_name": "ADAR2_SD40_中期提交材料_匿名版.zip",
+  "archive_bytes": 2839557228,
+  "archive_sha256": "705697db6456f286bea37f982839e36dce026ab21041831b76a24650d381106b",
+  "archive_file_count": 13009,
+  "environment_evidence": "ADAR2_SD40_中期提交材料_匿名版/02_原始记录/方法脚本与公共参考/docs/VERSIONS.md",
+  "environment_document_sha256": "ef576e3e4a0b30746ed08c5d19f662dbcaed08ac7627c7f5ccb3a5ba4b2cb654",
+  "a3m_entries": 807,
+  "run_parameter_entries": 22,
+  "nonempty_log_directory_entries": 1726,
+  "weight_entries": [],
+  "notes": [
+    "Counts include archival/index copies; they are not unique scientific jobs.",
+    "Original top-level README excludes weights and environments; stale internal documents claim weights were included.",
+    "The organizing computer is not the production machine. No current-machine environment snapshot is used as historical evidence."
+  ]
+}

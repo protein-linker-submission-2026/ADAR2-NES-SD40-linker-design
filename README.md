@@ -2,7 +2,7 @@
 
 本科生组，赛道二 AI基因编辑与核酸工具设计。
 
-This is the anonymous reproducibility package for the ADAR2DD(E488Q)-NES-linker-SD40 computational design project. It contains the complete derived result tables, all final RFdiffusion and Boltz-2 PDB structures, docking and RMSD evidence, analysis code, key logs, a journal-style report, and provenance manifests. It reports computational screening only and does not claim wet-laboratory validation. Chinese judge navigation is provided in [`JUDGES_GUIDE.md`](JUDGES_GUIDE.md); complete clean-machine instructions are in [`REPRODUCE_FROM_ZERO.md`](REPRODUCE_FROM_ZERO.md).
+This is the anonymous computational evidence package for the ADAR2DD(E488Q)-NES-linker-SD40 project. It contains derived result tables, final RFdiffusion and Boltz-2 structures, docking and RMSD evidence, analysis code, logs, a computational report, and provenance manifests. The team confirms that accompanying wet-laboratory work has been carried out; experimental methods, raw data and conclusions are not included in this computational package. Chinese navigation is in [`JUDGES_GUIDE.md`](JUDGES_GUIDE.md). Installation instructions and the full entry point are supplied, but clean-machine end-to-end execution is not yet verified; see [`docs/REPRODUCIBILITY_STATUS.md`](docs/REPRODUCIBILITY_STATUS.md).
 
 ## Main result
 
@@ -86,7 +86,7 @@ python validate_submission.py
 
 `results/results.csv` is the standardized machine-readable output. Each row contains a candidate ID, competition track, linker sequence, metrics, model versions, notes, one RFdiffusion backbone path, and three corresponding Boltz-2 PDB paths. All paths are relative to this package.
 
-The lightweight rebuild and validation also run automatically through `.github/workflows/validate-submission.yml` after repository updates. Hosted CI does not run the GPU pipeline.
+The lightweight rebuild and validation also run automatically through `.github/workflows/validate-submission.yml` after repository updates. Hosted CI does not run the GPU pipeline. A successful lightweight check is not proof of a successful fresh environment installation or end-to-end model run.
 
 ## Full computational pipeline
 

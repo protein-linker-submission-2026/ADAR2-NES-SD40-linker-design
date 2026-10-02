@@ -96,10 +96,10 @@ Docking is a separately reviewed stage because receptor and ligand PDBQT prepara
 
 ## Environment and resources
 
-- Recorded production platform: Ubuntu 22.04 under WSL2, Python 3.11.16, PyTorch 2.5.1+cu124, CUDA build 12.4, NVIDIA driver 610.88.
-- Recorded GPU: NVIDIA GeForce RTX 4060 Laptop GPU with 8188 MiB VRAM; WSL limit 20 GB RAM, 28 logical processors, and 32 GB swap.
+- Recorded software platform: Ubuntu 22.04 under WSL2, Python 3.11.16, PyTorch 2.5.1+cu124, and CUDA build 12.4. The archived environment snapshot records NVIDIA driver 610.88 and CUDA UMD 13.3.
+- The 11-20 A production logs identify an NVIDIA GeForce RTX 4070 Laptop GPU with 8188 MiB VRAM. A separate earlier local verification used an RTX 4060 Laptop GPU; these hardware records are not presented as one homogeneous run. The recorded WSL limit was 20 GB RAM, 28 logical processors, and 32 GB swap.
 - Boltz-2 was run with `--no_kernels`; three models were generated per candidate. Individual runtimes and command records are retained under `logs/`.
-- The lightweight result rebuild is expected to complete in under 5 minutes with less than 2 GB RAM on a typical CPU and does not require a GPU. On the recorded RTX 4060 Laptop GPU, RFdiffusion required about 4.5-5.6 minutes per backbone; full regeneration comprises many RFdiffusion, ProteinMPNN, Boltz-2, and docking jobs and can require many hours to days depending on network and scheduling. Per-task timestamps are retained under `logs/`.
+- The lightweight result rebuild is expected to complete in under 5 minutes with less than 2 GB RAM on a typical CPU and does not require a GPU. In the RTX 4070 production logs, RFdiffusion required about 4.5-5.6 minutes per backbone; full regeneration comprises many RFdiffusion, ProteinMPNN, Boltz-2, and docking jobs and can require many hours to days depending on network and scheduling. Per-task timestamps are retained under `logs/`.
 
 Exact package dependencies are in `requirements.txt` and `environment.yml`; full-pipeline versions are in `docs/VERSIONS.md`. Inputs, outputs, chain conventions, coordinate units, residue boundaries, and protonation handling are documented in `data/README.md`, `results/README.md`, and `docs/STRUCTURE_FILES.md`.
 

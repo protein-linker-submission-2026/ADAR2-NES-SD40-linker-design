@@ -11,11 +11,12 @@
 | PyTorch | 2.5.1+cu124 |
 | DGL | 1.1.3+cu121 |
 | AutoDock Vina | 1.1.2 |
-| GPU | NVIDIA GeForce RTX 4060 Laptop GPU |
-| GPU显存 | 8188 MiB |
-| NVIDIA驱动 | 610.88 |
-| CUDA UMD | 13.3 |
+| 11-20 Å正式主批次GPU | NVIDIA GeForce RTX 4070 Laptop GPU（由主批次日志记录） |
+| 主批次GPU显存 | 8188 MiB（由批处理总控日志记录） |
+| 早期本地核验GPU | NVIDIA GeForce RTX 4060 Laptop GPU；不与正式主批次混写 |
+| 环境快照NVIDIA驱动 | 610.88 |
+| 环境快照CUDA UMD | 13.3 |
 | PyTorch CUDA构建 | 12.4（PyTorch 2.5.1+cu124） |
 | WSL资源上限 | 20 GB RAM、28逻辑处理器、32 GB swap |
 
-Boltz 的可选 cuequivariance kernel 因本环境 cuBLAS 版本约束而关闭，使用官方 `--no_kernels` 路径。完整批次的逐任务运行时间保留在 `logs/` 和完整复现附件的阶段日志中；不以单一总耗时替代这些记录。第三方权重和 Conda 环境不打包，应依据 `THIRD_PARTY_SOFTWARE.md` 中的官方来源获取。
+正式11-20 Å批次日志反复记录RTX 4070 Laptop GPU；早期本地核验曾使用RTX 4060 Laptop GPU，因此两类硬件证据分别披露。Boltz 的可选 cuequivariance kernel 因本环境 cuBLAS 版本约束而关闭，使用官方 `--no_kernels` 路径。完整批次的逐任务运行时间保留在 `logs/` 和完整复现附件的阶段日志中；不以单一总耗时替代这些记录。第三方权重和 Conda 环境不打包，应依据 `THIRD_PARTY_SOFTWARE.md` 中的官方来源获取。

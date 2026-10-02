@@ -8,7 +8,7 @@ Status correction (2026-10-02): document presence and lightweight validation do 
 | --- | --- | --- |
 | README and complete commands | PASS | `README.md`, `JUDGES_GUIDE.md`, `REPRODUCE_FROM_ZERO.md` |
 | Exact lightweight dependencies | PASS | `requirements.txt`, `environment.yml` |
-| Full software, OS, CUDA, driver, and hardware versions | PARTIAL; archived principal versions present, full inference lock pending | `docs/VERSIONS.md`, historical `logs/`, `docs/REPRODUCIBILITY_STATUS.md`; current organizer computer is not production evidence |
+| Full software, OS, CUDA, driver, and hardware versions | PARTIAL; team reports historical locks and current exports found, underlying files pending delivery | `docs/VERSIONS.md`, historical `logs/`, `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`; current exports are not per-run historical snapshots |
 | Data source, acquisition, purpose, license, and preprocessing | PASS | `data/README.md`, `DATA_SOURCES.md`, `docs/DATA_SOURCES.md` |
 | Leakage and deduplication controls | PASS | `data/README.md`, `DATA_SOURCES.md` |
 | Core source code | PASS | `src/`, `methods/`, `ranker/` |
@@ -22,7 +22,7 @@ Status correction (2026-10-02): document presence and lightweight validation do 
 | Logs, parameters, and seeds | PASS | `logs/`, `results/inputs/`, `results/state/` |
 | Model Card and limitations | PASS | `MODEL_CARD.md`, `results/report.pdf` |
 | Ranking logic and uncertainty | PASS | `methods/methods.md`, `MODEL_CARD.md`, `results/report.pdf` |
-| Third-party tools, services, dates, parameters, and outputs | DISCLOSED; historical MGLTools patch version unverified | `THIRD_PARTY_SOFTWARE.md`, `docs/VERSIONS.md`, `src/`, `logs/`, `results/` |
+| Third-party tools, services, dates, parameters, and outputs | DISCLOSED; supplement reports MGLTools 1.5.7, historical installation continuity unverified | `THIRD_PARTY_SOFTWARE.md`, `docs/VERSIONS.md`, `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`, `src/`, `logs/`, `results/` |
 | Clean-machine design to final-list demonstration | NOT YET VERIFIED | Entry and instructions supplied; no fresh-install GPU-to-docking acceptance record |
 | Third-party weight redistribution | NOT REQUIRED | exact official retrieval/call method supplied; final project structures and result tables included |
 | Anonymous, relative-path package | PASS after validation | `validate_submission.py`, `provenance/` |

@@ -34,6 +34,7 @@ REQUIRED = [
     "provenance/ATTACHMENT5_AUDIT_20261002.json",
     "provenance/ORIGINAL_ARCHIVE_AUDIT.json",
     "docs/REPRODUCIBILITY_STATUS.md",
+    "docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md",
     "results/results.xlsx",
     "results/results.csv",
     "results/all_candidate_records.csv",

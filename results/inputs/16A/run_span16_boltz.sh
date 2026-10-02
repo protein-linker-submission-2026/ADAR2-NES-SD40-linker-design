@@ -6,7 +6,7 @@ DATA_ROOT=${PROJECT_ROOT}/data
 HELPER=${PIPELINE_HELPER:-${PACKAGE_ROOT}/02_原始记录/方法脚本与公共参考/src/pipeline_helper.py}
 PY=${BOLTZ_PYTHON:-/opt/adar2/envs/boltz/bin/python}
 BOLTZ=${BOLTZ_EXECUTABLE:-/opt/adar2/envs/boltz/bin/boltz}
-CACHE=${BOLTZ_CACHE:-/mnt/d/WSL/Models/Boltz}
+CACHE=${BOLTZ_CACHE:-$HOME/.cache/boltz}
 mkdir -p "$DATA_ROOT/08_boltz2_local/inputs" "$DATA_ROOT/08_boltz2_local/outputs" "$DATA_ROOT/09_rmsd_gate_local" "$DATA_ROOT/04_logs/boltz2_local"
 
 "$PY" - <<'PY'

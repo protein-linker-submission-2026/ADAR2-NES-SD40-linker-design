@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import os
+import subprocess
 from pathlib import Path
 
 
@@ -18,7 +20,10 @@ EXCLUDED = {
 
 def digest(path: Path) -> str:
     value = hashlib.sha256()
-    with path.open("rb") as handle:
+    readable = path
+    if os.name == "nt":
+        readable = Path("\\\\?\\" + str(path.resolve()))
+    with readable.open("rb") as handle:
         for chunk in iter(lambda: handle.read(8 * 1024 * 1024), b""):
             value.update(chunk)
     return value.hexdigest()
@@ -26,13 +31,20 @@ def digest(path: Path) -> str:
 
 def main() -> None:
     rows = []
-    for path in sorted(ROOT.rglob("*")):
-        if not path.is_file() or ".git" in path.parts:
-            continue
-        relative = path.relative_to(ROOT).as_posix()
+    listed = subprocess.run(
+        ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout.decode("utf-8").split("\0")
+    for relative in sorted(value for value in listed if value):
         if relative in EXCLUDED:
             continue
-        rows.append((relative, path.stat().st_size, digest(path)))
+        path = ROOT / relative
+        readable = path
+        if os.name == "nt":
+            readable = Path("\\\\?\\" + str(path.resolve()))
+        rows.append((relative, readable.stat().st_size, digest(path)))
 
     with INVENTORY.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle, lineterminator="\n")

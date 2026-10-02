@@ -2,6 +2,8 @@
 
 本科生组，赛道二 AI基因编辑与核酸工具设计。
 
+评委阅读入口：根目录的 [00_评委资料导航清单.md](00_评委资料导航清单.md)，与 `JUDGES_GUIDE.md` 内容一致。
+
 This is the anonymous computational evidence package for the ADAR2DD(E488Q)-NES-linker-SD40 project. It contains derived result tables, final RFdiffusion and Boltz-2 structures, docking and RMSD evidence, analysis code, logs, a computational report, and provenance manifests. The team confirms that accompanying wet-laboratory work has been carried out; experimental methods, raw data and conclusions are not included in this computational package. Chinese navigation is in [`JUDGES_GUIDE.md`](JUDGES_GUIDE.md). Installation instructions and the full entry point are supplied, but clean-machine end-to-end execution is not yet verified; see [`docs/REPRODUCIBILITY_STATUS.md`](docs/REPRODUCIBILITY_STATUS.md).
 
 ## Main result

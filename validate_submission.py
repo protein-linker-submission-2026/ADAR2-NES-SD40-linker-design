@@ -20,6 +20,7 @@ REQUIRED = [
     "THIRD_PARTY_SOFTWARE.md",
     "SUBMISSION_COMPLIANCE.md",
     "JUDGES_GUIDE.md",
+    "00_评委资料导航清单.md",
     "REPRODUCE_FROM_ZERO.md",
     "run_full.ps1",
     "data/README.md",

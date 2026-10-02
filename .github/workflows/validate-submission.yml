@@ -1,0 +1,28 @@
+name: Validate submission package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lightweight-reproduction:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install lightweight dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Rebuild standardized candidate list
+        run: python predict.py --input results/all_candidate_records.csv --output results/results.csv
+      - name: Validate files, counts, structures, paths, and anonymity
+        run: python validate_submission.py
+
+# GPU generation is intentionally not run in hosted CI. The clean-machine
+# RFdiffusion -> ProteinMPNN -> Boltz-2 -> Vina -> ranker entry point is
+# run_full.ps1 and is documented in REPRODUCE_FROM_ZERO.md.

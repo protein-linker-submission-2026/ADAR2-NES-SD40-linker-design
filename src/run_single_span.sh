@@ -8,7 +8,7 @@ HELPER="$SCRIPT_DIR/pipeline_helper.py"
 REPORTER="$SCRIPT_DIR/span_report.py"
 SPAN=""; OUTPUT=""; MSA_MODE="online"; STAGE="all"; DRY_RUN=false
 
-usage(){ echo "Usage: $0 --span {11..20} --output-root ${PROJECT_ROOT}/<span> --msa-mode online [--stage rf|mpnn|qc|boltz|ranker|finalize|all] [--dry-run]"; }
+usage(){ echo "Usage: $0 --span {11..20} --output-root <directory> --msa-mode online [--stage rf|mpnn|qc|boltz|ranker|finalize|all] [--dry-run]"; }
 while (($#)); do
   case "$1" in
     --span) SPAN="$2"; shift 2;;
@@ -22,20 +22,26 @@ while (($#)); do
 done
 
 [[ "$SPAN" =~ ^(11|12|13|14|15|16|17|18|19|20)$ ]] || { echo "span must be one of 11-20" >&2; exit 2; }
-[[ "$OUTPUT" == "${PROJECT_ROOT}/$SPAN" ]] || { echo "output-root must be exactly ${PROJECT_ROOT}/$SPAN" >&2; exit 2; }
+[[ -n "$OUTPUT" ]] || { echo "--output-root is required" >&2; exit 2; }
 [[ "$MSA_MODE" == online ]] || { echo "this remaining-span run requires --msa-mode online" >&2; exit 2; }
 [[ "$STAGE" =~ ^(rf|mpnn|qc|boltz|ranker|finalize|all)$ ]] || { echo "invalid stage: $STAGE" >&2; exit 2; }
 
 POSE="$PACKAGE_ROOT/references/poses_11-20A_spin0/ADAR2_NES_SD40_pose_span_$(printf '%02d' "$SPAN")A_spin0.pdb"
-SHARED=${PROJECT_ROOT}/_shared/baseline_online
+SHARED="$RUN_ROOT/_shared/baseline_online"
 mkdir_layout(){ mkdir -p "$OUTPUT"/{01_input,02_rfdiffusion_raw,03_rfdiffusion_validated,04_logs/{rfdiffusion,proteinmpnn,boltz2},05_reports,06_proteinmpnn,07_sequence_qc,08_msa_online,08_boltz2_local/{inputs,outputs},09_rmsd_gate_local,10_docking,11_ranker,state}; }
 
 preflight(){
   [[ -s "$POSE" ]] || { echo "missing pose: $POSE" >&2; exit 1; }
-  [[ -x "$RFDIFFUSION_PYTHON" && -x "$PROTEIN_MPNN_PYTHON" && -x "$BOLTZ_PYTHON" ]] || { echo "one or more Python environments are missing" >&2; exit 1; }
-  [[ -x /opt/adar2/envs/boltz/bin/boltz ]] || { echo "Boltz executable missing" >&2; exit 1; }
-  local free_kb; free_kb=$(df -Pk /mnt/d | awk 'NR==2{print $4}')
-  (( free_kb >= 68*1024*1024 )) || { echo "D drive has less than the required 68 GiB free" >&2; exit 1; }
+  [[ -d "$RFDIFFUSION_DIR" ]] || { echo "RFdiffusion directory missing: $RFDIFFUSION_DIR" >&2; exit 1; }
+  [[ -d "$PROTEIN_MPNN_DIR" ]] || { echo "ProteinMPNN directory missing: $PROTEIN_MPNN_DIR" >&2; exit 1; }
+  command -v "$RFDIFFUSION_PYTHON" >/dev/null 2>&1 || [[ -x "$RFDIFFUSION_PYTHON" ]] || { echo "RFdiffusion Python missing: $RFDIFFUSION_PYTHON" >&2; exit 1; }
+  command -v "$PROTEIN_MPNN_PYTHON" >/dev/null 2>&1 || [[ -x "$PROTEIN_MPNN_PYTHON" ]] || { echo "ProteinMPNN Python missing: $PROTEIN_MPNN_PYTHON" >&2; exit 1; }
+  command -v "$BOLTZ_PYTHON" >/dev/null 2>&1 || [[ -x "$BOLTZ_PYTHON" ]] || { echo "Boltz Python missing: $BOLTZ_PYTHON" >&2; exit 1; }
+  command -v "$BOLTZ_EXE" >/dev/null 2>&1 || [[ -x "$BOLTZ_EXE" ]] || { echo "Boltz executable missing: $BOLTZ_EXE" >&2; exit 1; }
+  mkdir -p "$OUTPUT"
+  local free_kb; free_kb=$(df -Pk "$OUTPUT" | awk 'NR==2{print $4}')
+  (( free_kb >= MIN_FREE_GB*1024*1024 )) || { echo "output filesystem has less than the required ${MIN_FREE_GB} GiB free: $OUTPUT" >&2; exit 1; }
+  command -v nvidia-smi >/dev/null 2>&1 || { echo "nvidia-smi is unavailable inside WSL" >&2; exit 1; }
   nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
   "$BOLTZ_PYTHON" "$HELPER" check-only --root "$PACKAGE_ROOT" >/dev/null
 }
@@ -54,7 +60,7 @@ spin_deg=0
 rf_designs=3
 mpnn_sequences_per_backbone=10
 msa_mode=online
-msa_server=https://api.colabfold.com
+msa_server=$MSA_SERVER_URL
 boltz_model=boltz2
 boltz_sampling_steps=200
 boltz_recycling_steps=3
@@ -140,7 +146,7 @@ run_boltz(){
       success=false
       for attempt in 1 2 3; do
         echo "[$n/$total] Boltz-2 + online MSA $cid attempt=$attempt" | tee -a "$log"
-        if /opt/adar2/envs/boltz/bin/boltz predict "$yaml" --out_dir "$out" --cache "$BOLTZ_CACHE" --model boltz2 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --diffusion_samples 3 --max_parallel_samples 1 --output_format pdb --write_full_pae --use_potentials --no_kernels --seed "$(printf '%s' "$cid" | "$BOLTZ_PYTHON" -c 'import hashlib,sys; s=sys.stdin.read(); print(int.from_bytes(hashlib.sha256(s.encode()).digest()[:4],"big")%2147483646+1)')" --use_msa_server --msa_server_url https://api.colabfold.com --msa_pairing_strategy greedy 2>&1 | tee -a "$log"; then
+        if "$BOLTZ_EXE" predict "$yaml" --out_dir "$out" --cache "$BOLTZ_CACHE" --model boltz2 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --diffusion_samples 3 --max_parallel_samples 1 --output_format pdb --write_full_pae --use_potentials --no_kernels --seed "$(printf '%s' "$cid" | "$BOLTZ_PYTHON" -c 'import hashlib,sys; s=sys.stdin.read(); print(int.from_bytes(hashlib.sha256(s.encode()).digest()[:4],"big")%2147483646+1)')" --use_msa_server --msa_server_url "$MSA_SERVER_URL" --msa_pairing_strategy greedy 2>&1 | tee -a "$log"; then
           found=$(find "$out" -type f -name '*_model_*.pdb' | wc -l); if (( found >= 3 )); then success=true; break; fi
         fi
         sleep $((attempt*30))
@@ -148,7 +154,7 @@ run_boltz(){
       $success || { printf '{"status":"failed","candidate_id":"%s","reason":"online MSA or Boltz failed after 3 attempts"}\n' "$cid" > "$msadir/status.json"; exit 1; }
     fi
     find "$out" -type f \( -name '*.a3m' -o -name '*.csv' -o -name '*.m8' -o -name '*.tar.gz' \) -exec cp -f {} "$msadir/" \; 2>/dev/null || true
-    printf '{"status":"complete","candidate_id":"%s","msa_mode":"online","server":"https://api.colabfold.com","models":3}\n' "$cid" > "$msadir/status.json"
+    printf '{"status":"complete","candidate_id":"%s","msa_mode":"online","server":"%s","models":3}\n' "$cid" "$MSA_SERVER_URL" > "$msadir/status.json"
     "$BOLTZ_PYTHON" "$HELPER" evaluate-boltz "$OUTPUT/state/candidates/$cid.jsonl" "$cid" "$out" "$eval" >/dev/null
     if [[ "$cid" == baseline_GGGGSGGGGS && $(find "$SHARED/outputs/$cid" -type f -name '*_model_*.pdb' 2>/dev/null | wc -l) -lt 3 ]]; then
       mkdir -p "$SHARED/outputs/$cid" "$SHARED/msa/$cid"; cp -a "$out/." "$SHARED/outputs/$cid/"; cp -a "$msadir/." "$SHARED/msa/$cid/"

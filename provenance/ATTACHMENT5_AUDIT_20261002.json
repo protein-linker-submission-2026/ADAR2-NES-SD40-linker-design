@@ -1,0 +1,43 @@
+{
+  "audit_date": "2026-10-02",
+  "official_project_title": "AI辅助设计RNA编辑器连接肽优化",
+  "group": "本科生组",
+  "track": "赛道二：AI基因编辑与核酸工具设计",
+  "official_requirement_source": "第一届全球大学生生命科学挑战赛附件5代码提交要求",
+  "lightweight_validation": {
+    "status": "PASS",
+    "candidate_records": 302,
+    "model_records": 588,
+    "formal_candidates": 114,
+    "above_baseline_candidates": 22,
+    "boltz2_pdb_structures": 588
+  },
+  "fresh_run_collector_test": {
+    "status": "PASS",
+    "input": "complete online-MMseqs2 span directories 11-20 A",
+    "generated_formal_candidates": 114,
+    "generated_candidate_records": 302,
+    "generated_model_records": 588,
+    "comparison": "candidate identifiers, sequences, and all reported numeric fields match the submitted standardized results"
+  },
+  "entry_points": {
+    "quick_review": ["run.sh", "run.ps1", "predict.py"],
+    "full_clean_machine": ["run_full.ps1", "src/run_full_pipeline.ps1"],
+    "environment_and_execution_manual": "REPRODUCE_FROM_ZERO.md",
+    "judge_navigation": "JUDGES_GUIDE.md"
+  },
+  "release_audit": {
+    "release_tag": "v2.0-complete-submission",
+    "published_assets": 14,
+    "full_reproduction_zip_volumes": 11,
+    "supporting_manifest_assets": 3,
+    "file_names_and_sizes_match_local_asset_manifest": true
+  },
+  "limitations": [
+    "No wet-laboratory validation was performed.",
+    "Third-party pretrained weights and software environments are obtained from their official sources and are not redistributed.",
+    "Online MSA service state, GPU hardware, and numerical kernels may prevent bitwise-identical coordinates while preserving the documented workflow and decision rules.",
+    "GitHub Actions performs only lightweight result and package validation; hosted CI does not execute the GPU pipeline."
+  ],
+  "status": "PASS"
+}

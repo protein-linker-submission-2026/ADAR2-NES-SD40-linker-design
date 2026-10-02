@@ -1,6 +1,8 @@
-# ADAR2 NES SD40 Linker Design Competition Submission
+# AI辅助设计RNA编辑器连接肽优化
 
-This is the anonymous reproducibility package for the ADAR2DD(E488Q)-NES-linker-SD40 computational design project. It contains the complete derived result tables, all final RFdiffusion and Boltz-2 PDB structures, docking and RMSD evidence, analysis code, key logs, a journal-style report, and provenance manifests. It reports computational screening only and does not claim wet-laboratory validation.
+本科生组，赛道二 AI基因编辑与核酸工具设计。
+
+This is the anonymous reproducibility package for the ADAR2DD(E488Q)-NES-linker-SD40 computational design project. It contains the complete derived result tables, all final RFdiffusion and Boltz-2 PDB structures, docking and RMSD evidence, analysis code, key logs, a journal-style report, and provenance manifests. It reports computational screening only and does not claim wet-laboratory validation. Chinese judge navigation is provided in [`JUDGES_GUIDE.md`](JUDGES_GUIDE.md); complete clean-machine instructions are in [`REPRODUCE_FROM_ZERO.md`](REPRODUCE_FROM_ZERO.md).
 
 ## Main result
 
@@ -16,6 +18,7 @@ requirements.txt
 environment.yml
 run.sh
 run.ps1
+run_full.ps1
 predict.py
 validate_submission.py
 MODEL_CARD.md
@@ -52,6 +55,10 @@ models/
   Third-party model and weight acquisition instructions
 SUBMISSION_COMPLIANCE.md
   Attachment 5 requirement-to-evidence matrix
+JUDGES_GUIDE.md
+  Judge-facing file map and verification checklist
+REPRODUCE_FROM_ZERO.md
+  Clean-machine full-pipeline installation and execution manual
 ```
 
 ## Quick reproduction
@@ -79,20 +86,20 @@ python validate_submission.py
 
 `results/results.csv` is the standardized machine-readable output. Each row contains a candidate ID, competition track, linker sequence, metrics, model versions, notes, one RFdiffusion backbone path, and three corresponding Boltz-2 PDB paths. All paths are relative to this package.
 
+The lightweight rebuild and validation also run automatically through `.github/workflows/validate-submission.yml` after repository updates. Hosted CI does not run the GPU pipeline.
+
 ## Full computational pipeline
 
-The full GPU pipeline is preserved under `src/`. It requires separately installed RFdiffusion, ProteinMPNN, Boltz-2, and AutoDock Vina environments. Their source code and pretrained weights are not redistributed in this package. No third-party model was trained or fine-tuned by this project. Configure installation paths in `src/pipeline_config.sh`, then run:
+The maintained full entry point is `run_full.ps1`. It coordinates WSL GPU stages, Windows Vina preparation/docking, the geometry ranker, and final standardized table generation. It requires separately installed RFdiffusion, ProteinMPNN, Boltz-2, AutoDock Vina, and MGLTools environments. Their source code and pretrained weights are not redistributed in this package. No third-party model was trained or fine-tuned by this project. Follow `REPRODUCE_FROM_ZERO.md`, copy `src/local_paths.example.sh` to the gitignored `src/local_paths.sh`, then run:
 
 The main paths are configurable through `RFDIFFUSION_DIR`, `RFDIFFUSION_PYTHON`, `PROTEIN_MPNN_DIR`, `PROTEIN_MPNN_PYTHON`, `BOLTZ_EXE`, `BOLTZ_PYTHON`, `BOLTZ_CACHE`, and `VINA_WSL_EXE`. The submission does not depend on a participant-specific home directory.
 
-```bash
-bash src/run_pipeline.sh --check-only
-bash src/run_pipeline.sh --run-expensive rf
-bash src/run_pipeline.sh --run-expensive mpnn
-bash src/run_pipeline.sh --run-expensive boltz
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_full.ps1 -CheckOnly
+powershell -ExecutionPolicy Bypass -File .\run_full.ps1
 ```
 
-Docking is a separately reviewed stage because receptor and ligand PDBQT preparation must be checked before Vina execution. See the source comments and `methods/methods.md`.
+For a smaller first test, add `-Spans 15`. The full entry point ends by writing `reproduction_runs/final/results.csv` and `results.xlsx`. `src/run_pipeline.sh` is retained only as a stage-development utility and is not the complete cross-platform reproduction entry point.
 
 ## Environment and resources
 

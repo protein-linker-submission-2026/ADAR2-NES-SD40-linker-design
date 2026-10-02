@@ -11,3 +11,17 @@
 
 Each third-party component remains governed by its original license or terms of use. The package does not claim ownership of pretrained model code, model weights, public PDB records, or service implementations.
 
+## Recorded invocation and key parameters
+
+The formal 11-20 A production batch was run in September 2026. Per-job timestamps, inputs, output paths, and console records are retained under `logs/` and in the full reproduction release. The reproducible invocation is encoded in `src/run_single_span.sh`, `src/docking_helper.py`, and `src/pipeline_config.sh`.
+
+| Component | Recorded input and key parameters |
+| --- | --- |
+| RFdiffusion | Prepared ADAR2DD(E488Q)-NES and SD40 pose; contig `[A1-393/11/A394-428]`; three deterministic backbones per 11-20 A span; design indices/seeds 0, 1, 2 |
+| ProteinMPNN | One validated RF backbone; only A394-A403 designed; 10 samples per backbone; temperature 0.15; per-backbone fixed seed; C/K/R biases −0.30/−0.10/−0.10 |
+| ColabFold MMseqs2 | Full 439-aa fusion sequence; online MSA at `https://api.colabfold.com`; greedy pairing; returned MSA/status records retained |
+| Boltz-2 | Full fusion sequence plus MSA; 3 recycling steps; 200 sampling steps; 3 diffusion samples; one parallel sample; full PAE; inference potentials; no optional kernels; SHA256-derived candidate seed |
+| AutoDock Vina | Complete A1-A439 Boltz receptor and MIQ/PT-179 ligand; model-specific 36-residue SD40 box plus 5 A per-side margin; exhaustiveness 32; 9 modes; energy range 3 kcal/mol; deterministic candidate/model seed |
+
+No commercial API or private model endpoint was used. The public MMseqs2 service is the only network inference dependency in the formal batch. No prompt-based generative service was used to generate candidate sequences or scores.
+

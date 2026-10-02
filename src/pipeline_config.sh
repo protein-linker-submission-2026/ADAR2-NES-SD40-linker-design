@@ -2,6 +2,7 @@
 # ADAR2-SD40 linker pipeline V2. All numbering is 1-based, chain A.
 PACKAGE_ROOT="${PACKAGE_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 OUTPUT_ROOT="${OUTPUT_ROOT:-$PACKAGE_ROOT/results_v2}"
+RUN_ROOT="${RUN_ROOT:-$PACKAGE_ROOT/reproduction_runs}"
 REFERENCE_ROOT="$PACKAGE_ROOT/references"
 ADAR2_LENGTH=384
 NES_SEQUENCE=LPPLERLTL
@@ -53,7 +54,17 @@ PROTEIN_MPNN_PYTHON="${PROTEIN_MPNN_PYTHON:-$RFDIFFUSION_PYTHON}"
 BOLTZ_PYTHON="${BOLTZ_PYTHON:-python}"
 BOLTZ_EXE="${BOLTZ_EXE:-boltz}"
 BOLTZ_CACHE="${BOLTZ_CACHE:-$PACKAGE_ROOT/cache/boltz}"
+MSA_SERVER_URL="${MSA_SERVER_URL:-https://api.colabfold.com}"
+MIN_FREE_GB="${MIN_FREE_GB:-68}"
 ADAR_TEMPLATE="$REFERENCE_ROOT/prepared/5ED1_ADAR2DD_E488Q_A1-384.pdb"
 SD40_RESOLVED_TEMPLATE="$REFERENCE_ROOT/prepared/8TNQ_SD40_positions_2-36.pdb"
 MIQ_LIGAND_PDB="$REFERENCE_ROOT/prepared/8TNQ_MIQ_experimental.pdb"
 # No TARGET_PASS exists in V2: all 10 spans x 3 backbones are scanned.
+
+# Optional machine-local overrides. This file is gitignored so reviewers can
+# configure installation paths without editing the versioned parameters above.
+LOCAL_PATHS_FILE="${LOCAL_PATHS_FILE:-$PACKAGE_ROOT/src/local_paths.sh}"
+if [[ -f "$LOCAL_PATHS_FILE" ]]; then
+  # shellcheck source=/dev/null
+  source "$LOCAL_PATHS_FILE"
+fi

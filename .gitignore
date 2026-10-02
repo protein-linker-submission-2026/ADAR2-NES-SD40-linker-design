@@ -6,3 +6,5 @@ Thumbs.db
 *.tmp
 *.bak
 *.inspect.ndjson
+src/local_paths.sh
+reproduction_runs/

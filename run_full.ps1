@@ -5,18 +5,17 @@ param(
     [string]$WslDistribution = 'Ubuntu-22.04',
     [string]$WindowsPython = 'py',
     [string]$VinaExe = 'vina',
-    [switch]$DryRun
+    [switch]$CheckOnly
 )
 
-# Backward-compatible name retained for historical logs. The maintained,
-# path-independent implementation is run_full_pipeline.ps1.
-$parameters = @{
+$ErrorActionPreference = 'Stop'
+$forward = @{
     Spans = $Spans
     WslDistribution = $WslDistribution
     WindowsPython = $WindowsPython
     VinaExe = $VinaExe
-    CheckOnly = $DryRun
+    CheckOnly = $CheckOnly
 }
-if ($OutputRoot) { $parameters.OutputRoot = $OutputRoot }
-& (Join-Path $PSScriptRoot 'run_full_pipeline.ps1') @parameters
+if ($OutputRoot) { $forward.OutputRoot = $OutputRoot }
+& (Join-Path $PSScriptRoot 'src\run_full_pipeline.ps1') @forward
 exit $LASTEXITCODE

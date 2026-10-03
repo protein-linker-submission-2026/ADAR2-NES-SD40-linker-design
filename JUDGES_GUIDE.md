@@ -62,7 +62,8 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 | 跨距离筛选漏斗与图表 | `results/span_summary.csv`、`results/figures/`、`methods/` |
 | 数据来源与第三方工具 | `data/README.md`、`DATA_SOURCES.md`、`THIRD_PARTY_SOFTWARE.md` |
 | 模型权重获取与安装 | `models/README.md`、`src/setup_external_sources.sh`、`REPRODUCE_FROM_ZERO.md` |
-| 环境证据与复现边界 | `docs/VERSIONS.md`、`docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`、`docs/REPRODUCIBILITY_STATUS.md` |
+| 历史环境版本与来源 | `docs/VERSIONS.md`、`docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`、`provenance/HISTORICAL_ENVIRONMENT_REPORTED_20261002.json`；依据提供方核查说明及团队确认收录 |
+| 复现范围与证据边界 | `docs/REPRODUCIBILITY_STATUS.md`；区分历史环境记录、独立测试和未收录的底层文件 |
 | 独立测试环境安装 | `environments/README.md`、`src/install_gpu_environment.sh`、`provenance/FRESH_ENVIRONMENT_TEST_20261003.json`；包括Python、GPU依赖、系统库与实际安装检查 |
 | 文件完整性与来源 | `provenance/`、`validate_submission.py` |
 
@@ -85,11 +86,11 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 
 在线MSA使用Boltz 2.2.1调用ColabFold MMseqs2服务；服务地址与参数有记录，但未核实当时服务端软件和数据库快照版本。该版本不等同于Boltz版本，历史输入可通过归档MSA复核。详见 `docs/ONLINE_MSA_PROVENANCE.md`。
 
-本次已收录报告的脱敏摘要。报告所述锁文件、环境导出及Git工作区差异等原始附件尚未随本次说明交付，不能据摘要独立验证全部依赖条目。当前导出也不等于计算当日的逐次快照。详细证据边界见 `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`。
+团队于2026-10-03确认采用该提供方核查说明，代码包已收录其脱敏摘要、主要版本及可追溯的机器可读记录。历史环境为Ubuntu 22.04.5 LTS / WSL2、两个Linux环境Python 3.11.16、PyTorch 2.5.1+cu124、设计环境DGL 1.1.3+cu121、Boltz 2.2.1、MGLTools 1.5.7和Vina 1.1.2。报告所述完整锁文件、环境导出及Git工作区差异原件未收录，故不据摘要声称已独立核验全部依赖，也不将当前导出视为计算当日快照。详细来源及边界见 `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`。
 
 已提交结果的轻量重建、结构映射与文件检查已通过。2026-10-03进一步在新建RF/MPNN及Boltz依赖环境完成独立小样本端到端，覆盖RF、MPNN、在线MSA、6个Boltz模型、RMSD、6次Vina对接、Ranker和CSV/XLSX。环境安装、实际系统库、版本逐条核对、脱敏日志和小样本统计均已入包，见 `environments/README.md`、`docs/FRESH_ENVIRONMENT_TEST_20261003.md` 及 `provenance/FRESH_ENVIRONMENT_*_20261003.json`。
 
-这轮复用基础解释器、操作系统、驱动和权重，不等于新机器、全量在线安装或全部历史批次重跑；历史锁文件原件仍待补交。在线MSA服务、GPU和数值内核变化可能影响新采样结果，不承诺坐标与评分逐位相同。
+这轮复用基础解释器、操作系统、驱动和权重，不等于新机器、全量在线安装或全部历史批次重跑；测试环境依赖清单已收录，历史完整锁文件原件未收录，两者不能混用。在线MSA服务、GPU和数值内核变化可能影响新采样结果，不承诺坐标与评分逐位相同。
 
 ## 七、轻量结果复核
 

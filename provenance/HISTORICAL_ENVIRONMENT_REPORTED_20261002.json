@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "evidence_type": "provider_report_confirmed_by_team",
+  "report_date": "2026-10-02",
+  "team_confirmation_date": "2026-10-03",
+  "source_document": "核查说明.md",
+  "source_sha256": "1c8dc072aa056ff6441dcfa9f8a780553ed66f316a7d395c18c46bab0a88ade2",
+  "public_summary": "docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md",
+  "raw_report_published": false,
+  "raw_report_withheld_reason": "Contains local identifying paths; public summary is anonymized.",
+  "historical_lockfiles_received": false,
+  "underlying_exports_independently_verified": false,
+  "reported_versions": {
+    "os": "Ubuntu 22.04.5 LTS / WSL2",
+    "design_python": "3.11.16",
+    "boltz_python": "3.11.16",
+    "pytorch": "2.5.1+cu124",
+    "design_dgl": "1.1.3+cu121",
+    "boltz": "2.2.1",
+    "prediction_model": "Boltz-2",
+    "rfdiffusion_commit": "86507b6538f51fce57b5a72477165f03999ed7ae",
+    "proteinmpnn_commit": "8907e6671bfbfc92303b5f79c4b5e6ce47cdef57",
+    "mgltools_autodocktools": "1.5.7",
+    "mgltools_python": "2.7.11 (32-bit)",
+    "autodock_vina": "1.1.2 (May 11, 2011)",
+    "nvidia_driver": "610.62",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpu_memory_mib": 8188
+  },
+  "reported_comparison": "Existing historical lockfiles and current exports agree except pip, setuptools and wheel added by freeze --all; reported by provider, not independently compared here.",
+  "unreceived_underlying_files": {
+    "historical_evidence": ["design_requirements.lock.txt", "boltz_requirements.lock.txt", "installation_status.md"],
+    "each_conda_environment": ["environment.yml", "conda-explicit.txt", "conda-list.json", "pip-freeze-all.txt", "pip-list.json", "conda-history.txt", "python-version.txt"],
+    "source_working_trees": ["working-tree.txt"]
+  },
+  "limitations": [
+    "Major versions are reported historical records, not a complete installable dependency lock.",
+    "Source HEAD equality does not establish an unmodified working tree.",
+    "Driver version is from the reported 2026-09-10 installation record and later query, not per-run snapshots.",
+    "Detailed MGLTools build and historical installation continuity were not established.",
+    "Report did not perform reinstallation or rerun historical computations.",
+    "Independent fresh-dependency smoke test uses different versions and is documented separately."
+  ],
+  "separate_test_record": "provenance/FRESH_ENVIRONMENT_TEST_20261003.json"
+}

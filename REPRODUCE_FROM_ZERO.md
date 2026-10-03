@@ -2,7 +2,7 @@
 
 ## 目的与复现边界
 
-验收状态：本手册和完整入口已提供，历史结果轻量核验与汇总器测试已执行，但尚未完成本次修订后的全新环境端到端重跑。原环境主版本来自历史总包，不来自当前整理电脑。完整依赖锁定与待确认事项见 `docs/REPRODUCIBILITY_STATUS.md`。
+验收状态：2026-10-03已在新建Python虚拟环境完成历史结果重建，并在另一台电脑的已有GPU环境完成小样本端到端测试：1个RF骨架、10条MPNN序列、2条序列的6个Boltz模型、6次对接、排序和最终表格。尚未完成全新GPU环境安装或全部距离重跑，不能称为“全新机器从零全部通过”。详细实测见 `docs/REPRODUCTION_TEST_20261003.md`。原环境主版本来自历史总包，不来自当前整理电脑。完整依赖锁定与待确认事项见 `docs/REPRODUCIBILITY_STATUS.md`。
 
 本手册对应项目“AI辅助设计RNA编辑器连接肽优化”，用于从一台新机器重建计算环境并执行完整的设计、优化、结构预测、门控和排序流程。项目没有自行训练或微调模型，因而不存在训练入口、训练集划分或自训练权重；RFdiffusion、ProteinMPNN和Boltz-2使用公开预训练模型，Vina用于对接筛选。
 
@@ -83,7 +83,7 @@ bash src/setup_external_sources.sh
 
 ## 6 建立RFdiffusion环境
 
-按固定提交中的官方环境文件安装：
+以下为固定提交中的官方环境安装入口，不是已实测通过的现代GPU锁定方案。其旧版PyTorch/CUDA不应直接视为RTX 40系列的兼容保证；新环境安装仍需独立验证。不要覆盖现有工作环境。
 
 ```bash
 cd external/RFdiffusion
@@ -97,7 +97,7 @@ python -m pip install -e .
 python scripts/run_inference.py --help
 ```
 
-ProteinMPNN在本次实际流程中复用这个已验证的PyTorch环境：
+在确认RF环境可导入并实际完成推理后，ProteinMPNN可复用该PyTorch环境：
 
 ```bash
 cd ../ProteinMPNN
@@ -115,6 +115,8 @@ python -m pip install "boltz[cuda]==2.2.1"
 boltz predict --help
 ```
 
+这只固定Boltz版本，并未锁定其全部依赖；pip可能选择与历史环境不同的PyTorch/CUDA版本。安装成功或`--help`成功不能代替GPU推理测试。在线MSA会将输入蛋白序列发送到 `https://api.colabfold.com`，执行前须确认允许向该服务提交这些序列。
+
 首次预测会把Boltz-2模型和分子缓存下载到 `BOLTZ_CACHE`。完整流程使用：
 
 - `--model boltz2`
@@ -122,6 +124,7 @@ boltz predict --help
 - `--sampling_steps 200`
 - `--diffusion_samples 3`
 - `--max_parallel_samples 1`
+- `--num_workers 0`（本次复现修订的资源设置，避免多数据加载子进程；历史默认值不据此追改）
 - `--write_full_pae`
 - `--use_potentials`
 - `--no_kernels`
@@ -201,8 +204,8 @@ powershell -ExecutionPolicy Bypass -File .\run_full.ps1 `
 
 完整入口顺序执行：
 
-1. 验证并准备5ED1 ADAR2DD(E488Q)、NES、8TNQ SD40和MIQ参考结构。
-2. 生成11至20 Å、spin 0°的初始位姿。
+1. 验证包中已准备的5ED1 ADAR2DD(E488Q)、NES、8TNQ SD40和MIQ参考结构。
+2. 读取包中已生成的11至20 Å、spin 0°初始位姿；完整入口不会重新生成这些参考文件。
 3. 每个距离运行3个RFdiffusion骨架。
 4. 每个骨架由ProteinMPNN生成10条linker序列，只设计A394至A403。
 5. 去重并执行K/R比例、疏水比例、净电荷等序列QC。
@@ -214,6 +217,15 @@ powershell -ExecutionPolicy Bypass -File .\run_full.ps1 `
 11. 生成标准化 `results.csv`、`results.xlsx`、全候选表、全模型表和距离汇总表。
 
 脚本按输出文件和完成标记断点续跑。不要删除已经完成的跨度目录；重复执行同一命令会复用已完成的中间产物。
+
+完整批次前可进行隔离小样本测试（需要先授权在线MSA序列提交）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_full.ps1 `
+  -Spans 15 -SmokeTest -OutputRoot 'E:\ADAR2_smoke_test'
+```
+
+该模式生成1个RF骨架及10条MPNN序列，只选择首条QC通过设计加baseline做Boltz；每条仍为3模型、200采样步。筛选阈值不变。没有QC通过设计时会报错，不将仅有baseline计为设计测试成功。不要与正式批次共用输出目录。WSL发行版不同请用`-WslDistribution`指定；目录可含空格，但不支持单引号。`-CheckOnly`只做预检，不执行预测。
 
 ## 12 输出位置
 
@@ -233,6 +245,8 @@ reproduction_runs/
 
 每个距离目录保存输入、RFdiffusion、ProteinMPNN、MSA、Boltz-2、RMSD、Vina、Ranker和日志，不依赖个人绝对路径解释结果。
 
+本次修订还会写入每个距离的`01_input/runtime_*.json`与输出根目录的`runtime_windows_tools.json`，记录实际包版本、源码提交及是否有已跟踪源码修改。它们描述新运行环境，不替代历史锁文件。
+
 ## 13 快速核验已提交结果
 
 如果评委只需要确认上传材料内部一致性：
@@ -240,6 +254,8 @@ reproduction_runs/
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\run.ps1
 ```
+
+若环境有多个Python，使用`-Python 'E:\review_env\Scripts\python.exe'`指定已安装`requirements.txt`的解释器。
 
 该命令重建 `results/results.csv` 并运行完整性和匿名性检查。它不会重新执行GPU模型，因此通常在5分钟内完成。
 

@@ -32,13 +32,18 @@ checkout_exact https://github.com/dauparas/ProteinMPNN.git "$MPNN_COMMIT" "$EXTE
 mkdir -p "$EXTERNAL_ROOT/RFdiffusion/models"
 RF_MODEL="$EXTERNAL_ROOT/RFdiffusion/models/Base_ckpt.pt"
 if [[ -s "$RF_MODEL" ]] && ! printf '%s  %s\n' "$RF_MODEL_SHA256" "$RF_MODEL" | sha256sum --check --status; then
-  echo "Removing incomplete or mismatched RFdiffusion checkpoint" >&2
-  rm -f "$RF_MODEL"
+  echo "Preserving incomplete or mismatched RFdiffusion checkpoint" >&2
+  mv "$RF_MODEL" "${RF_MODEL}.unverified.$(date +%Y%m%d_%H%M%S).$$"
 fi
 if [[ ! -s "$RF_MODEL" ]]; then
   curl -fL --retry 20 --retry-all-errors --continue-at - \
-    -o "$RF_MODEL" \
+    -o "${RF_MODEL}.part" \
     http://files.ipd.uw.edu/pub/RFdiffusion/6f5902ac237024bdd0c176cb93063dc4/Base_ckpt.pt
+  printf '%s  %s\n' "$RF_MODEL_SHA256" "${RF_MODEL}.part" | sha256sum --check --status || {
+    echo "Downloaded checkpoint checksum mismatch; .part file retained for inspection" >&2
+    exit 1
+  }
+  mv "${RF_MODEL}.part" "$RF_MODEL"
 fi
 printf '%s  %s\n' "$RF_MODEL_SHA256" "$RF_MODEL" | sha256sum --check --status || {
   echo "RFdiffusion Base_ckpt.pt checksum mismatch" >&2

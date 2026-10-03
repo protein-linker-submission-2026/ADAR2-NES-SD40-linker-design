@@ -29,6 +29,7 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 4. `MODEL_CARD.md`：模型用途、输入输出、排序依据与已知局限。
 5. `docs/VERSIONS.md`、`docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`及`REPRODUCE_FROM_ZERO.md`：环境证据和复现方法。
 6. `SUBMISSION_COMPLIANCE.md`：附件5要求与材料位置的对应关系。
+7. `docs/REPRODUCTION_TEST_20261003.md`：独立复现测试范围、实测通过步骤、入口修正及尚未验证的步骤；预检通过不等于端到端通过。
 
 ## 三、结果范围与编号
 

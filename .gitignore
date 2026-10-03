@@ -8,3 +8,6 @@ Thumbs.db
 *.inspect.ndjson
 src/local_paths.sh
 reproduction_runs/
+external/
+cache/
+.venv/

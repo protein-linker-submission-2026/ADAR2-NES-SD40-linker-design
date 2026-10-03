@@ -7,8 +7,10 @@ source "$SCRIPT_DIR/pipeline_config.sh"
 HELPER="$SCRIPT_DIR/pipeline_helper.py"
 REPORTER="$SCRIPT_DIR/span_report.py"
 SPAN=""; OUTPUT=""; MSA_MODE="online"; STAGE="all"; DRY_RUN=false
+SMOKE=false
+RF_COUNT=3
 
-usage(){ echo "Usage: $0 --span {11..20} --output-root <directory> --msa-mode online [--stage rf|mpnn|qc|boltz|ranker|finalize|all] [--dry-run]"; }
+usage(){ echo "Usage: $0 --span {11..20} --output-root <directory> --msa-mode online [--stage rf|mpnn|qc|boltz|ranker|finalize|all] [--dry-run] [--smoke-test]"; }
 while (($#)); do
   case "$1" in
     --span) SPAN="$2"; shift 2;;
@@ -16,6 +18,7 @@ while (($#)); do
     --msa-mode) MSA_MODE="$2"; shift 2;;
     --stage) STAGE="$2"; shift 2;;
     --dry-run) DRY_RUN=true; shift;;
+    --smoke-test) SMOKE=true; RF_COUNT=1; shift;;
     -h|--help) usage; exit 0;;
     *) echo "Unknown argument: $1" >&2; usage >&2; exit 2;;
   esac
@@ -43,21 +46,39 @@ preflight(){
   (( free_kb >= MIN_FREE_GB*1024*1024 )) || { echo "output filesystem has less than the required ${MIN_FREE_GB} GiB free: $OUTPUT" >&2; exit 1; }
   command -v nvidia-smi >/dev/null 2>&1 || { echo "nvidia-smi is unavailable inside WSL" >&2; exit 1; }
   nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
+  "$RFDIFFUSION_PYTHON" -c 'import torch, dgl, hydra, se3_transformer; assert torch.cuda.is_available(), "RFdiffusion CUDA unavailable"'
+  "$PROTEIN_MPNN_PYTHON" -c 'import torch, numpy; assert torch.cuda.is_available(), "ProteinMPNN CUDA unavailable"'
+  "$BOLTZ_PYTHON" -c 'import torch, boltz, rdkit, yaml; assert torch.cuda.is_available(), "Boltz CUDA unavailable"'
+  [[ -s "$RFDIFFUSION_DIR/models/Base_ckpt.pt" ]] || { echo 'RF checkpoint missing' >&2; exit 1; }
+  [[ -s "$PROTEIN_MPNN_DIR/vanilla_model_weights/v_48_020.pt" ]] || { echo 'MPNN checkpoint missing' >&2; exit 1; }
   "$BOLTZ_PYTHON" "$HELPER" check-only --root "$PACKAGE_ROOT" >/dev/null
 }
 
 if $DRY_RUN; then
   preflight
-  printf '{"status":"ok","dry_run":true,"span_A":%s,"output_root":"%s","msa_mode":"online","rf_backbones":3,"mpnn_requested":30,"historical_span_16_preserved":true}\n' "$SPAN" "$OUTPUT"
+  printf 'PREFLIGHT PASS span=%s RF=%s smoke=%s; model execution not tested\n' "$SPAN" "$RF_COUNT" "$SMOKE"
   exit 0
 fi
 
 mkdir_layout; preflight
+if [[ -f "$OUTPUT/state/run_mode" ]]; then
+  [[ "$(cat "$OUTPUT/state/run_mode")" == "$SMOKE" ]] || { echo 'Cannot mix smoke and full runs in one output directory' >&2; exit 1; }
+fi
+printf '%s\n' "$SMOKE" > "$OUTPUT/state/run_mode"
+for label in rfdiffusion proteinmpnn boltz; do
+  case "$label" in
+    rfdiffusion) interpreter="$RFDIFFUSION_PYTHON"; source_args=(--source "$RFDIFFUSION_DIR");;
+    proteinmpnn) interpreter="$PROTEIN_MPNN_PYTHON"; source_args=(--source "$PROTEIN_MPNN_DIR");;
+    boltz) interpreter="$BOLTZ_PYTHON"; source_args=();;
+  esac
+  "$interpreter" "$SCRIPT_DIR/capture_runtime.py" --label "$label" --output "$OUTPUT/01_input/runtime_${label}.json" "${source_args[@]}"
+done
 cp -f "$POSE" "$OUTPUT/01_input/"
 cat > "$OUTPUT/01_input/run_parameters.txt" <<EOF
 span_A=$SPAN
 spin_deg=0
-rf_designs=3
+rf_designs=$RF_COUNT
+smoke_test=$SMOKE
 mpnn_sequences_per_backbone=10
 msa_mode=online
 msa_server=$MSA_SERVER_URL
@@ -65,6 +86,7 @@ boltz_model=boltz2
 boltz_sampling_steps=200
 boltz_recycling_steps=3
 boltz_diffusion_samples=3
+boltz_num_workers=$BOLTZ_NUM_WORKERS
 vina_exhaustiveness=32
 vina_num_modes=9
 vina_energy_range=3
@@ -73,7 +95,7 @@ ranker_weights=0.3,0.3,0.4
 EOF
 
 run_rf(){
-  for idx in 0 1 2; do
+  for ((idx=0; idx<RF_COUNT; idx++)); do
     raw="$OUTPUT/02_rfdiffusion_raw/design_${idx}.pdb"; final="$OUTPUT/03_rfdiffusion_validated/span${SPAN}A_design_${idx}.pdb"
     if [[ ! -s "$raw" ]]; then
       prefix="$OUTPUT/02_rfdiffusion_raw/design"
@@ -91,7 +113,7 @@ run_rf(){
     rm -f "$tmp"
   done
   : > "$OUTPUT/03_rfdiffusion_validated/backbone_manifest.jsonl"
-  for idx in 0 1 2; do
+  for ((idx=0; idx<RF_COUNT; idx++)); do
     final="$OUTPUT/03_rfdiffusion_validated/span${SPAN}A_design_${idx}.pdb"
     printf '{"target_span_A":%d,"rf_design_index":%d,"rf_seed":%d,"rf_backbone_id":"span%dA_design_%d","rf_pdb_path":"%s"}\n' "$SPAN" "$idx" "$idx" "$SPAN" "$idx" "$final" >> "$OUTPUT/03_rfdiffusion_validated/backbone_manifest.jsonl"
   done
@@ -100,7 +122,7 @@ run_rf(){
 
 run_mpnn(){
   printf '%s\n' '{"C":-0.30,"K":-0.10,"R":-0.10}' > "$OUTPUT/06_proteinmpnn/linker_bias_AA.jsonl"
-  for idx in 0 1 2; do
+  for ((idx=0; idx<RF_COUNT; idx++)); do
     id="span${SPAN}A_design_${idx}"; pdb="$OUTPUT/03_rfdiffusion_validated/$id.pdb"; work="$OUTPUT/06_proteinmpnn/$id"; fa="$work/output/seqs/$id.fa"
     [[ -s "$pdb" ]] || { echo "missing validated RF backbone: $pdb" >&2; exit 1; }
     mkdir -p "$work/input" "$work/output"; cp -f "$pdb" "$work/input/$id.pdb"
@@ -120,8 +142,9 @@ run_mpnn(){
 }
 
 run_qc(){
-  "$BOLTZ_PYTHON" "$REPORTER" prepare-qc --root "$OUTPUT" --span "$SPAN"
-  "$BOLTZ_PYTHON" "$REPORTER" prepare-boltz-list --root "$OUTPUT"
+  "$BOLTZ_PYTHON" "$REPORTER" prepare-qc --root "$OUTPUT" --span "$SPAN" --rf-count "$RF_COUNT"
+  limit_args=(); $SMOKE && limit_args=(--design-limit 1)
+  "$BOLTZ_PYTHON" "$REPORTER" prepare-boltz-list --root "$OUTPUT" "${limit_args[@]}"
   touch "$OUTPUT/state/qc.complete"
 }
 
@@ -146,7 +169,8 @@ run_boltz(){
       success=false
       for attempt in 1 2 3; do
         echo "[$n/$total] Boltz-2 + online MSA $cid attempt=$attempt" | tee -a "$log"
-        if "$BOLTZ_EXE" predict "$yaml" --out_dir "$out" --cache "$BOLTZ_CACHE" --model boltz2 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --diffusion_samples 3 --max_parallel_samples 1 --output_format pdb --write_full_pae --use_potentials --no_kernels --seed "$(printf '%s' "$cid" | "$BOLTZ_PYTHON" -c 'import hashlib,sys; s=sys.stdin.read(); print(int.from_bytes(hashlib.sha256(s.encode()).digest()[:4],"big")%2147483646+1)')" --use_msa_server --msa_server_url "$MSA_SERVER_URL" --msa_pairing_strategy greedy 2>&1 | tee -a "$log"; then
+        # Boltz otherwise skips an existing prediction directory even if incomplete.
+        if "$BOLTZ_EXE" predict "$yaml" --out_dir "$out" --cache "$BOLTZ_CACHE" --override --model boltz2 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --diffusion_samples 3 --max_parallel_samples 1 --num_workers "$BOLTZ_NUM_WORKERS" --output_format pdb --write_full_pae --use_potentials --no_kernels --seed "$(printf '%s' "$cid" | "$BOLTZ_PYTHON" -c 'import hashlib,sys; s=sys.stdin.read(); print(int.from_bytes(hashlib.sha256(s.encode()).digest()[:4],"big")%2147483646+1)')" --use_msa_server --msa_server_url "$MSA_SERVER_URL" --msa_pairing_strategy greedy 2>&1 | tee -a "$log"; then
           found=$(find "$out" -type f -name '*_model_*.pdb' | wc -l); if (( found >= 3 )); then success=true; break; fi
         fi
         sleep $((attempt*30))
@@ -170,7 +194,7 @@ run_ranker(){
   touch "$OUTPUT/state/ranker.complete"
 }
 
-run_finalize(){ "$BOLTZ_PYTHON" "$REPORTER" finalize --root "$OUTPUT" --span "$SPAN"; touch "$OUTPUT/state/finalize.complete"; }
+run_finalize(){ "$BOLTZ_PYTHON" "$REPORTER" finalize --root "$OUTPUT" --span "$SPAN" --rf-count "$RF_COUNT"; touch "$OUTPUT/state/finalize.complete"; }
 
 case "$STAGE" in
   rf) run_rf;; mpnn) run_mpnn;; qc) run_qc;; boltz) run_boltz;; ranker) run_ranker;; finalize) run_finalize;;

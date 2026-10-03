@@ -14,6 +14,14 @@ VERSIONS = (
     "ProteinMPNN 8907e6671bfbfc92303b5f79c4b5e6ce47cdef57; "
     "Boltz 2.2.1/Boltz-2; AutoDock Vina 1.1.2"
 )
+RESULT_FIELDS = [
+    "candidate_id", "track", "target_span_A", "linker_sequence",
+    "final_score_median", "score_minus_baseline", "rmsd_pass_count",
+    "linker_rmsd_median_A", "vina_pass_count", "vina_median_kcal_mol",
+    "sd40_rmsd_median_A", "confidence_median", "rf_backbone_pdb",
+    "boltz_model_0_pdb", "boltz_model_1_pdb", "boltz_model_2_pdb",
+    "model_versions", "run_mode", "notes",
+]
 
 
 def read_json(path: Path):
@@ -70,6 +78,24 @@ def load_ranker(path: Path):
     return output
 
 
+def runtime_versions(span_root: Path, run_root: Path):
+    paths = {name: span_root / '01_input' / f'runtime_{name}.json'
+             for name in ('rfdiffusion', 'proteinmpnn', 'boltz')}
+    paths['windows'] = run_root / 'runtime_windows_tools.json'
+    if not all(path.is_file() for path in paths.values()):
+        return 'Runtime snapshot incomplete; configured targets only: ' + VERSIONS
+    records = {name: read_json(path) for name, path in paths.items()}
+    boltz = {item['name'].lower(): item['version'] for item in records['boltz']['packages']}
+    values = [f"{name} commit={records[name]['source_commit']} tracked_modified={records[name]['tracked_source_modified']}"
+              for name in ('rfdiffusion', 'proteinmpnn')]
+    values.extend([
+        f"Boltz={boltz.get('boltz', 'unknown')}; torch={boltz.get('torch', 'unknown')}",
+        records['windows'].get('vina_version', 'Vina not recorded'),
+        'ADT=' + records['windows'].get('autodocktools_version', 'unknown'),
+    ])
+    return '; '.join(values)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Collect a fresh full-pipeline run into standard result tables.")
     parser.add_argument("--run-root", type=Path, required=True)
@@ -100,6 +126,7 @@ def main():
             raise FileNotFoundError(f"span {span} is incomplete: {missing}")
 
         summary = read_json(required[0])
+        observed_versions = runtime_versions(root, run_root)
         summary_rows.append({"batch": "online_mmseqs2", "target_span_A": span, **summary})
         sequences = read_json(required[1])
         qc = {row["candidate_id"]: row for row in read_csv(required[2])}
@@ -204,12 +231,13 @@ def main():
                 "boltz_model_0_pdb": boltz_paths[0],
                 "boltz_model_1_pdb": boltz_paths[1],
                 "boltz_model_2_pdb": boltz_paths[2],
-                "model_versions": VERSIONS,
+                "model_versions": observed_versions,
+                "run_mode": summary.get("run_mode", "full"),
                 "notes": "Computational candidate; experimental validation required",
             })
 
     formal_rows.sort(key=lambda row: row["final_score_median"], reverse=True)
-    write_csv(output / "results.csv", formal_rows)
+    write_csv(output / "results.csv", formal_rows, RESULT_FIELDS)
     write_csv(output / "all_candidate_records.csv", candidate_rows)
     write_csv(output / "all_model_records.csv", model_rows)
     write_csv(output / "span_summary.csv", summary_rows)
@@ -220,6 +248,8 @@ def main():
         workbook.remove(workbook.active)
         for title, rows in (("results", formal_rows), ("all_candidates", candidate_rows), ("all_models", model_rows), ("span_summary", summary_rows)):
             sheet = workbook.create_sheet(title)
+            if title == "results" and not rows:
+                sheet.append(RESULT_FIELDS)
             if rows:
                 sheet.append(list(rows[0]))
                 for row in rows:

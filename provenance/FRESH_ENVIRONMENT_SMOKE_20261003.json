@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-03",
+  "scope": "New isolated Python dependency environments and new GPU smoke outputs. Existing OS/driver, base interpreters, pinned external source and weights reused. Not historical production results or clean-machine installation.",
+  "full_entry_exit_code": 0,
+  "summary": {
+    "span_A": 15,
+    "rf_backbones": 1,
+    "mpnn_requested": 10,
+    "mpnn_unique": 10,
+    "qc_pass_design": 4,
+    "boltz_candidates": 2,
+    "boltz_models": 6,
+    "rmsd_pass_design": 1,
+    "vina_candidates": 2,
+    "vina_models": 6,
+    "vina_pass_design": 1,
+    "ranker_models": 6,
+    "network_used_for_MSA": true,
+    "msa_server": "https://api.colabfold.com",
+    "boltz_inference": "local GPU",
+    "scoring_weights": {
+      "S_RMSD": 0.3,
+      "S_contact": 0.3,
+      "S_clash": 0.4
+    },
+    "run_mode": "smoke_test"
+  },
+  "entry_parameters": {
+    "entry": "run_full.ps1",
+    "Spans": [
+      15
+    ],
+    "SmokeTest": true,
+    "WslDistribution": "Ubuntu-26.04",
+    "rf_backbones": 1,
+    "mpnn_samples_per_backbone": 10,
+    "boltz_sequences": 2,
+    "boltz_diffusion_samples_per_sequence": 3,
+    "boltz_sampling_steps": 200,
+    "boltz_num_workers": 0
+  },
+  "new_design": {
+    "candidate_id": "span15A_design_0_s01_EEEKKEKEEK",
+    "linker_ca_rmsd_A": [
+      0.930150490748305,
+      0.7454796561671619,
+      0.3659238631837474
+    ],
+    "vina_best_score_kcal_mol": [
+      -7.9,
+      -6.5,
+      -7.6
+    ]
+  },
+  "accepted_test_rows": [
+    {
+      "candidate_id": "span15A_design_0_s01_EEEKKEKEEK",
+      "linker_sequence": "EEEKKEKEEK",
+      "final_score_median": "44.1515",
+      "model_versions": "rfdiffusion commit=86507b6538f51fce57b5a72477165f03999ed7ae tracked_modified=False; proteinmpnn commit=8907e6671bfbfc92303b5f79c4b5e6ce47cdef57 tracked_modified=False; Boltz=2.2.1; torch=2.14.0; AutoDock Vina 1.1.2 (May 11, 2011); ADT=1.5.6"
+    }
+  ],
+  "artifact_hashes_relative_to_test_run": {
+    "final/all_candidate_records.csv": "0082825133b5bd114e13fc0dfae7414b835edcdf6e27db6c95d41207fc19b697",
+    "final/all_model_records.csv": "165567d10cdcf9d5e83d1acb4a103fb751acb37baed7200d30fd34e4bd05bfac",
+    "final/results.csv": "84529635e2f1f7c0eca41113fe90a58f705e8d6f59d5a6baeb8772c698a791de",
+    "final/results.xlsx": "19376c70f6eef0e24a5a85f3e850d6756761b75f9094f3a3bf50292ad217e869",
+    "final/span_summary.csv": "9679780520817df4d5410e49cace8fcbe03e4d67a72383c9f6ea3ce1876e5092",
+    "15/05_reports/span15A_summary.json": "18cc2d8e772fef944b99fb7597305157fbcc563ca425e884cb787229a000e2a8"
+  }
+}

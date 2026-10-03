@@ -2,7 +2,7 @@
 
 ## 目的与复现边界
 
-验收状态：2026-10-03已在新建Python虚拟环境完成历史结果重建，并在另一台电脑的已有GPU环境完成小样本端到端测试：1个RF骨架、10条MPNN序列、2条序列的6个Boltz模型、6次对接、排序和最终表格。尚未完成全新GPU环境安装或全部距离重跑，不能称为“全新机器从零全部通过”。详细实测见 `docs/REPRODUCTION_TEST_20261003.md`。原环境主版本来自历史总包，不来自当前整理电脑。完整依赖锁定与待确认事项见 `docs/REPRODUCIBILITY_STATUS.md`。
+验收状态：2026-10-03已完成轻量结果重建，并在新建RF/MPNN及Boltz依赖环境完成小样本端到端：1个RF骨架、10条MPNN序列、2条序列的6个Boltz模型、6次对接、排序和最终表格。依赖从原始wheel重新安装，DGL从官方重新下载验证；复用现有基础Python、操作系统、驱动和权重。不是全新机器或完整在线Conda安装验收，也未重跑全部距离。最新实测见 `docs/FRESH_ENVIRONMENT_TEST_20261003.md`，第一轮已有环境测试保留于 `docs/REPRODUCTION_TEST_20261003.md`。历史环境证据与测试环境清单应区分，见 `docs/REPRODUCIBILITY_STATUS.md`。
 
 本手册对应项目“AI辅助设计RNA编辑器连接肽优化”，用于从一台新机器重建计算环境并执行完整的设计、优化、结构预测、门控和排序流程。项目没有自行训练或微调模型，因而不存在训练入口、训练集划分或自训练权重；RFdiffusion、ProteinMPNN和Boltz-2使用公开预训练模型，Vina用于对接筛选。
 
@@ -16,7 +16,7 @@
 - WSL内能够访问GitHub、模型权重地址和 `https://api.colabfold.com`。
 - Windows侧安装PowerShell、Python 3、AutoDock Vina 1.1.2和MGLTools 1.5.x。
 
-实际生产环境与版本见 `docs/VERSIONS.md`。如果只核验已提交结果，无需GPU，执行根目录 `run.ps1` 或 `run.sh` 即可。
+实际生产环境与版本见 `docs/VERSIONS.md`。上面的Ubuntu 22.04描述历史目标平台；2026-10-03新依赖安装测试实际为Ubuntu 26.04，系统库版本见 `provenance/FRESH_ENVIRONMENT_TEST_20261003.json`，不能据此声称所有Ubuntu版本均已验证。使用该测试发行版时，在完整入口中加 `-WslDistribution Ubuntu-26.04`。如果只核验已提交结果，无需GPU，执行根目录 `run.ps1` 或 `run.sh` 即可。
 
 ## 2 获取项目
 
@@ -83,39 +83,31 @@ bash src/setup_external_sources.sh
 
 ## 6 建立RFdiffusion环境
 
-以下为固定提交中的官方环境安装入口，不是已实测通过的现代GPU锁定方案。其旧版PyTorch/CUDA不应直接视为RTX 40系列的兼容保证；新环境安装仍需独立验证。不要覆盖现有工作环境。
+从仓库根目录运行以下独立安装入口，详细依赖与验收状态见 `environments/README.md`。它使用Python 3.9.23、torch 2.4.0和CUDA 12.1版DGL，以及NVIDIA DeepLearningExamples提交`729963dd47e7c8bd462ad10bfac7a7b0b604e6dd`的SE3Transformer。它描述本次测试环境，不冒充历史生产环境。
 
 ```bash
-cd external/RFdiffusion
-conda env create -f env/SE3nv.yml -n rfdiffusion
-conda activate rfdiffusion
-cd env/SE3Transformer
-python -m pip install --no-cache-dir -r requirements.txt
-python setup.py install
-cd ../..
-python -m pip install -e .
-python scripts/run_inference.py --help
+bash src/install_gpu_environment.sh rfdiffusion "$PWD/.envs"
+"$PWD/.envs/rfdiffusion/bin/python" external/RFdiffusion/scripts/run_inference.py --help
 ```
 
 在确认RF环境可导入并实际完成推理后，ProteinMPNN可复用该PyTorch环境：
 
 ```bash
-cd ../ProteinMPNN
-python protein_mpnn_run.py --help
+"$PWD/.envs/rfdiffusion/bin/python" external/ProteinMPNN/protein_mpnn_run.py --help
 ```
 
-若固定提交的官方环境安装说明与本机CUDA不兼容，应保留固定源码和权重不变，仅调整PyTorch/CUDA构建，并在复现记录中注明偏差。
+旧版上游 `env/SE3nv.yml` 使用不同的PyTorch/CUDA组合，不应与这套重建清单混装。任何兼容性调整都需另建环境、记录偏差并重新验收，不要覆盖现有工作环境。
 
 ## 7 建立Boltz-2环境
 
+固定依赖重建入口见 `src/install_gpu_environment.sh` 和 `environments/boltz-test-pins.txt`；安装验收状态以 `environments/README.md` 为准。
+
 ```bash
-conda create -n boltz python=3.11 -y
-conda activate boltz
-python -m pip install "boltz[cuda]==2.2.1"
-boltz predict --help
+bash src/install_gpu_environment.sh boltz "$PWD/.envs"
+"$PWD/.envs/boltz/bin/boltz" predict --help
 ```
 
-这只固定Boltz版本，并未锁定其全部依赖；pip可能选择与历史环境不同的PyTorch/CUDA版本。安装成功或`--help`成功不能代替GPU推理测试。在线MSA会将输入蛋白序列发送到 `https://api.colabfold.com`，执行前须确认允许向该服务提交这些序列。
+本入口按测试环境固定各项Python依赖版本；它不是历史锁文件，也不是所有下载文件的哈希锁。安装成功或`--help`成功不能代替GPU推理测试。在线MSA会将输入蛋白序列发送到 `https://api.colabfold.com`，执行前须确认允许向该服务提交这些序列。
 
 首次预测会把Boltz-2模型和分子缓存下载到 `BOLTZ_CACHE`。完整流程使用：
 
@@ -142,11 +134,11 @@ nano src/local_paths.sh
 
 ```bash
 RFDIFFUSION_DIR="$PACKAGE_ROOT/external/RFdiffusion"
-RFDIFFUSION_PYTHON="$HOME/miniconda3/envs/rfdiffusion/bin/python"
+RFDIFFUSION_PYTHON="$PACKAGE_ROOT/.envs/rfdiffusion/bin/python"
 PROTEIN_MPNN_DIR="$PACKAGE_ROOT/external/ProteinMPNN"
 PROTEIN_MPNN_PYTHON="$RFDIFFUSION_PYTHON"
-BOLTZ_PYTHON="$HOME/miniconda3/envs/boltz/bin/python"
-BOLTZ_EXE="$HOME/miniconda3/envs/boltz/bin/boltz"
+BOLTZ_PYTHON="$PACKAGE_ROOT/.envs/boltz/bin/python"
+BOLTZ_EXE="$PACKAGE_ROOT/.envs/boltz/bin/boltz"
 BOLTZ_CACHE="$PACKAGE_ROOT/cache/boltz"
 ```
 

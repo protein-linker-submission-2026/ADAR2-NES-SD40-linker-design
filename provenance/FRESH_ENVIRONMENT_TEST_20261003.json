@@ -1,0 +1,835 @@
+{
+  "date": "2026-10-03",
+  "scope": "Fresh venv dependencies from separately retained wheel archives; existing base Python, OS, driver and pretrained weights reused. Installations interrupted and resumed before acceptance.",
+  "excluded_claims": [
+    "No new OS/driver installation",
+    "No complete online Conda/download branch acceptance",
+    "Not a historical production lockfile",
+    "Not a full-distance rerun"
+  ],
+  "source_revisions": {
+    "RFdiffusion": "86507b6538f51fce57b5a72477165f03999ed7ae",
+    "ProteinMPNN": "8907e6671bfbfc92303b5f79c4b5e6ce47cdef57",
+    "NVIDIA_DeepLearningExamples_SE3Transformer": "729963dd47e7c8bd462ad10bfac7a7b0b604e6dd"
+  },
+  "dgl_official_archive_used_for_final_test": {
+    "url": "https://data.dgl.ai/wheels/torch-2.4/cu121/dgl-2.4.0%2Bcu121-cp39-cp39-manylinux1_x86_64.whl",
+    "bytes": 355172350,
+    "sha256": "c2e9f089e52f6788553a6478fe9872cd96728a61f66f603356dc46fcb254efcf",
+    "note": "Fresh install initially used a different cached build with the same version; explicitly replaced with this freshly downloaded official archive before final inference."
+  },
+  "environments": {
+    "rfdiffusion": {
+      "isolation_check": {
+        "mode": "rfdiffusion",
+        "python": "3.9.23",
+        "packages_imported_from_new_environment": [
+          "torch",
+          "numpy",
+          "yaml",
+          "dgl",
+          "se3_transformer",
+          "rfdiffusion"
+        ],
+        "torch": "2.4.0+cu121",
+        "torch_cuda_build": "12.1",
+        "libc": [
+          "glibc",
+          "2.43"
+        ],
+        "os_release": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+        "gpu_driver": {
+          "exit_code": 0,
+          "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 610.88",
+          "stderr": ""
+        },
+        "system_library_packages": {
+          "exit_code": 0,
+          "stdout": "g++=4:15.2.0-5ubuntu1\ngcc=4:15.2.0-5ubuntu1\nlibc6=2.43-2ubuntu2.3\nlibgomp1=16-20260322-1ubuntu1\nlibstdc++6=16-20260322-1ubuntu1\nzlib1g=1:1.3.dfsg+really1.3.1-1ubuntu3.1",
+          "stderr": ""
+        },
+        "pip_check": {
+          "exit_code": 0,
+          "stdout": "No broken requirements found.",
+          "stderr": ""
+        },
+        "cuda_tensor_test": "PASS",
+        "scope": "New dependency environment on existing OS/driver and Python interpreter; not a fresh-machine installation"
+      },
+      "runtime": {
+        "label": "rfdiffusion",
+        "scope": "Observed environment for this run, not a historical lockfile",
+        "python": "3.9.23",
+        "system": "Linux",
+        "packages": [
+          {
+            "name": "annotated-types",
+            "version": "0.7.0"
+          },
+          {
+            "name": "antlr4-python3-runtime",
+            "version": "4.9.3"
+          },
+          {
+            "name": "asttokens",
+            "version": "3.0.2"
+          },
+          {
+            "name": "biopython",
+            "version": "1.85"
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22"
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.1"
+          },
+          {
+            "name": "click",
+            "version": "8.1.8"
+          },
+          {
+            "name": "colorama",
+            "version": "0.4.6"
+          },
+          {
+            "name": "contourpy",
+            "version": "1.3.0"
+          },
+          {
+            "name": "cycler",
+            "version": "0.12.1"
+          },
+          {
+            "name": "decorator",
+            "version": "5.3.1"
+          },
+          {
+            "name": "dgl",
+            "version": "2.4.0+cu121"
+          },
+          {
+            "name": "e3nn",
+            "version": "0.6.0"
+          },
+          {
+            "name": "einops",
+            "version": "0.8.2"
+          },
+          {
+            "name": "eval_type_backport",
+            "version": "0.4.0"
+          },
+          {
+            "name": "executing",
+            "version": "2.2.1"
+          },
+          {
+            "name": "filelock",
+            "version": "3.19.1"
+          },
+          {
+            "name": "fonttools",
+            "version": "4.60.2"
+          },
+          {
+            "name": "fsspec",
+            "version": "2025.10.0"
+          },
+          {
+            "name": "gitdb",
+            "version": "4.0.12"
+          },
+          {
+            "name": "GitPython",
+            "version": "3.1.61"
+          },
+          {
+            "name": "hydra-core",
+            "version": "1.3.6"
+          },
+          {
+            "name": "icecream",
+            "version": "2.2.0"
+          },
+          {
+            "name": "idna",
+            "version": "3.19"
+          },
+          {
+            "name": "importlib_resources",
+            "version": "6.5.2"
+          },
+          {
+            "name": "Jinja2",
+            "version": "3.1.6"
+          },
+          {
+            "name": "kiwisolver",
+            "version": "1.4.7"
+          },
+          {
+            "name": "MarkupSafe",
+            "version": "3.0.3"
+          },
+          {
+            "name": "matplotlib",
+            "version": "3.9.4"
+          },
+          {
+            "name": "mpmath",
+            "version": "1.3.0"
+          },
+          {
+            "name": "networkx",
+            "version": "3.2.1"
+          },
+          {
+            "name": "numpy",
+            "version": "2.0.2"
+          },
+          {
+            "name": "nvidia-cublas-cu12",
+            "version": "12.1.3.1"
+          },
+          {
+            "name": "nvidia-cuda-cupti-cu12",
+            "version": "12.1.105"
+          },
+          {
+            "name": "nvidia-cuda-nvrtc-cu12",
+            "version": "12.1.105"
+          },
+          {
+            "name": "nvidia-cuda-runtime-cu12",
+            "version": "12.1.105"
+          },
+          {
+            "name": "nvidia-cudnn-cu12",
+            "version": "9.1.0.70"
+          },
+          {
+            "name": "nvidia-cufft-cu12",
+            "version": "11.0.2.54"
+          },
+          {
+            "name": "nvidia-curand-cu12",
+            "version": "10.3.2.106"
+          },
+          {
+            "name": "nvidia-cusolver-cu12",
+            "version": "11.4.5.107"
+          },
+          {
+            "name": "nvidia-cusparse-cu12",
+            "version": "12.1.0.106"
+          },
+          {
+            "name": "nvidia-nccl-cu12",
+            "version": "2.20.5"
+          },
+          {
+            "name": "nvidia-nvjitlink-cu12",
+            "version": "12.9.86"
+          },
+          {
+            "name": "nvidia-nvtx-cu12",
+            "version": "12.1.105"
+          },
+          {
+            "name": "omegaconf",
+            "version": "2.3.1"
+          },
+          {
+            "name": "opt-einsum-fx",
+            "version": "0.1.4"
+          },
+          {
+            "name": "opt_einsum",
+            "version": "3.4.0"
+          },
+          {
+            "name": "packaging",
+            "version": "26.3"
+          },
+          {
+            "name": "pandas",
+            "version": "2.3.3"
+          },
+          {
+            "name": "pillow",
+            "version": "11.3.0"
+          },
+          {
+            "name": "pip",
+            "version": "23.0.1"
+          },
+          {
+            "name": "platformdirs",
+            "version": "4.4.0"
+          },
+          {
+            "name": "protobuf",
+            "version": "6.33.6"
+          },
+          {
+            "name": "psutil",
+            "version": "7.2.2"
+          },
+          {
+            "name": "pydantic",
+            "version": "2.13.5"
+          },
+          {
+            "name": "pydantic_core",
+            "version": "2.46.5"
+          },
+          {
+            "name": "Pygments",
+            "version": "2.21.0"
+          },
+          {
+            "name": "pyparsing",
+            "version": "3.3.2"
+          },
+          {
+            "name": "pyrsistent",
+            "version": "0.20.0"
+          },
+          {
+            "name": "python-dateutil",
+            "version": "2.9.0.post0"
+          },
+          {
+            "name": "pytz",
+            "version": "2026.3.post1"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3"
+          },
+          {
+            "name": "requests",
+            "version": "2.32.5"
+          },
+          {
+            "name": "rfdiffusion",
+            "version": "1.1.0"
+          },
+          {
+            "name": "scipy",
+            "version": "1.13.1"
+          },
+          {
+            "name": "se3-transformer",
+            "version": "1.2.0"
+          },
+          {
+            "name": "sentry-sdk",
+            "version": "2.68.1"
+          },
+          {
+            "name": "setuptools",
+            "version": "58.1.0"
+          },
+          {
+            "name": "six",
+            "version": "1.17.0"
+          },
+          {
+            "name": "smmap",
+            "version": "5.0.3"
+          },
+          {
+            "name": "sympy",
+            "version": "1.13.1"
+          },
+          {
+            "name": "torch",
+            "version": "2.4.0"
+          },
+          {
+            "name": "tqdm",
+            "version": "4.70.0"
+          },
+          {
+            "name": "triton",
+            "version": "3.0.0"
+          },
+          {
+            "name": "typing-inspection",
+            "version": "0.4.2"
+          },
+          {
+            "name": "typing_extensions",
+            "version": "4.16.0"
+          },
+          {
+            "name": "tzdata",
+            "version": "2026.3"
+          },
+          {
+            "name": "urllib3",
+            "version": "2.6.3"
+          },
+          {
+            "name": "wandb",
+            "version": "0.26.1"
+          },
+          {
+            "name": "wheel",
+            "version": "0.45.1"
+          },
+          {
+            "name": "zipp",
+            "version": "3.23.1"
+          }
+        ]
+      },
+      "dependency_entries_verified": 76
+    },
+    "boltz": {
+      "isolation_check": {
+        "mode": "boltz",
+        "python": "3.11.16",
+        "packages_imported_from_new_environment": [
+          "torch",
+          "numpy",
+          "yaml",
+          "boltz"
+        ],
+        "torch": "2.14.0+cu130",
+        "torch_cuda_build": "13.0",
+        "libc": [
+          "glibc",
+          "2.43"
+        ],
+        "os_release": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+        "gpu_driver": {
+          "exit_code": 0,
+          "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 610.88",
+          "stderr": ""
+        },
+        "system_library_packages": {
+          "exit_code": 0,
+          "stdout": "g++=4:15.2.0-5ubuntu1\ngcc=4:15.2.0-5ubuntu1\nlibc6=2.43-2ubuntu2.3\nlibgomp1=16-20260322-1ubuntu1\nlibstdc++6=16-20260322-1ubuntu1\nzlib1g=1:1.3.dfsg+really1.3.1-1ubuntu3.1",
+          "stderr": ""
+        },
+        "pip_check": {
+          "exit_code": 0,
+          "stdout": "No broken requirements found.",
+          "stderr": ""
+        },
+        "cuda_tensor_test": "PASS",
+        "scope": "New dependency environment on existing OS/driver and Python interpreter; not a fresh-machine installation"
+      },
+      "runtime": {
+        "label": "boltz",
+        "scope": "Observed environment for this run, not a historical lockfile",
+        "python": "3.11.16",
+        "system": "Linux",
+        "packages": [
+          {
+            "name": "aiohappyeyeballs",
+            "version": "2.7.1"
+          },
+          {
+            "name": "aiohttp",
+            "version": "3.14.3"
+          },
+          {
+            "name": "aiosignal",
+            "version": "1.4.0"
+          },
+          {
+            "name": "antlr4-python3-runtime",
+            "version": "4.9.3"
+          },
+          {
+            "name": "attrs",
+            "version": "26.1.0"
+          },
+          {
+            "name": "biopython",
+            "version": "1.84"
+          },
+          {
+            "name": "boltz",
+            "version": "2.2.1"
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22"
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.1"
+          },
+          {
+            "name": "chembl-structure-pipeline",
+            "version": "1.2.2"
+          },
+          {
+            "name": "click",
+            "version": "8.1.7"
+          },
+          {
+            "name": "cloudpickle",
+            "version": "3.1.2"
+          },
+          {
+            "name": "cuda-bindings",
+            "version": "13.3.1"
+          },
+          {
+            "name": "cuda-pathfinder",
+            "version": "1.8.1"
+          },
+          {
+            "name": "cuda-toolkit",
+            "version": "13.0.3.0"
+          },
+          {
+            "name": "cuequivariance",
+            "version": "0.11.1"
+          },
+          {
+            "name": "cuequivariance-ops-cu12",
+            "version": "0.11.1"
+          },
+          {
+            "name": "cuequivariance-ops-torch-cu12",
+            "version": "0.11.1"
+          },
+          {
+            "name": "cuequivariance-torch",
+            "version": "0.11.1"
+          },
+          {
+            "name": "dm-tree",
+            "version": "0.1.8"
+          },
+          {
+            "name": "docker-pycreds",
+            "version": "0.4.0"
+          },
+          {
+            "name": "einops",
+            "version": "0.8.0"
+          },
+          {
+            "name": "einx",
+            "version": "0.3.0"
+          },
+          {
+            "name": "fairscale",
+            "version": "0.4.13"
+          },
+          {
+            "name": "filelock",
+            "version": "3.32.5"
+          },
+          {
+            "name": "frozendict",
+            "version": "2.4.7"
+          },
+          {
+            "name": "frozenlist",
+            "version": "1.8.0"
+          },
+          {
+            "name": "fsspec",
+            "version": "2026.7.0"
+          },
+          {
+            "name": "gemmi",
+            "version": "0.6.5"
+          },
+          {
+            "name": "gitdb",
+            "version": "4.0.12"
+          },
+          {
+            "name": "GitPython",
+            "version": "3.1.62"
+          },
+          {
+            "name": "hydra-core",
+            "version": "1.3.2"
+          },
+          {
+            "name": "idna",
+            "version": "3.19"
+          },
+          {
+            "name": "ihm",
+            "version": "2.11"
+          },
+          {
+            "name": "Jinja2",
+            "version": "3.1.6"
+          },
+          {
+            "name": "joblib",
+            "version": "1.6.0"
+          },
+          {
+            "name": "lightning-utilities",
+            "version": "0.15.3"
+          },
+          {
+            "name": "llvmlite",
+            "version": "0.44.0"
+          },
+          {
+            "name": "MarkupSafe",
+            "version": "3.0.3"
+          },
+          {
+            "name": "mashumaro",
+            "version": "3.14"
+          },
+          {
+            "name": "modelcif",
+            "version": "1.2"
+          },
+          {
+            "name": "mpmath",
+            "version": "1.3.0"
+          },
+          {
+            "name": "msgpack",
+            "version": "1.2.2"
+          },
+          {
+            "name": "multidict",
+            "version": "6.7.1"
+          },
+          {
+            "name": "networkx",
+            "version": "3.6.1"
+          },
+          {
+            "name": "numba",
+            "version": "0.61.0"
+          },
+          {
+            "name": "numpy",
+            "version": "1.26.4"
+          },
+          {
+            "name": "nvidia-cublas",
+            "version": "13.1.1.3"
+          },
+          {
+            "name": "nvidia-cublas-cu12",
+            "version": "12.9.2.10"
+          },
+          {
+            "name": "nvidia-cuda-cupti",
+            "version": "13.0.85"
+          },
+          {
+            "name": "nvidia-cuda-nvrtc",
+            "version": "13.0.88"
+          },
+          {
+            "name": "nvidia-cuda-nvrtc-cu12",
+            "version": "12.9.86"
+          },
+          {
+            "name": "nvidia-cuda-runtime",
+            "version": "13.0.96"
+          },
+          {
+            "name": "nvidia-cudnn-cu13",
+            "version": "9.24.0.43"
+          },
+          {
+            "name": "nvidia-cufft",
+            "version": "12.0.0.61"
+          },
+          {
+            "name": "nvidia-cufile",
+            "version": "1.15.1.6"
+          },
+          {
+            "name": "nvidia-curand",
+            "version": "10.4.0.35"
+          },
+          {
+            "name": "nvidia-cusolver",
+            "version": "12.0.4.66"
+          },
+          {
+            "name": "nvidia-cusparse",
+            "version": "12.6.3.3"
+          },
+          {
+            "name": "nvidia-cusparselt-cu13",
+            "version": "0.8.1"
+          },
+          {
+            "name": "nvidia-ml-py",
+            "version": "13.610.43"
+          },
+          {
+            "name": "nvidia-nccl-cu13",
+            "version": "2.30.7"
+          },
+          {
+            "name": "nvidia-nvjitlink",
+            "version": "13.3.33"
+          },
+          {
+            "name": "nvidia-nvshmem-cu13",
+            "version": "3.4.5"
+          },
+          {
+            "name": "nvidia-nvtx",
+            "version": "13.0.85"
+          },
+          {
+            "name": "omegaconf",
+            "version": "2.3.1"
+          },
+          {
+            "name": "opt_einsum",
+            "version": "3.4.0"
+          },
+          {
+            "name": "packaging",
+            "version": "26.3"
+          },
+          {
+            "name": "pandas",
+            "version": "3.0.5"
+          },
+          {
+            "name": "pillow",
+            "version": "12.3.0"
+          },
+          {
+            "name": "pip",
+            "version": "24.0"
+          },
+          {
+            "name": "platformdirs",
+            "version": "4.11.7"
+          },
+          {
+            "name": "propcache",
+            "version": "0.5.2"
+          },
+          {
+            "name": "protobuf",
+            "version": "5.29.6"
+          },
+          {
+            "name": "psutil",
+            "version": "7.2.2"
+          },
+          {
+            "name": "python-dateutil",
+            "version": "2.9.0.post0"
+          },
+          {
+            "name": "pytorch-lightning",
+            "version": "2.5.0"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.2"
+          },
+          {
+            "name": "rdkit",
+            "version": "2026.3.6"
+          },
+          {
+            "name": "requests",
+            "version": "2.32.3"
+          },
+          {
+            "name": "scikit-learn",
+            "version": "1.6.1"
+          },
+          {
+            "name": "scipy",
+            "version": "1.13.1"
+          },
+          {
+            "name": "sentry-sdk",
+            "version": "2.68.1"
+          },
+          {
+            "name": "setproctitle",
+            "version": "1.3.7"
+          },
+          {
+            "name": "setuptools",
+            "version": "79.0.1"
+          },
+          {
+            "name": "six",
+            "version": "1.17.0"
+          },
+          {
+            "name": "smmap",
+            "version": "5.0.3"
+          },
+          {
+            "name": "sympy",
+            "version": "1.14.0"
+          },
+          {
+            "name": "threadpoolctl",
+            "version": "3.6.0"
+          },
+          {
+            "name": "torch",
+            "version": "2.14.0"
+          },
+          {
+            "name": "torchmetrics",
+            "version": "1.9.0"
+          },
+          {
+            "name": "tqdm",
+            "version": "4.70.0"
+          },
+          {
+            "name": "triton",
+            "version": "3.8.0"
+          },
+          {
+            "name": "types-requests",
+            "version": "2.33.0.20260906"
+          },
+          {
+            "name": "typing_extensions",
+            "version": "4.16.0"
+          },
+          {
+            "name": "urllib3",
+            "version": "2.7.0"
+          },
+          {
+            "name": "wandb",
+            "version": "0.18.7"
+          },
+          {
+            "name": "wheel",
+            "version": "0.45.1"
+          },
+          {
+            "name": "yarl",
+            "version": "1.24.5"
+          }
+        ]
+      },
+      "dependency_entries_verified": 96
+    }
+  }
+}

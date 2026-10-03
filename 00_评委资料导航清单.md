@@ -30,6 +30,7 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 5. `docs/VERSIONS.md`、`docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`及`REPRODUCE_FROM_ZERO.md`：环境证据和复现方法。
 6. `SUBMISSION_COMPLIANCE.md`：附件5要求与材料位置的对应关系。
 7. `docs/REPRODUCTION_TEST_20261003.md`：独立复现测试范围、实测通过步骤、入口修正及尚未验证的步骤；预检通过不等于端到端通过。
+8. `environments/README.md`、`docs/FRESH_ENVIRONMENT_TEST_20261003.md`：RF/MPNN、Boltz及Windows工具的分别固定依赖、额外SE3源码版本、安装入口与独立依赖环境验收；不能将测试环境清单当作历史环境原件。
 
 ## 三、结果范围与编号
 
@@ -62,6 +63,7 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 | 数据来源与第三方工具 | `data/README.md`、`DATA_SOURCES.md`、`THIRD_PARTY_SOFTWARE.md` |
 | 模型权重获取与安装 | `models/README.md`、`src/setup_external_sources.sh`、`REPRODUCE_FROM_ZERO.md` |
 | 环境证据与复现边界 | `docs/VERSIONS.md`、`docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`、`docs/REPRODUCIBILITY_STATUS.md` |
+| 独立测试环境安装 | `environments/README.md`、`src/install_gpu_environment.sh`、`provenance/FRESH_ENVIRONMENT_TEST_20261003.json`；包括Python、GPU依赖、系统库与实际安装检查 |
 | 文件完整性与来源 | `provenance/`、`validate_submission.py` |
 
 ## 五、完整原始记录下载对应
@@ -85,7 +87,9 @@ GitHub自动生成的 `Source code (zip/tar.gz)` 对应Release标签的源码快
 
 本次已收录报告的脱敏摘要。报告所述锁文件、环境导出及Git工作区差异等原始附件尚未随本次说明交付，不能据摘要独立验证全部依赖条目。当前导出也不等于计算当日的逐次快照。详细证据边界见 `docs/ENVIRONMENT_VERIFICATION_SUPPLEMENT.md`。
 
-已提交结果的轻量重建、结构映射与文件检查已通过；尚无本次整理后全新环境安装并完成全部模型及对接步骤的端到端验收记录。在线MSA服务、GPU和数值内核变化可能影响新采样结果，不承诺坐标与评分逐位相同。
+已提交结果的轻量重建、结构映射与文件检查已通过。2026-10-03进一步在新建RF/MPNN及Boltz依赖环境完成独立小样本端到端，覆盖RF、MPNN、在线MSA、6个Boltz模型、RMSD、6次Vina对接、Ranker和CSV/XLSX。环境安装、实际系统库、版本逐条核对、脱敏日志和小样本统计均已入包，见 `environments/README.md`、`docs/FRESH_ENVIRONMENT_TEST_20261003.md` 及 `provenance/FRESH_ENVIRONMENT_*_20261003.json`。
+
+这轮复用基础解释器、操作系统、驱动和权重，不等于新机器、全量在线安装或全部历史批次重跑；历史锁文件原件仍待补交。在线MSA服务、GPU和数值内核变化可能影响新采样结果，不承诺坐标与评分逐位相同。
 
 ## 七、轻量结果复核
 
@@ -113,9 +117,13 @@ bash run.sh
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\run_full.ps1 -CheckOnly
-powershell -ExecutionPolicy Bypass -File .\run_full.ps1
+powershell -ExecutionPolicy Bypass -File .\run_full.ps1 -Spans 15 -SmokeTest -OutputRoot 'E:\ADAR2_smoke_test'
 ```
 
 完整入口覆盖：参考结构准备 → 初始位姿 → RFdiffusion → ProteinMPNN → 序列QC → MSA → Boltz-2 → Linker RMSD → Vina → SD40评分 → 标准化结果清单。
 
+上面第二条为独立小样本：1个RF骨架、10条MPNN序列，选1条QC通过设计加baseline，每条3个Boltz模型。确需重跑完整距离批次时，再执行 `powershell -ExecutionPolicy Bypass -File .\run_full.ps1`。小样本与完整批次使用不同输出目录。在线MSA会向公共服务提交输入序列，运行前请确认允许提交；只阅读和轻量复核无需提交序列。
+
 `-CheckOnly`仅检查路径与部分前置条件，不执行模型。所需资源、安装方法与当前验收边界以复现手册和环境说明为准。
+
+入口默认发行版名为 `Ubuntu-22.04`。本次独立测试使用 `Ubuntu-26.04`，使用该环境时两条命令均需加 `-WslDistribution Ubuntu-26.04`；其他电脑以实际发行版名为准。多个Windows Python并存时，使用 `-WindowsPython` 指定已安装轻量依赖的解释器。

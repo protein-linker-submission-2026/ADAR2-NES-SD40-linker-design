@@ -67,6 +67,18 @@ TEXT_EXTENSIONS = {
     ".py", ".sh", ".ps1", ".ipynb",
 }
 OFFICE_EXTENSIONS = {".docx", ".xlsx", ".pptx"}
+LOCAL_ONLY_DIRECTORIES = {'.git', '.envs', '.venv', 'external', 'cache', 'reproduction_runs'}
+
+
+def iter_package_files(root: Path):
+    for directory, directories, files in os.walk(root):
+        current = Path(directory)
+        directories[:] = [name for name in directories if name != '__pycache__'
+                          and not (current == root and name in LOCAL_ONLY_DIRECTORIES)]
+        for name in files:
+            path = current / name
+            if path.relative_to(root).as_posix() != 'src/local_paths.sh':
+                yield path
 
 
 def csv_rows(relative: str) -> int:
@@ -135,29 +147,28 @@ def main() -> None:
     # A local clone necessarily contains .git. GitHub source archives and the
     # competition ZIP generated from tracked files do not include it.
 
-    for path in ROOT.rglob("*"):
-        if not path.is_file():
-            continue
+    for path in iter_package_files(ROOT):
         if path.resolve() == Path(__file__).resolve():
             continue
         relative = str(path.relative_to(ROOT))
         scan_forbidden(relative, f"path {relative}", errors)
         suffix = path.suffix.lower()
+        readable = Path("\\\\?\\" + str(path.resolve())) if os.name == 'nt' else path
         if suffix in TEXT_EXTENSIONS:
             try:
-                text = path.read_text(encoding="utf-8-sig", errors="strict")
+                text = readable.read_text(encoding="utf-8-sig", errors="strict")
             except UnicodeError:
                 continue
             scan_forbidden(text, relative, errors)
         elif suffix in OFFICE_EXTENSIONS:
-            with zipfile.ZipFile(path) as package:
+            with zipfile.ZipFile(readable) as package:
                 for member in package.namelist():
                     if not member.endswith((".xml", ".rels")):
                         continue
                     text = package.read(member).decode("utf-8", errors="ignore")
                     scan_forbidden(text, f"{relative}:{member}", errors)
         elif suffix == ".pdf":
-            text = path.read_bytes().decode("latin-1", errors="ignore")
+            text = readable.read_bytes().decode("latin-1", errors="ignore")
             scan_forbidden(text, relative, errors)
 
     if errors:

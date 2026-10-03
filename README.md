@@ -101,7 +101,7 @@ powershell -ExecutionPolicy Bypass -File .\run_full.ps1 -CheckOnly
 powershell -ExecutionPolicy Bypass -File .\run_full.ps1
 ```
 
-For a smaller first test, add `-Spans 15`. The full entry point ends by writing `reproduction_runs/final/results.csv` and `results.xlsx`. `src/run_pipeline.sh` is retained only as a stage-development utility and is not the complete cross-platform reproduction entry point.
+For a smaller first test, use `-Spans 15 -SmokeTest -OutputRoot 'E:\ADAR2_smoke_test'` in a separate directory: one RF backbone, ten MPNN samples, then one QC-passing design and the baseline, each with three Boltz models. `-Spans 15` alone still runs the complete configured batch for that span. The full entry point ends by writing `final/results.csv` and `results.xlsx` under its output root. `src/run_pipeline.sh` is retained only as a stage-development utility and is not the complete cross-platform reproduction entry point.
 
 ## Environment and resources
 
@@ -110,7 +110,7 @@ For a smaller first test, add `-Spans 15`. The full entry point ends by writing 
 - Boltz-2 was run with `--no_kernels`; three models were generated per candidate. Individual runtimes and command records are retained under `logs/`.
 - The lightweight result rebuild is expected to complete in under 5 minutes with less than 2 GB RAM on a typical CPU and does not require a GPU. In the RTX 4070 production logs, RFdiffusion required about 4.5-5.6 minutes per backbone; full regeneration comprises many RFdiffusion, ProteinMPNN, Boltz-2, and docking jobs and can require many hours to days depending on network and scheduling. Per-task timestamps are retained under `logs/`.
 
-Exact package dependencies are in `requirements.txt` and `environment.yml`; full-pipeline versions are in `docs/VERSIONS.md`. Inputs, outputs, chain conventions, coordinate units, residue boundaries, and protonation handling are documented in `data/README.md`, `results/README.md`, and `docs/STRUCTURE_FILES.md`.
+`requirements.txt` and `environment.yml` cover only the lightweight review tools, not the GPU pipeline. Separate exact-version test dependency lists and the GPU environment installer are in `environments/README.md`; historical full-pipeline version evidence is in `docs/VERSIONS.md`. These are different evidence sources, not a single historical lockfile. Inputs, outputs, chain conventions, coordinate units, residue boundaries, and protonation handling are documented in `data/README.md`, `results/README.md`, and `docs/STRUCTURE_FILES.md`.
 
 ## Decision rules
 

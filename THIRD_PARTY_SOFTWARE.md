@@ -3,6 +3,7 @@
 | Software or service | Version or identifier | License/terms and official source | Use | Distribution in this package |
 | --- | --- | --- | --- | --- |
 | RFdiffusion | `86507b6538f51fce57b5a72477165f03999ed7ae` | BSD; https://github.com/RosettaCommons/RFdiffusion | Backbone generation | Configuration and invocation only |
+| NVIDIA SE3Transformer (independent test environment) | DeepLearningExamples `729963dd47e7c8bd462ad10bfac7a7b0b604e6dd`, `DGLPyTorch/DrugDiscovery/SE3Transformer` | Retain upstream component license notices; https://github.com/NVIDIA/DeepLearningExamples | RFdiffusion dependency in the 2026-10-03 independent test, not asserted as historical production provenance | Fixed source retrieval and installation instructions; source is not redistributed here |
 | ProteinMPNN | `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57` | MIT; https://github.com/dauparas/ProteinMPNN | Linker sequence design | Configuration and invocation only |
 | Boltz | 2.2.1, Boltz-2 model | MIT; https://github.com/jwohlwend/boltz | Full-fusion prediction | Inputs, outputs, parameters; weights excluded |
 | ColabFold MMseqs2 API | Historical server build and database snapshot unverified; invoked by Boltz 2.2.1 | Official project and citations: https://github.com/sokrypton/ColabFold | Production-batch MSA generation | Returned MSA and logs in full archives; detailed evidence in `docs/ONLINE_MSA_PROVENANCE.md` |

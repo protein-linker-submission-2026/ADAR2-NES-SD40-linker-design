@@ -1,0 +1,233 @@
+3.11.16 (main, Sep  2 2026, 23:39:52) [GCC 15.3.0]
+<TEST_ROOT>/public_envs/boltz
+Looking in links: <TEST_ROOT>/wheelhouse
+Requirement already satisfied: wheel==0.45.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (0.45.1)
+Looking in links: <TEST_ROOT>/wheelhouse
+Requirement already satisfied: aiohappyeyeballs==2.7.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 3)) (2.7.1)
+Processing <TEST_ROOT>/wheelhouse/aiohttp-3.14.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 4))
+Processing <TEST_ROOT>/wheelhouse/aiosignal-1.4.0-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 5))
+Requirement already satisfied: antlr4-python3-runtime==4.9.3 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 6)) (4.9.3)
+Requirement already satisfied: attrs==26.1.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 7)) (26.1.0)
+Processing <TEST_ROOT>/wheelhouse/biopython-1.84-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 8))
+Processing <TEST_ROOT>/wheelhouse/boltz-2.2.1-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 9))
+Requirement already satisfied: certifi==2026.7.22 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 10)) (2026.7.22)
+Requirement already satisfied: charset-normalizer==3.5.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 11)) (3.5.1)
+Processing <TEST_ROOT>/wheelhouse/chembl_structure_pipeline-1.2.2-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 12))
+Requirement already satisfied: click==8.1.7 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 13)) (8.1.7)
+Requirement already satisfied: cloudpickle==3.1.2 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 14)) (3.1.2)
+Processing <TEST_ROOT>/wheelhouse/cuda_bindings-13.3.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 15))
+Requirement already satisfied: cuda-pathfinder==1.8.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 16)) (1.8.1)
+Requirement already satisfied: cuda-toolkit==13.0.3.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 17)) (13.0.3.0)
+Processing <TEST_ROOT>/wheelhouse/cuequivariance-0.11.1-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 18))
+Processing <TEST_ROOT>/wheelhouse/cuequivariance_ops_cu12-0.11.1-py3-none-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 19))
+Processing <TEST_ROOT>/wheelhouse/cuequivariance_ops_torch_cu12-0.11.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 20))
+Processing <TEST_ROOT>/wheelhouse/cuequivariance_torch-0.11.1-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 21))
+Requirement already satisfied: dm-tree==0.1.8 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 22)) (0.1.8)
+Processing <TEST_ROOT>/wheelhouse/docker_pycreds-0.4.0-py2.py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 23))
+Requirement already satisfied: einops==0.8.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 24)) (0.8.0)
+Processing <TEST_ROOT>/wheelhouse/einx-0.3.0-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 25))
+Processing <TEST_ROOT>/wheelhouse/fairscale-0.4.13-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 26))
+Requirement already satisfied: filelock==3.32.5 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 27)) (3.32.5)
+Requirement already satisfied: frozendict==2.4.7 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 28)) (2.4.7)
+Requirement already satisfied: frozenlist==1.8.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 29)) (1.8.0)
+Requirement already satisfied: fsspec==2026.7.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 30)) (2026.7.0)
+Requirement already satisfied: gemmi==0.6.5 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 31)) (0.6.5)
+Processing <TEST_ROOT>/wheelhouse/gitdb-4.0.12-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 32))
+Processing <TEST_ROOT>/wheelhouse/gitpython-3.1.62-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 33))
+Processing <TEST_ROOT>/wheelhouse/hydra_core-1.3.2-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 34))
+Requirement already satisfied: idna==3.19 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 35)) (3.19)
+Processing <TEST_ROOT>/wheelhouse/ihm-2.11-cp311-cp311-linux_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 36))
+Processing <TEST_ROOT>/wheelhouse/jinja2-3.1.6-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 37))
+Processing <TEST_ROOT>/wheelhouse/joblib-1.6.0-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 38))
+Processing <TEST_ROOT>/wheelhouse/lightning_utilities-0.15.3-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 39))
+Requirement already satisfied: llvmlite==0.44.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 40)) (0.44.0)
+Requirement already satisfied: MarkupSafe==3.0.3 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 41)) (3.0.3)
+Processing <TEST_ROOT>/wheelhouse/mashumaro-3.14-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 42))
+Processing <TEST_ROOT>/wheelhouse/modelcif-1.2-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 43))
+Requirement already satisfied: mpmath==1.3.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 44)) (1.3.0)
+Requirement already satisfied: msgpack==1.2.2 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 45)) (1.2.2)
+Requirement already satisfied: multidict==6.7.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 46)) (6.7.1)
+Requirement already satisfied: networkx==3.6.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 47)) (3.6.1)
+Processing <TEST_ROOT>/wheelhouse/numba-0.61.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 48))
+Requirement already satisfied: numpy==1.26.4 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 49)) (1.26.4)
+Processing <TEST_ROOT>/wheelhouse/nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 50))
+Processing <TEST_ROOT>/wheelhouse/nvidia_cublas_cu12-12.9.2.10-py3-none-manylinux_2_27_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 51))
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 52)) (13.0.85)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 53)) (13.0.88)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.9.86 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 54)) (12.9.86)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 55)) (13.0.96)
+Processing <TEST_ROOT>/wheelhouse/nvidia_cudnn_cu13-9.24.0.43-py3-none-manylinux_2_27_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 56))
+Requirement already satisfied: nvidia-cufft==12.0.0.61 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 57)) (12.0.0.61)
+Requirement already satisfied: nvidia-cufile==1.15.1.6 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 58)) (1.15.1.6)
+Requirement already satisfied: nvidia-curand==10.4.0.35 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 59)) (10.4.0.35)
+Processing <TEST_ROOT>/wheelhouse/nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 60))
+Requirement already satisfied: nvidia-cusparse==12.6.3.3 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 61)) (12.6.3.3)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 62)) (0.8.1)
+Requirement already satisfied: nvidia-ml-py==13.610.43 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 63)) (13.610.43)
+Requirement already satisfied: nvidia-nccl-cu13==2.30.7 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 64)) (2.30.7)
+Requirement already satisfied: nvidia-nvjitlink==13.3.33 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 65)) (13.3.33)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 66)) (3.4.5)
+Requirement already satisfied: nvidia-nvtx==13.0.85 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 67)) (13.0.85)
+Requirement already satisfied: omegaconf==2.3.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 68)) (2.3.1)
+Requirement already satisfied: opt_einsum==3.4.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 69)) (3.4.0)
+Requirement already satisfied: packaging==26.3 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 70)) (26.3)
+Processing <TEST_ROOT>/wheelhouse/pandas-3.0.5-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 71))
+Requirement already satisfied: pillow==12.3.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 72)) (12.3.0)
+Requirement already satisfied: platformdirs==4.11.7 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 73)) (4.11.7)
+Requirement already satisfied: propcache==0.5.2 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 74)) (0.5.2)
+Requirement already satisfied: protobuf==5.29.6 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 75)) (5.29.6)
+Requirement already satisfied: psutil==7.2.2 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 76)) (7.2.2)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 77)) (2.9.0.post0)
+Processing <TEST_ROOT>/wheelhouse/pytorch_lightning-2.5.0-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 78))
+Requirement already satisfied: PyYAML==6.0.2 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 79)) (6.0.2)
+Requirement already satisfied: rdkit==2026.3.6 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 80)) (2026.3.6)
+Requirement already satisfied: requests==2.32.3 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 81)) (2.32.3)
+Processing <TEST_ROOT>/wheelhouse/scikit_learn-1.6.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 82))
+Requirement already satisfied: scipy==1.13.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 83)) (1.13.1)
+Requirement already satisfied: sentry-sdk==2.68.1 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 84)) (2.68.1)
+Requirement already satisfied: setproctitle==1.3.7 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 85)) (1.3.7)
+Requirement already satisfied: six==1.17.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 86)) (1.17.0)
+Requirement already satisfied: smmap==5.0.3 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 87)) (5.0.3)
+Requirement already satisfied: sympy==1.14.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 88)) (1.14.0)
+Requirement already satisfied: threadpoolctl==3.6.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 89)) (3.6.0)
+Processing <TEST_ROOT>/wheelhouse/torch-2.14.0-cp311-cp311-manylinux_2_28_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 90))
+Processing <TEST_ROOT>/wheelhouse/torchmetrics-1.9.0-py3-none-any.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 91))
+Requirement already satisfied: tqdm==4.70.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 92)) (4.70.0)
+Requirement already satisfied: triton==3.8.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 93)) (3.8.0)
+Requirement already satisfied: types-requests==2.33.0.20260906 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 94)) (2.33.0.20260906)
+Requirement already satisfied: typing_extensions==4.16.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 95)) (4.16.0)
+Requirement already satisfied: urllib3==2.7.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 96)) (2.7.0)
+Processing <TEST_ROOT>/wheelhouse/wandb-0.18.7-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 97))
+Requirement already satisfied: yarl==1.24.5 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from -r <TEST_ROOT>/boltz-cached-pins.txt (line 98)) (1.24.5)
+Requirement already satisfied: setuptools>=46.4.0 in <TEST_ROOT>/public_envs/boltz/lib/python3.11/site-packages (from chembl-structure-pipeline==1.2.2->-r <TEST_ROOT>/boltz-cached-pins.txt (line 12)) (79.0.1)
+Installing collected packages: nvidia-cublas-cu12, nvidia-cublas, numba, mashumaro, lightning-utilities, joblib, Jinja2, ihm, gitdb, docker-pycreds, cuda-bindings, biopython, aiosignal, scikit-learn, pandas, nvidia-cusolver, nvidia-cudnn-cu13, modelcif, hydra-core, GitPython, einx, cuequivariance-ops-cu12, cuequivariance, chembl-structure-pipeline, aiohttp, wandb, cuequivariance-torch, torch, torchmetrics, fairscale, cuequivariance-ops-torch-cu12, pytorch-lightning, boltz
+Successfully installed GitPython-3.1.62 Jinja2-3.1.6 aiohttp-3.14.3 aiosignal-1.4.0 biopython-1.84 boltz-2.2.1 chembl-structure-pipeline-1.2.2 cuda-bindings-13.3.1 cuequivariance-0.11.1 cuequivariance-ops-cu12-0.11.1 cuequivariance-ops-torch-cu12-0.11.1 cuequivariance-torch-0.11.1 docker-pycreds-0.4.0 einx-0.3.0 fairscale-0.4.13 gitdb-4.0.12 hydra-core-1.3.2 ihm-2.11 joblib-1.6.0 lightning-utilities-0.15.3 mashumaro-3.14 modelcif-1.2 numba-0.61.0 nvidia-cublas-13.1.1.3 nvidia-cublas-cu12-12.9.2.10 nvidia-cudnn-cu13-9.24.0.43 nvidia-cusolver-12.0.4.66 pandas-3.0.5 pytorch-lightning-2.5.0 scikit-learn-1.6.1 torch-2.14.0 torchmetrics-1.9.0 wandb-0.18.7
+No broken requirements found.
+2.14.0+cu130 13.0
+16.0
+Usage: boltz predict [OPTIONS] DATA
+
+  Run predictions with Boltz.
+
+Options:
+  --out_dir PATH                  The path where to save the predictions.
+  --cache PATH                    The directory where to download the data and
+                                  model. Default is ~/.boltz, or $BOLTZ_CACHE
+                                  if set.
+  --checkpoint PATH               An optional checkpoint, will use the
+                                  provided Boltz-1 model by default.
+  --devices INTEGER               The number of devices to use for prediction.
+                                  Default is 1.
+  --accelerator [gpu|cpu|tpu]     The accelerator to use for prediction.
+                                  Default is gpu.
+  --recycling_steps INTEGER       The number of recycling steps to use for
+                                  prediction. Default is 3.
+  --sampling_steps INTEGER        The number of sampling steps to use for
+                                  prediction. Default is 200.
+  --diffusion_samples INTEGER     The number of diffusion samples to use for
+                                  prediction. Default is 1.
+  --max_parallel_samples INTEGER  The maximum number of samples to predict in
+                                  parallel. Default is None.
+  --step_scale FLOAT              The step size is related to the temperature
+                                  at which the diffusion process samples the
+                                  distribution. The lower the higher the
+                                  diversity among samples (recommended between
+                                  1 and 2). Default is 1.638 for Boltz-1 and
+                                  1.5 for Boltz-2. If not provided, the
+                                  default step size will be used.
+  --write_full_pae                Whether to dump the pae into a npz file.
+                                  Default is True.
+  --write_full_pde                Whether to dump the pde into a npz file.
+                                  Default is False.
+  --output_format [pdb|mmcif]     The output format to use for the
+                                  predictions. Default is mmcif.
+  --num_workers INTEGER           The number of dataloader workers to use for
+                                  prediction. Default is 2.
+  --override                      Whether to override existing found
+                                  predictions. Default is False.
+  --seed INTEGER                  Seed to use for random number generator.
+                                  Default is None (no seeding).
+  --use_msa_server                Whether to use the MMSeqs2 server for MSA
+                                  generation. Default is False.
+  --msa_server_url TEXT           MSA server url. Used only if
+                                  --use_msa_server is set.
+  --msa_pairing_strategy TEXT     Pairing strategy to use. Used only if
+                                  --use_msa_server is set. Options are
+                                  'greedy' and 'complete'
+  --msa_server_username TEXT      MSA server username for basic auth. Used
+                                  only if --use_msa_server is set. Can also be
+                                  set via BOLTZ_MSA_USERNAME environment
+                                  variable.
+  --msa_server_password TEXT      MSA server password for basic auth. Used
+                                  only if --use_msa_server is set. Can also be
+                                  set via BOLTZ_MSA_PASSWORD environment
+                                  variable.
+  --api_key_header TEXT           Custom header key for API key authentication
+                                  (default: X-API-Key).
+  --api_key_value TEXT            Custom header value for API key
+                                  authentication.
+  --use_potentials                Whether to use potentials for steering.
+                                  Default is False.
+  --model [boltz1|boltz2]         The model to use for prediction. Default is
+                                  boltz2.
+  --method TEXT                   The method to use for prediction. Default is
+                                  None.
+  --preprocessing-threads INTEGER
+                                  The number of threads to use for
+                                  preprocessing. Default is 1.
+  --affinity_mw_correction        Whether to add the Molecular Weight
+                                  correction to the affinity value head.
+  --sampling_steps_affinity INTEGER
+                                  The number of sampling steps to use for
+                                  affinity prediction. Default is 200.
+  --diffusion_samples_affinity INTEGER
+                                  The number of diffusion samples to use for
+                                  affinity prediction. Default is 5.
+  --affinity_checkpoint PATH      An optional checkpoint, will use the
+                                  provided Boltz-1 model by default.
+  --max_msa_seqs INTEGER          The maximum number of MSA sequences to use
+                                  for prediction. Default is 8192.
+  --subsample_msa                 Whether to subsample the MSA. Default is
+                                  True.
+  --num_subsampled_msa INTEGER    The number of MSA sequences to subsample.
+                                  Default is 1024.
+  --no_kernels                    Whether to disable the kernels. Default
+                                  False
+  --write_embeddings              to dump the s and z embeddings into a npz
+                                  file. Default is False.
+  --help                          Show this message and exit.
+{
+  "mode": "boltz",
+  "python": "3.11.16",
+  "packages_imported_from_new_environment": [
+    "torch",
+    "numpy",
+    "yaml",
+    "boltz"
+  ],
+  "torch": "2.14.0+cu130",
+  "torch_cuda_build": "13.0",
+  "libc": [
+    "glibc",
+    "2.43"
+  ],
+  "os_release": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+  "gpu_driver": {
+    "exit_code": 0,
+    "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 610.88",
+    "stderr": ""
+  },
+  "system_library_packages": {
+    "exit_code": 0,
+    "stdout": "g++=4:15.2.0-5ubuntu1\ngcc=4:15.2.0-5ubuntu1\nlibc6=2.43-2ubuntu2.3\nlibgomp1=16-20260322-1ubuntu1\nlibstdc++6=16-20260322-1ubuntu1\nzlib1g=1:1.3.dfsg+really1.3.1-1ubuntu3.1",
+    "stderr": ""
+  },
+  "pip_check": {
+    "exit_code": 0,
+    "stdout": "No broken requirements found.",
+    "stderr": ""
+  },
+  "cuda_tensor_test": "PASS",
+  "scope": "New dependency environment on existing OS/driver and Python interpreter; not a fresh-machine installation"
+}
+CLEAN_INSTALL_CHECK_PASS boltz
